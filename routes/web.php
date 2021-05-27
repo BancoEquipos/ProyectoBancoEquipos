@@ -17,11 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hola', function()
-{
-    return '¡Hola mundo!';
-});
-
 Route::get('/print', function () {
     return view('print');
 });
