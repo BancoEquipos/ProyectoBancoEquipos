@@ -12,6 +12,6 @@
 		<input type="button" value="Send Email" onclick="sendEmail()"/>
 	</form>
 
-    <script src="{{ asset('email.js') }}"></script>
+    <script src="{{ asset('email/email.js') }}"></script>
 </body>
 </html>
