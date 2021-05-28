@@ -31,6 +31,9 @@
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesi&oacute;n</button>
                 <hr>
                 <a href="/signUp" class="btn btn-secondary">Registrate</a>
+                <a href="{{ url('auth/google') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2 btn-google">
+                    <strong>Login With Google</strong>
+                </a>
                 <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
             </form>
         </main>
