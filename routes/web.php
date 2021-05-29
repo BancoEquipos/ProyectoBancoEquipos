@@ -19,6 +19,10 @@ Route::get('/signUp', function () {
     return view('signUp');
 });
 
+Route::get('/peopleNotAutorithed', function () {
+    return view('peopleNotAutorithed');
+});
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

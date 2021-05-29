@@ -24,8 +24,14 @@ class LoginController extends Controller
 
             if ($finduser) {
                 Auth::login($finduser);
-//                return dd($user->getEmail());
-                return redirect('/print');
+                if (!strpos($user->getEmail(),'alu.murciaeduca.es') || !strpos($user->getEmail(),'murciaeduca.es')) {
+                    return view('peopleNotAutorithed');
+                } if (strpos($user->getEmail(),'alu.murciaeduca.es')){
+                    $nre = explode("@", $user['email']);
+                    return view('alumno', array('userName' => $user['family_name'], 'surnames' => $user['given_name'], 'nre' => $nre[0]));
+                } else {
+                    return view('profesor', array('user' => $user));
+                }
             } else {
                 $newUser = User::create([
                     'name' => $user->name,
@@ -34,8 +40,7 @@ class LoginController extends Controller
                     'password' => encrypt('')
                 ]);
                 Auth::login($newUser);
-//                return dd($user->getName());
-                return redirect('/email');
+                return "Hola";
             }
 
         } catch (Exception $e) {
