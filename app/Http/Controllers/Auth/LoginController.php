@@ -28,9 +28,9 @@ class LoginController extends Controller
                     return view('peopleNotAutorithed');
                 } if (strpos($user->getEmail(),'alu.murciaeduca.es')){
                     $nre = explode("@", $user['email']);
-                    return view('alumno', array('userName' => $user['family_name'], 'surnames' => $user['given_name'], 'nre' => $nre[0]));
+                    return view('infoAlumno', array('userName' => $user['family_name'], 'surnames' => $user['given_name'], 'nre' => $nre[0]));
                 } else {
-                    return view('profesor', array('user' => $user));
+                    return view('infoProfesor', array('user' => $user));
                 }
             } else {
                 $newUser = User::create([

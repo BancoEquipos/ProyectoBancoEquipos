@@ -19,5 +19,9 @@ Route::get('/notAutorithed', function () {
     return view('peopleNotAutorithed');
 });
 
+Route::get('infoAlumno', function (){
+   return view('alumno');
+});
+
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);

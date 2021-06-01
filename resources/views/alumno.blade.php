@@ -7,6 +7,6 @@
 <h1>Nombre: {{ $userName }}</h1>
 <h1>Apellido: {{ $surnames }}</h1>
 <h1>NRE: {{ $nre }}</h1>
-<a href="/">Inicio</a>
+<a href="/print">Ir a la sección de alumno</a>
 </body>
 </html>
