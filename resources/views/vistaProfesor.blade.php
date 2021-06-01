@@ -7,17 +7,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('/profesor/css/style.css') }}">
+    <link rel="stylesheet" href="/profesor/css/style.css">
 
     <title>Seccion Profesor</title>
-    <link rel="icon" href="{{ asset('/profesor/images/logoC3Mobile.svg') }}">
+    <link rel="icon" href="/profesor/images/logoC3Mobile.svg">
 </head>
 <body>
 <div class="container-fluid">
     <header class="row">
         <div class="row col span12 text-center contenedorHeader">
-            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="{{ asset('/profesor/images/C3Logo.png') }}" class="imagenLogo"></div>
-            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="{{ asset('/profesor/images/logoC3Mobile.svg') }}" class="imagenLogoMobile"></div>
+            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="/profesor/images/C3Logo.png" class="imagenLogo"></div>
+            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="/profesor/images/logoC3Mobile.svg" class="imagenLogoMobile"></div>
             <div class="col-xl-7 col-lg-8  col-md-12 textoHeader">Sección de profesor</div>
         </div>
     </header>
@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col-10 col-lg-4 text-center servicio row">
             <div class="col-7 textoServicio">Formulario de incidencias</div>
-            <img src="{{ asset('/profesor/images/incidencias.svg') }}" class="col-4 logoServicio">
+            <img src="/profesor/images/incidencias.svg" class="col-4 logoServicio">
         </div>
         <div class="col-10 col-lg-4 text-center servicio row">
             <div class="col-12 textoServicio">Ejemplo de servicio</div>
