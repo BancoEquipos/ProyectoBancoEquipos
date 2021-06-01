@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="alumno/css/style.css">
 
     <title>Seccion Alumno</title>
-    <link rel="icon" href="{{ asset('alumno/images/logoC3Mobile.svg') }}">
+    <link rel="icon" href="alumno/images/logoC3Mobile.svg">
 </head>
 <body>
 <div class="container-fluid">
