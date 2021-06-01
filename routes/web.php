@@ -7,20 +7,16 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/print', function () {
-    return view('print');
-});
-
-Route::get('/email', function () {
-    return view('email');
-});
-
 Route::get('/notAutorithed', function () {
     return view('peopleNotAutorithed');
 });
 
-Route::get('/infoAlumno', function (){
-   return view('alumno');
+Route::get('/vistaAlumnos', function () {
+    return view('vistaAlumno');
+});
+
+Route::get('/vistaProfesor', function () {
+    return view('vistaProfesor');
 });
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
