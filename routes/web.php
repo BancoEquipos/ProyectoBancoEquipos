@@ -15,17 +15,9 @@ Route::get('/email', function () {
     return view('email');
 });
 
-Route::get('/signUp', function () {
-    return view('signUp');
-});
-
-Route::get('/peopleNotAutorithed', function () {
+Route::get('/notAutorithed', function () {
     return view('peopleNotAutorithed');
 });
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
