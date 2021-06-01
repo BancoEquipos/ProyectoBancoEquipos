@@ -19,7 +19,7 @@ Route::get('/notAutorithed', function () {
     return view('peopleNotAutorithed');
 });
 
-Route::get('infoAlumno', function (){
+Route::get('/infoAlumno', function (){
    return view('alumno');
 });
 
