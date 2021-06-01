@@ -11,7 +11,7 @@ Route::get('/notAutorithed', function () {
     return view('peopleNotAutorithed');
 });
 
-Route::get('/vistaAlumnos', function () {
+Route::get('/vistaAlumno', function () {
     return view('vistaAlumno');
 });
 

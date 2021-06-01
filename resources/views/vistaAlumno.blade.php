@@ -60,10 +60,6 @@
         </div>
     </div>
 
-    <div>
-        <a href="/infoAlumno">Alumno</a>
-    </div>
-
     <div class="row">
         <div class="d-none d-sm-block col-12 text-center footer">Carlos 3 Cartagena</div>
     </div>
