@@ -15,10 +15,6 @@ class LoginController extends Controller
     {
             $user = Socialite::driver('google')->stateless()->user();
 
-            $token = $user->token;
-            $refreshToken = $user->refreshToken;
-            $expiresIn = $user->expiresIn;
-
             if (!strpos($user->getEmail(),'alu.murciaeduca.es') || !strpos($user->getEmail(),'murciaeduca.es')) {
 
                 return view('peopleNotAutorithed');
