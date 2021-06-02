@@ -13,7 +13,11 @@ class LoginController extends Controller
 
     public function handleGoogleCallback()
     {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('google')->stateless()->user();
+
+            $token = $user->token;
+            $refreshToken = $user->refreshToken;
+            $expiresIn = $user->expiresIn;
 
             if (!strpos($user->getEmail(),'alu.murciaeduca.es') || !strpos($user->getEmail(),'murciaeduca.es')) {
 
