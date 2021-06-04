@@ -29,7 +29,8 @@ class LoginController extends Controller
                 ]);
                 $newUser->save();
             } else {
-                $finduser->lastLog = date();
+                $finduser->lastLog = date(Y."-".n."-".j ." / ". G.":".i.":".s.":");
+                $finduser->save();
             }
             if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
                 $nre = explode("@", $user['email']);
