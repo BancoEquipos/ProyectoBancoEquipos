@@ -13,7 +13,7 @@ Route::get('/notAutorithed', function () {
 
 Route::get('/vistaAlumno', function () {
     return view('vistaAlumno');
-});
+})->middleware(['routes']);
 
 Route::get('/vistaProfesor', function () {
     return view('vistaProfesor');
