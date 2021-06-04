@@ -20,7 +20,6 @@ class LoginController extends Controller
             }
 
             $finduser = User::where('google_id', $user->id)->first();
-            return dd(date_default_timezone_get());
             if (!$finduser) {
                 $formatDate = "Y-m-d H:i:s";
                 $newUser = User::create([
