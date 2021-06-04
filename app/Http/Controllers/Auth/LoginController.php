@@ -22,16 +22,18 @@ class LoginController extends Controller
             $finduser = User::where('google_id', $user->id)->first();
             if (!$finduser) {
                 $formatDate = "Y-m-d H:i:s";
+                $fecha = date($formatDate);
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'lastLog' => date($formatDate),
+                    'lastLog' => $fecha,
                 ]);
                 $newUser->save();
             } else {
                 $formatDate = "Y-m-d H:i:s";
-                $finduser->lastLog = date($formatDate);
+                $fecha = date($formatDate);
+                $finduser->lastLog = $fecha;
                 $finduser->save();
             }
             if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
