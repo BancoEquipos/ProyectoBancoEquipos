@@ -21,10 +21,8 @@ class LoginController extends Controller
 
             $finduser = User::where('google_id', $user->id)->first();
             if (!$finduser) {
-                $formatDate = "Y-m-d H:i:s";
-//                $fecha = "\"".date($formatDate)."\"";
                 $newUser = User::create([
-                    'name' => $user->name,
+                    'name' => "boaaaaa",
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'lastLog' => "hola",
