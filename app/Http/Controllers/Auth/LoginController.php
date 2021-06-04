@@ -27,9 +27,9 @@ class LoginController extends Controller
                     'google_id'=> $user->id
                 ]);
                 $newUser->save();
+            } else {
+                $finduser->lastLog = date();
             }
-//                Auth::login($finduser);
-//                Auth::login($newUser);
             if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
                 $nre = explode("@", $user['email']);
                 return view('alumno', array('userName' => $user['family_name'], 'surnames' => $user['given_name'], 'nre' => $nre[0]));
