@@ -24,7 +24,8 @@ class LoginController extends Controller
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'google_id'=> $user->id
+                    'google_id'=> $user->id,
+                    'lastLog' => date(),
                 ]);
                 $newUser->save();
             } else {
