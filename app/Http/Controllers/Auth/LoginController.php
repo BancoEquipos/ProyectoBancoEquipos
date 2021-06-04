@@ -3,7 +3,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
-use Carbon\Carbon;
 
 class LoginController extends Controller
 {
@@ -23,18 +22,16 @@ class LoginController extends Controller
             $finduser = User::where('google_id', $user->id)->first();
             if (!$finduser) {
                 $formatDate = "Y-m-d H:i:s";
-                $fecha = date($formatDate);
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'lastLog' => Carbon::now()->toDateTimeString(),
+                    'lastLog' => now(),
                 ]);
                 $newUser->save();
             } else {
                 $formatDate = "Y-m-d H:i:s";
-                $fecha = date($formatDate);
-                $finduser->lastLog = Carbon::now()->toDateTimeString();
+                $finduser->lastLog = now();
                 $finduser->save();
             }
             if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
