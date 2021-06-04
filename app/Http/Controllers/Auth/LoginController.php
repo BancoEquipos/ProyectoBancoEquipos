@@ -21,7 +21,7 @@ class LoginController extends Controller
 
             $finduser = User::where('google_id', $user->id)->first();
             if (!$finduser) {
-                $formatDate = Y."-".n."-".j ." / ". G.":".i.":".s.":";
+                $formatDate = "Y-n-j G:i:s";
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
@@ -30,7 +30,7 @@ class LoginController extends Controller
                 ]);
                 $newUser->save();
             } else {
-                $formatDate = Y."-".n."-".j ." / ". G.":".i.":".s.":";
+                $formatDate = "Y-n-j G:i:s";
                 $finduser->lastLog = date($formatDate);
                 $finduser->save();
             }
