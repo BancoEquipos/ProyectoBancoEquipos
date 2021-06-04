@@ -25,7 +25,7 @@ class LoginController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                    'lastLog' => date(),
+                    'lastLog' => date(Y."-".n."-".j ." / ". G.":".i.":".s.":"),
                 ]);
                 $newUser->save();
             } else {
