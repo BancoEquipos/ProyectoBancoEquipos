@@ -11,8 +11,8 @@ class RedirectViews
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-            return 'estas logeado' .$next($request);
+            return $next($request);
         }
-        return 'no estas logeado';
+        abort(403);
     }
 }
