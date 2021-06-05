@@ -13,7 +13,7 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 Route::get('/solicitudPrestamo', function () {
     if (Auth::check()) {
-        return Auth::user();
+        return Auth::user()->email;
     } else {
         return 'No estas logeado';
     }
