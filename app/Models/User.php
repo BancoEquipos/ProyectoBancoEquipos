@@ -58,4 +58,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function tipoUsuario() {
+        if ($this->email == '6379454@alu.murciaeduca.es') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
