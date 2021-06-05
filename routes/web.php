@@ -13,7 +13,7 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 Route::get('/solicitudPrestamo', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
-        return 'Eres alumno';
+        return view('solicitudPrestamo');
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return 'Eres profesor';
     } else {

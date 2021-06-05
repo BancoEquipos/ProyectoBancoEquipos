@@ -27,7 +27,7 @@
             <div class="col-7 textoServicio">Solicitud de prestamo de equipos informáticos</div>
             <img src="/alumno/images/solicitudMaterial.svg" class="col-4 logoServicio">
             <a href="{{ url('solicitudPrestamo') }}">Solicitud prestamo</a>
-            <a href="{{ url('logOut') }}">Solicitud prestamo</a>
+            <a href="{{ url('logOut') }}">Hacer Log Out</a>
         </div>
         <div class="col-10 col-lg-4 text-center servicio row">
             <div class="col-12 textoServicio">Ejemplo de servicio</div>
