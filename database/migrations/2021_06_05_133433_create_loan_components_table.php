@@ -14,9 +14,8 @@ class CreateLoanComponentsTable extends Migration
     public function up()
     {
         Schema::create('loan_components', function (Blueprint $table) {
-            $table->id('loan_id')->unsigned();
-            $table->bigInteger('id')->unsigned();
-            $table->primary(['loan_id', 'id']);
+            $table->bigInteger('loan_id')->primary();
+            $table->bigInteger('id')->primary();
             $table->foreign('loan_id')->references('id')->on('loans');
             $table->bigInteger('component_id');
             $table->foreign('component_id')->references('id')->on('component_type');
