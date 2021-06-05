@@ -10,7 +10,7 @@ Route::get('/', function () {
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
-//Route::middleware(['routes'])->group(function () {
+Route::middleware(['auth/google'])->group(function () {
     Route::get('/vistaAlumno', function () {
         return view('vistaAlumno');
     });
@@ -21,4 +21,4 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
     Route::get('/notAutorithed', function () {
         return view('peopleNotAutorithed');
     });
-//});
+});

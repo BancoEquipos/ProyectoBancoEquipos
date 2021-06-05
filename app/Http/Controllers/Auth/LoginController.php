@@ -3,7 +3,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -37,10 +36,8 @@ class LoginController extends Controller
             }
             if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
                 $nre = explode("@", $user['email']);
-                Auth::login($finduser);
                 return view('alumno', array('userName' => $user['family_name'], 'surnames' => $user['given_name'], 'nre' => $nre[0]));
             } else {
-                Auth::login($finduser);
                 return view('profesor', array('user' => $user));
             }
     }
