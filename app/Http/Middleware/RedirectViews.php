@@ -9,7 +9,7 @@ class RedirectViews
 {
     public function handle(Request $request, Closure $next)
     {
-        return redirect('/');
-//        return $next($request);
+        dd($request);
+        return $next($request);
     }
 }
