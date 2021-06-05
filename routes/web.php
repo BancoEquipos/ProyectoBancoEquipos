@@ -20,3 +20,12 @@ Route::get('/solicitudPrestamo', function () {
         return 'Persona no autorizada';
     }
 });
+
+Route::get('/logOut', function () {
+    if (Auth::check()) {
+        Auth::logout();
+        return 'Log Out complete';
+    } else {
+        return 'No estabas logeado por lo que no hemos podido deslogear.';
+    }
+});
