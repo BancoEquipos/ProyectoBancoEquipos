@@ -14,7 +14,7 @@ class CreateSpecificComponentsTable extends Migration
     public function up()
     {
         Schema::create('specific_components', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->bigInteger('component_id');
             $table->foreign('component_id')->references('id')->on('component_types');
             $table->timestamps();

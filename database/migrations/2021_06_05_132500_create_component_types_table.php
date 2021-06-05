@@ -14,7 +14,7 @@ class CreateComponentTypesTable extends Migration
     public function up()
     {
         Schema::create('component_types', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->text('nombreComponente');
             $table->timestamps();
         });
