@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoansComponentsTable extends Migration
+class CreateSpecificComponentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateLoansComponentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('loans_components', function (Blueprint $table) {
-            $table->id('loan_id');
-            $table->foreign('loan_id')->references('id')->on('loans');
-            $table->bigInteger('id');
+        Schema::create('specific_components', function (Blueprint $table) {
+            $table->id('id');
             $table->bigInteger('component_id');
             $table->foreign('component_id')->references('id')->on('component_type');
-            $table->bigInteger('specific_component_id');
-            $table->foreign('specific_component_id')->references('id')->on('specific_component');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateLoansComponentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loans_components');
+        Schema::dropIfExists('specific_components');
     }
 }
