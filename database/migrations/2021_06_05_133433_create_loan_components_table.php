@@ -15,10 +15,12 @@ class CreateLoanComponentsTable extends Migration
     {
         Schema::create('loan_components', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('load_id')->primary();
+            $table->bigInteger('load_id');
             $table->foreign('loan_id')->references('id')->on('loans');
+
             $table->bigInteger('component_id');
             $table->foreign('component_id')->references('id')->on('component_types');
+
             $table->bigInteger('specific_component_id');
             $table->foreign('specific_component_id')->references('id')->on('specific_components');
             $table->timestamps();
