@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('login');
@@ -12,13 +13,13 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 
     Route::get('/vistaAlumno', function () {
-        $user=Auth::user();
-        return dd($user->getEmail());
-        if ($user->getEmail()) {
-            return 'Eres alumno';
-        } else {
-            return 'No eres alumno';
-        }
+        $user = Socialite::driver('google')->stateless()->user();
+        return $user->getEmail();
+//        if ($user->getEmail()) {
+//            return 'Eres alumno';
+//        } else {
+//            return 'No eres alumno';
+//        }
 //        return view('vistaAlumno');
     });
 
