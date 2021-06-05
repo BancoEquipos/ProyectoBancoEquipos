@@ -10,25 +10,12 @@ Route::get('/', function () {
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
-
     Route::get('/vistaAlumno', function () {
-        $user=Auth::user();
-        if ($user->routes()) {
-            return 'Eres alumno';
-        } else {
-            return 'No eres alumno';
-        }
-//        return view('vistaAlumno');
+        return view('vistaProfesor');
     });
 
     Route::get('/vistaProfesor', function () {
-        $user=Auth::user();
-        if ($user->tipoUsuario()) {
-            return 'Eres profesor';
-        } else {
-            return 'No eres profesor';
-        }
-//        return view('vistaProfesor');
+        return view('vistaProfesor');
     });
 
     Route::get('/notAutorithed', function () {
