@@ -13,7 +13,8 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
     Route::get('/vistaAlumno', function () {
         $user=Auth::user();
-        if ($user->tipoUsuario()) {
+        return dd($user->getEmail());
+        if ($user->getEmail()) {
             return 'Eres alumno';
         } else {
             return 'No eres alumno';
