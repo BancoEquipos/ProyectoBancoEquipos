@@ -18,9 +18,9 @@ class CreateLoanComponentsTable extends Migration
             $table->bigInteger('id')->primary();
             $table->foreign('loan_id')->references('id')->on('loans');
             $table->bigInteger('component_id');
-            $table->foreign('component_id')->references('id')->on('component_type');
+            $table->foreign('component_id')->references('id')->on('component_types');
             $table->bigInteger('specific_component_id');
-            $table->foreign('specific_component_id')->references('id')->on('specific_component');
+            $table->foreign('specific_component_id')->references('id')->on('specific_components');
             $table->timestamps();
         });
     }
