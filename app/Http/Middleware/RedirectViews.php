@@ -13,6 +13,6 @@ class RedirectViews
         if (Auth::check()) {
             return $next($request);
         }
-        abort(403);
+        return 'no estas logeado';
     }
 }
