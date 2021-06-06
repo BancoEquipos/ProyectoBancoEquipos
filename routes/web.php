@@ -29,3 +29,7 @@ Route::get('/logOut', function () {
         return 'No estabas logeado por lo que no hemos podido deslogear.';
     }
 });
+
+Route::get('/offline', function () {
+    return view('offline');
+});
