@@ -15,8 +15,7 @@ class CreateLoansTable extends Migration
     {
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->integer('nre');
-            $table->text('curso');
+            $table->text('curso');  
             $table->text('cicloFormativo');
             $table->text('motivoSolicitud');
             $table->year('agnoPrestamo');
@@ -25,6 +24,8 @@ class CreateLoansTable extends Migration
             $table->date('fechaDevolucionTope');
             $table->date('salida');
             $table->date('fechaAltaSolicitud');
+            $table->integer('nre');
+            $table->foreign('nre')->references('nre')->on('alumnos');
             $table->timestamps();
         });
     }
