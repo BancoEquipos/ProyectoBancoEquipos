@@ -11,7 +11,7 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="alumno/css/estilo.css">
+    <link rel="stylesheet" href="/alumno/css/estilo.css">
     <script src="/alumno/js/eventosDiv.js"></script>
     <title>Seccion Alumno</title>
     <link rel="icon" href="/alumno/imagenes/logoC3Mobile.svg">
