@@ -96,7 +96,7 @@
         </div>
 
         <div class="form-floating separador col-12 col-lg-4">
-            <input class="form-control" type="text" name="motivo" id="motivo" title="" placeholder="Domicilio">
+            <input class="form-control" type="text" name="motivo" id="domicilio" title="" placeholder="Domicilio">
             <label for="floatingInput" class="etiquetaCampo" >Domicilio</label>
         </div>
 
