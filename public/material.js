@@ -123,15 +123,21 @@ $(document).ready(function () {
 
     }
 
+    //Redireccion de botones
+    function redirigir(url){
+        $(location).attr('href', url)
+    }
+
+
     var prov = document.getElementById('ps-prov');
-	var mun = document.getElementById('ps-mun');
-	// Create PS
-	new Pselect().create(prov, mun);
+    var mun = document.getElementById('ps-mun');
+    // Create PS
+    new Pselect().create(prov, mun);
 
 
-	//document.getElementById('ps-mun').addEventListener('change', function onChange() {
-		//document.getElementById('code').innerText = 'Código: ' + document.getElementById('ps-mun').value;
-	//});
+    //document.getElementById('ps-mun').addEventListener('change', function onChange() {
+    //document.getElementById('code').innerText = 'Código: ' + document.getElementById('ps-mun').value;
+    //});
 
     //$('#ps-mun').change(func)
     $('#nif').blur(function e() { comprobarDNI($(this).val()) });
@@ -139,4 +145,7 @@ $(document).ready(function () {
     $('#apellidos').blur(function e() { comprobarNombre($(this).val(), "apellidos") });
     $('#telefono').blur(function e() { comprobarTLF($(this).val()) });
     $('#email').blur(function e() { comprobarEmail($(this).val()) });
+    $("#botonVolver").click(function e(){redirigir("https://www.google.com")});
+
+
 });

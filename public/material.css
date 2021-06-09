@@ -1,10 +1,31 @@
 .container {
   height: 100%;
   width: 90%;
-
 }
 
-.etiquetaCampo{
+.imagenLogo {
+  height: 60%;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.contenedorHeader {
+  margin: 2%;
+  border-bottom: rgb(54, 148, 255) 4px solid;
+  background-color: rgb(234, 243, 253);
+  border-radius: 20px;
+  height: 60%;
+}
+
+.textoHeader {
+  height: 80%;
+  margin: auto;
+  font-family: verdana;
+  font-size: 150%;
+}
+
+.etiquetaCampo {
   margin-left: 10px;
 }
 
@@ -13,7 +34,6 @@ html, body {
 }
 
 body {
-  display: flex;
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -85,7 +105,6 @@ body {
   margin: 0 auto;
 }
 
-
 .footer {
   background-color: rgb(36, 36, 36);
   position: absolute;
@@ -101,6 +120,10 @@ body {
   width: 75%;
   float: left;
   margin-bottom: 15px;
+}
+
+.botonDiv {
+  padding: 20px;
 }
 
 .logoServicio {
@@ -122,24 +145,6 @@ body {
   margin-bottom: 15px;
 }
 
-.contenedorHeader {
-  margin: 2%;
-  border-bottom: black 1px solid;
-}
-
-.textoHeader {
-  height: 80%;
-  margin: auto;
-  font-family: verdana;
-  font-size: 150%;
-}
-
-.boton{
-  width: 30%;
-  margin: 0 auto;
-  float: center;
-} 
-
 .footer {
   background-color: rgb(36, 36, 36);
   position: absolute;
@@ -148,4 +153,30 @@ body {
   width: 100%;
   height: 40px;
   color: white;
+}
+
+.boton {
+  width: 80%;
+}
+
+.enviarDiv{
+  text-align: center; 
+  padding: 20px;
+}
+
+@media (min-width: 960px) {
+  .textoHeader {
+    height: 80%;
+    margin: auto;
+    border-left: rgb(54, 148, 255) 4px solid;
+    font-family: verdana;
+    font-size: 150%;
+  }
+  .boton {
+    width: 20%;
+  }
+  .enviarDiv{
+    text-align: right; 
+    padding: 20px;
+  }
 }
