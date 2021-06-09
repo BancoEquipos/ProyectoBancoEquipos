@@ -11,6 +11,16 @@ Route::get('/', function () {
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
+Route::get('/vistaAlumno', function () {
+    if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
+        return view('vistaAlumno');
+    } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
+        return 'Eres profesor';
+    } else {
+        return 'Persona no autorizada';
+    }
+});
+
 Route::get('/solicitudPrestamo', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         return view('solicitudPrestamo');

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario solicitud de material</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
-    <script type="text/javascript" src="material.js" defer></script>
+    <script type="text/javascript" src="/material.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/pselect.js@4.0.1/dist/pselect.min.js"></script>
@@ -38,7 +38,6 @@
                 <div class="row ">
                     <div class="col-12 botonDiv">
                         <button class=" btn boton btn-primary float-left" type="submit" id="botonVolver">Volver</button>
-
                     </div>
                 </div>
 
@@ -52,7 +51,7 @@
     <div class="row">
         <div class="form-floating separador col-12 col-lg-4">
             <input class="form-control" type="text" name="nombre" id="nombre"
-                   title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre">
+                   title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre" />
             <label for="floatingInput" class="etiquetaCampo" class="etiquetaCampo" class="etiquetaCampo"
                    class="etiquetaCampo">Nombre</label>
             <div class="mensajeOculto" id="nombreError">
@@ -96,7 +95,7 @@
         </div>
 
         <div class="form-floating separador col-12 col-lg-4">
-            <input class="form-control" type="text" name="motivo" id="domicilio" title="" placeholder="Domicilio">
+            <input class="form-control" type="text" name="motivo" id="domicilio" title="" placeholder="Domicilio" />
             <label for="floatingInput" class="etiquetaCampo" >Domicilio</label>
         </div>
 
@@ -144,7 +143,7 @@
         </div>
 
         <div class="form-floating separador col-12 col-lg-4">
-            <input class="form-control" type="text" name="motivo" id="motivo" title="" placeholder="Motivo de la solicitud">
+            <input class="form-control" type="text" name="motivo" id="motivo" title="" placeholder="Motivo de la solicitud" />
             <label for="floatingInput" class="etiquetaCampo">Motivo de la solicitud</label>
         </div>
 
@@ -164,7 +163,7 @@
             <button class=" btn boton btn-primary float-right" type="submit">Enviar</button>
         </div>
     </div>
-
+</div>
 </body>
 
 </html>
