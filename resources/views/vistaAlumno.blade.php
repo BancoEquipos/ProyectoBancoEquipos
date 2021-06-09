@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="/alumno/css/estilo.css">
     <script src="/alumno/js/eventosDiv.js"></script>
     <title>Seccion Alumno</title>
-    <link rel="icon" href="/alumno/imagenes/logoC3Mobile.svg">
+    <link rel="icon" href="/alumno/images/logoC3Mobile.svg">
 </head>
 
 <body>
 <div class="contenedor">
     <header class="row">
         <div class="row col span12 text-center contenedorHeader">
-            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="/alumno/imagenes/C3Logo.png" class="imagenLogo">
+            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="/alumno/images/C3Logo.png" class="imagenLogo">
             </div>
-            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="/alumno/imagenes/logoC3Mobile.svg"
+            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="/alumno/images/logoC3Mobile.svg"
                                                                      class="imagenLogoMobile"></div>
             <div class="col-xl-7 col-lg-8  col-md-12 textoHeader">
                 <div class="col-12 textoSeccion">
@@ -56,7 +56,7 @@
     <div class="row">
         <div class="col-10 col-lg-4 text-center servicio row" id="servicioPrestamo">
             <div class="col-7 textoServicio">Solicitud de prestamo de equipos informáticos</div>
-            <img src="/alumno/imagenes/solicitudMaterial.svg" class="col-4 logoServicio">
+            <img src="/alumno/images/solicitudMaterial.svg" class="col-4 logoServicio">
         </div>
         <div class="col-10 col-lg-4 text-center servicio row">
             <div class="col-12 textoServicio">Ejemplo de servicio</div>
