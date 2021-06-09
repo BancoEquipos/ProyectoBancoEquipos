@@ -13,8 +13,8 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 Route::get('/vistaAlumno', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
-        return dd(Auth::user());
-        return view('/vistaAlumno');
+        $nre = explode("@", Auth::user()->email);
+        return view('/vistaAlumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return 'Eres profesor';
     } else {

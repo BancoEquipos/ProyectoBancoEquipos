@@ -39,7 +39,7 @@ class LoginController extends Controller
         }
         if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
             $nre = explode("@", $user['email']);
-            return view('vistaAlumno', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0]));
+            return view('vistaAlumno', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
         } else {
             return view('vistaProfesor', array('user' => $user));
         }
