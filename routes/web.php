@@ -3,7 +3,6 @@
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use \Illuminate\Support\Facades\Auth;
-use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('login');
@@ -14,9 +13,8 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 Route::get('/vistaAlumno', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
-        $user = Socialite::driver('google')->stateless()->user();
-        $nre = explode("@", $user['email']);
-        return view('vistaAlumno', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0]));
+        return dd(Auth::user());
+        return view('/vistaAlumno');
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return 'Eres profesor';
     } else {
