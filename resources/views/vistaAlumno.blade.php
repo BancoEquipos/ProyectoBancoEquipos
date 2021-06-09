@@ -31,7 +31,7 @@
                 </div>
                 <div class="row ">
                     <div class="col-12 col-lg-6 infoUsuario">
-                        <p>Nombre:</p>
+                        <p>Nombre: {{ $userName }}</p>
                         <p>E-mail:</p>
                     </div>
                     <div class="col-12 col-lg-6 infoUsuario">
