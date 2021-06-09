@@ -5,8 +5,8 @@ $(document).ready(function () {
     }
 
 
-    $("#servicioIncidencia").click(function e(){redirigir("https://www.google.com")});
-    $("#botonLogout").click(function e(){redirigir("https://www.google.com")});
-    $("#botonCambiar").click(function e(){redirigir("https://www.google.com")});
-    
+    $("#servicioPrestamo").click(function e(){redirigir("/solicitudPrestamo")});
+    $("#botonLogout").click(function e(){redirigir("/logOut")});
+    $("#botonCambiar").click(function e(){redirigir("/auth/google")});
+
 });

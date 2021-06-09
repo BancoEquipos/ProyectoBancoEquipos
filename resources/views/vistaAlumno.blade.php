@@ -35,7 +35,7 @@
                         <p>E-mail:</p>
                     </div>
                     <div class="col-12 col-lg-6 infoUsuario">
-                        <p>NRE:</p>
+                        <p>NRE: {{ $nre }}</p>
                         <p>Última conexión:</p>
                     </div>
                     <div class="col-6 botonDiv">
