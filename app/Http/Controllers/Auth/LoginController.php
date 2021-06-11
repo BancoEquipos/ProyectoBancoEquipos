@@ -41,7 +41,8 @@ class LoginController extends Controller
             $nre = explode("@", $user['email']);
             return view('vistaProfesor', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
         } else {
-            return view('vistaProfesor', array('user' => $user));
+            $nre = explode("@", $user['email']);
+            return view('vistaProfesor', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
         }
     }
 }
