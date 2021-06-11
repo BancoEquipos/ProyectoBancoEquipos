@@ -38,8 +38,9 @@ class LoginController extends Controller
             Auth::login($finduser);
         }
         if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
+            return redirect('vistaAlumno');
             $nre = explode("@", $user['email']);
-            redirect('/vistaAlumno');
+            return view('vistaAlumno', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
         } else {
             $nre = explode("@", $user['email']);
             return view('vistaProfesor', array('userName' => $user['family_name'], 'email' => $user->getEmail(), 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
