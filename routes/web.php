@@ -37,7 +37,7 @@ Route::get('/logOut', function () {
         Auth::logout();
         return view('logOut');
     } else {
-        return 'No estabas logeado por lo que no hemos podido deslogear.';
+        return view('notLogIn');
     }
 });
 
