@@ -14,9 +14,10 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 Route::get('/vistaAlumno', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('/vistaAlumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
+        return view('vistaProfesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
-        return 'Eres profesor';
+        $nre = explode("@", Auth::user()->email);
+        return view('vistaProfesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else {
         return view('notAuthorized');
     }
@@ -25,7 +26,7 @@ Route::get('/vistaAlumno', function () {
 Route::get('/vistaProfesor', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('vistaProfesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
+        return view('vistaAlumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return view('vistaProfesor');
     } else {
