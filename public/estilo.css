@@ -1,0 +1,68 @@
+p {
+    font-size: 18px;
+    padding: 15px;
+    text-align: left;
+}
+
+.logoDiv {
+    text-align: center;
+    height: 200px;
+}
+
+.imagenLogoMobile {
+    height: 100%;
+    width: 30%;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.contenedorHeader {
+    margin: 2%;
+    border: rgb(54, 148, 255) 3px solid;
+    background-color: rgb(234, 243, 253);
+    border-radius: 20px;
+    height: 220px;
+}
+
+.textoSeccion {
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 110%;
+}
+
+.contenedor {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+}
+
+.botonDiv {
+    height: 100px;
+}
+
+.botonLogin {
+    height: 50%;
+    font-size: 120%;
+    margin-top: 2%;
+}
+
+@media (min-width: 960px) {
+    
+    .contenedorHeader {
+        margin: 2%;
+        border-bottom: rgb(54, 148, 255) 4px solid;
+        background-color: rgb(234, 243, 253);
+        border-radius: 20px;
+        height: 150px;
+    }
+
+    .textoSeccion {
+        height: 100%;
+        padding: 20px;
+        text-align: center;
+        font-family: verdana;
+        font-size: 120%;
+    }
+}
