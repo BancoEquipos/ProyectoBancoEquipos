@@ -17,7 +17,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->stateless()->user();
         if (!strpos($user->getEmail(),'alu.murciaeduca.es') || !strpos($user->getEmail(),'murciaeduca.es')) {
-            return view('peopleNotAutorithed');
+            return view('notAuthorized');
         }
 
         $finduser = User::where('google_id', $user->id)->first();
