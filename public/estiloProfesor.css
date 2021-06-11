@@ -1,0 +1,125 @@
+.contenedor {
+    margin: 0 auto;
+    width: 85%;
+}
+
+.botonDiv {
+    padding: 20px;
+
+}
+
+.imagenLogo {
+    height: 60%;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.logoServicio {
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.textoServicio {
+    height: 80%;
+    padding-top: 35px;
+    font-family: verdana;
+    font-size: 140%;
+}
+
+.textoSeccion {
+    height: 80px;
+    padding: 0;
+    margin: 0 auto;
+    border-bottom: rgb(54, 148, 255) 4px solid;
+    font-family: verdana;
+    font-size: 140%;
+}
+
+.infoUsuario {
+    height: 100%;
+    font-family: verdana;
+    font-size: 100%;
+    text-align: left;
+}
+
+.imagenLogoMobile {
+    height: 60%;
+    width: 30%;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+.contenedorHeader {
+    margin: 2%;
+    border-bottom: rgb(54, 148, 255) 4px solid;
+    background-color: rgb(234, 243, 253);
+    border-radius: 20px;
+    height: 60%;
+}
+
+.textoHeader {
+    height: 80%;
+    margin: auto;
+    font-family: verdana;
+    font-size: 150%;
+}
+
+.servicio {
+    border-radius: 15px;
+    background-color: rgb(159, 204, 255);
+    border: black 1px solid;
+    height: 150px;
+    margin: 10px auto;
+    font-family: verdana;
+    font-size: 12px;
+}
+
+.footer {
+    background-color: rgb(36, 36, 36);
+    position: absolute;
+    bottom: 1;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+    margin-top: 120px;
+}
+
+.servicio:hover {
+    background-color: rgb(95, 255, 194);
+}
+
+p {
+    font-size: 18px;
+    padding: 15px;
+    text-align: left;
+}
+
+@media (min-width: 960px) {
+    .servicio {
+        border-radius: 15px;
+        background-color: rgb(159, 204, 255);
+        border: black 1px solid;
+        height: 200px;
+        margin: 15px auto;
+        font-family: verdana;
+        font-size: 18px;
+        transition: transform .2s;
+    }
+    .infoUsuario {
+        height: 100%;
+        padding: 20px;
+    }
+    .textoHeader {
+        height: 80%;
+        margin: auto;
+        border-left: rgb(54, 148, 255) 4px solid;
+        font-family: verdana;
+        font-size: 150%;
+    }
+    .servicio:hover {
+        background-color: rgb(95, 255, 194);
+    }
+}

@@ -1,45 +1,65 @@
 <!doctype html>
 <html lang="es">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="/profesor/css/style.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estiloProfesor.css">
+    <script src="eventosDivProfesor.js"></script>
     <title>Seccion Profesor</title>
-    <link rel="icon" href="/profesor/images/logoC3Mobile.svg">
+    <link rel="icon" href="Imagenes/logoC3Mobile.svg">
 </head>
+
 <body>
-<div class="container-fluid">
+<div class="contenedor">
     <header class="row">
         <div class="row col span12 text-center contenedorHeader">
-            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="/profesor/images/C3Logo.png" class="imagenLogo"></div>
-            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="/profesor/images/logoC3Mobile.svg" class="imagenLogoMobile"></div>
-            <div class="col-xl-7 col-lg-8  col-md-12 textoHeader">Sección de profesor</div>
+            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="Imagenes/C3Logo.png" class="imagenLogo">
+            </div>
+            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="Imagenes/logoC3Mobile.svg"
+                                                                     class="imagenLogoMobile"></div>
+            <div class="col-xl-7 col-lg-8  col-md-12 textoHeader">
+                <div class="col-12 textoSeccion">
+                    Seccion de Profesor
+                </div>
+                <div class="row ">
+                    <div class="col-12 col-lg-6 infoUsuario">
+                        <p>Nombre:</p>
+                        <p>E-mail:</p>
+                    </div>
+                    <div class="col-12 col-lg-6 infoUsuario">
+                        <p>NRE:</p>
+                        <p>Última conexión:</p>
+                    </div>
+                    <div class="col-6 botonDiv">
+                        <button class=" btn boton btn-primary float-left" type="submit" id="botonLogout">Logout</button>
+
+                    </div>
+                    <div class="col-6 botonDiv">
+                        <button class=" btn boton btn-primary float-left" type="submit" id="botonCambiar">Cambiar cuenta</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </header>
 
     <div class="row">
-        <div class="col-10 col-lg-4 text-center servicio row">
-            <div class="col-7 textoServicio">Formulario de incidencias</div>
-            <img src="/profesor/images/incidencias.svg" class="col-4 logoServicio">
+        <div class="col-10 col-lg-4 text-center servicio row" id="servicioIncidencia">
+            <div class="col-7 textoServicio">Incidencias al RMI</div>
+            <img src="Imagenes/incidencias.svg" class="col-4 logoServicio">
         </div>
         <div class="col-10 col-lg-4 text-center servicio row">
             <div class="col-12 textoServicio">Ejemplo de servicio</div>
         </div>
 
-    </div>
-
-    <div class="row">
-        <div class="col-10 col-lg-4 text-center servicio row">
-            <div class="col-12 textoServicio">Ejemplo de servicio</div>
-        </div>
-        <div class="col-10 col-lg-4 text-center servicio row">
-            <div class="col-12 textoServicio">Ejemplo de servicio</div>
-        </div>
     </div>
 
     <div class="row">
@@ -66,8 +86,13 @@
 
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
