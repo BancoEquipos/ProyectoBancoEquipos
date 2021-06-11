@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="/estiloProfesor.css">
     <script src="/eventosDivProfesor.js"></script>
     <title>Seccion Profesor</title>
-    <link rel="icon" href="Imagenes/logoC3Mobile.svg">
+    <link rel="icon" href="/Imagenes/logoC3Mobile.svg">
 </head>
 
 <body>
 <div class="contenedor">
     <header class="row">
         <div class="row col span12 text-center contenedorHeader">
-            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="Imagenes/C3Logo.png" class="imagenLogo">
+            <div class="col-xl-5 col-lg-4 d-none d-lg-block"><img src="/Imagenes/C3Logo.png" class="imagenLogo">
             </div>
-            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="Imagenes/logoC3Mobile.svg"
+            <div class="col-xl-5 col-lg-4  col-md-12 d-lg-none"><img src="/Imagenes/logoC3Mobile.svg"
                                                                      class="imagenLogoMobile"></div>
             <div class="col-xl-7 col-lg-8  col-md-12 textoHeader">
                 <div class="col-12 textoSeccion">
