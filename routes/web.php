@@ -52,7 +52,3 @@ Route::get('/logOut', function () {
         return view('notLogIn');
     }
 });
-
-Route::get('/offline', function () {
-    return view('offline');
-});
