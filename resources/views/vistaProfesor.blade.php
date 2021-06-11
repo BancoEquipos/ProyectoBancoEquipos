@@ -31,12 +31,12 @@
                 </div>
                 <div class="row ">
                     <div class="col-12 col-lg-6 infoUsuario">
-                        <p>Nombre:</p>
-                        <p>E-mail:</p>
+                        <p>Nombre: {{ $userName }}</p>
+                        <p>E-mail: {{ $email }}</p>
                     </div>
                     <div class="col-12 col-lg-6 infoUsuario">
-                        <p>NRE:</p>
-                        <p>Última conexión:</p>
+                        <p>NRE: {{ $nre }}</p>
+                        <p>Última conexión: {{ $lastLog }}</p>
                     </div>
                     <div class="col-6 botonDiv">
                         <button class=" btn boton btn-primary float-left" type="submit" id="botonLogout">Logout</button>
