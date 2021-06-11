@@ -157,7 +157,7 @@ body {
 }
 
 .enviarDiv{
-  text-align: center; 
+  text-align: center;
   padding: 20px;
 }
 
@@ -173,7 +173,13 @@ body {
     width: 20%;
   }
   .enviarDiv{
-    text-align: right; 
+    text-align: right;
     padding: 20px;
   }
+}
+
+@media (max-width: 955px) {
+    .multiSelect {
+        height: 150%;
+    }
 }

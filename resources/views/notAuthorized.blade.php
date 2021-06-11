@@ -25,8 +25,7 @@
 
         <div class="col-12 float-center contenedorTitulo">
             <div class="titulo">
-                Acceso restringido.</br>
-                No estas autorizado a acceder.
+                Este correo no esta autorizado para ser utilizado en la aplicaci&oacute;n.<br>Por favor, intente acceder con un correo murciaeduca
             </div>
         </div>
 
