@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-10 col-lg-4 text-center servicio row" id="servicioIncidencia">
             <div class="col-7 textoServicio">Incidencias al RMI</div>
-            <img src="Imagenes/incidencias.svg" class="col-4 logoServicio">
+            <img src="/Imagenes/incidencias.svg" class="col-4 logoServicio">
         </div>
         <div class="col-10 col-lg-4 text-center servicio row">
             <div class="col-12 textoServicio">Ejemplo de servicio</div>

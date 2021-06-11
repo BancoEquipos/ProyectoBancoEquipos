@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 
     $("#servicioIncidencia").click(function e(){redirigir("https://www.google.com")});
-    $("#botonLogout").click(function e(){redirigir("logOut")});
+    $("#botonLogout").click(function e(){redirigir("/logOut")});
     $("#botonCambiar").click(function e(){redirigir("/auth/google")});
 
 });
