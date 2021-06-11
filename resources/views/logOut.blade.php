@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="estiloLogOut.css">
+    <link rel="stylesheet" href="estiloLogOut.js">
     <title>C3App Logout</title>
     <link rel="icon" href="Imagenes/logoC3Mobile.svg">
 </head>
@@ -27,6 +28,10 @@
                 Sesion cerrada correctamente.</br>
                 ¡Hasta pronto!
             </div>
+        </div>
+
+        <div class="col-12 text-center botonDiv">
+            <button class=" btn btn-primary botonLogin" type="submit" id="botonLogin">Volver a Inicio</button>
         </div>
     </div>
 </div>
