@@ -4,5 +4,5 @@ $(document).ready(function () {
         $(location).attr('href', url)
     }
 
-    $("#botonLogin").click(function e(){redirigir("https://www.google.com")});
+    $("#botonLogin").click(function e(){redirigir("/auth/google")});
 });

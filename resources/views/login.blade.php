@@ -26,7 +26,7 @@
             <div class="col-12 textoSeccion">
                 Bienvenido a C3App. Para poder acceder a los servicios que ofrecemos, por favor, inicia sesion con
                 tu cuenta de estudiante o profesor
-                (correos murciaedcua). </br>
+                (correos murciaeduca). </br>
                 Tan solo se podra acceder a la aplicacion mediante un correo de dicho tipo.
             </div>
         </div>
