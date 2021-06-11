@@ -18,7 +18,7 @@ Route::get('/vistaAlumno', function () {
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return 'Eres profesor';
     } else {
-        return 'Persona no autorizada';
+        return view('notAuthorized');
     }
 });
 
@@ -28,7 +28,7 @@ Route::get('/solicitudPrestamo', function () {
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return 'Eres profesor';
     } else {
-        return 'Persona no autorizada';
+        return view('notAuthorized');
     }
 });
 
