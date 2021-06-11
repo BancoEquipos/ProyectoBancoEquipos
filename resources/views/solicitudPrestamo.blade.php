@@ -7,9 +7,12 @@
     <title>Formulario solicitud de material</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
     <script type="text/javascript" src="material.js" defer></script>
+    <script type="text/javascript" src="datos.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/pselect.js@4.0.1/dist/pselect.min.js"></script>
+    <link rel="stylesheet" href="virtual-select-master/dist/virtual-select.min.css" />
+    <script src="virtual-select-master/dist/virtual-select.min.js"></script>
 
 
 
@@ -53,8 +56,7 @@
         <div class="form-floating separador col-12 col-lg-4">
             <input class="form-control" type="text" name="nombre" id="nombre"
                    title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre">
-            <label for="floatingInput" class="etiquetaCampo" class="etiquetaCampo" class="etiquetaCampo"
-                   class="etiquetaCampo">Nombre</label>
+            <label for="floatingInput" class="etiquetaCampo">Nombre</label>
             <div class="mensajeOculto" id="nombreError">
                 El nombre indicado no es valido. Comprueba que no tenga numeros ni carecteres especiales.
             </div>
@@ -63,18 +65,16 @@
         <div class="form-floating separador col-12 col-lg-4">
             <input class="form-control" type="text" name="apellidos" id="apellidos"
                    title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" />
-            <label for="floatingInput" class="etiquetaCampo" class="etiquetaCampo" class="etiquetaCampo">Apellidos</label>
+            <label for="floatingInput" class="etiquetaCampo">Apellidos</label>
             <div class="mensajeOculto" id="apellidosError">
                 El/los apellidos indicados no son validos. Comprueba que no tengan numeros ni carecteres especiales.
             </div>
         </div>
 
-
-
         <div class="form-floating separador col-12 col-lg-4">
             <input class="form-control" name="telefono" type="text" id="telefono" maxlength="9"
                    title="Introduce tu telefono movil." placeholder="Telefono*" />
-            <label for="floatingInput" class="etiquetaCampo" class="etiquetaCampo" class="etiquetaCampo">Teléfono</label>
+            <label for="floatingInput" class="etiquetaCampo">Teléfono</label>
             <div class="mensajeOculto" id="telefonoError">
                 El telefono introducido no es valido. Solo se permiten 9 digitos, sin espacios ni caracteres especiales.
             </div>
@@ -90,32 +90,32 @@
         </div>
 
         <div class="form-floating separador col-12 col-lg-4">
-            <select class="form-select centradoSelect" id="ps-mun">
+            <select class="form-select centradoSelect" id="ps-mun" title="Municipio">
                 <option selected>Seleccione su municipio</option>
             </select>
         </div>
 
         <div class="form-floating separador col-12 col-lg-4">
-            <input class="form-control" type="text" name="domicilio" id="domicilio" title="" placeholder="Domicilio">
-            <label for="floatingInput" class="etiquetaCampo" >Domicilio</label>
+            <input class="form-control" type="text" id="domicilio" placeholder="Domicilio">
+            <label for="floatingInput" class="etiquetaCampo">Domicilio</label>
         </div>
 
     </div>
 
 
     <div class="row">
-        <div class="form-floating separador col-12 col-lg-4">
+        <div class="form-floating separador col-12 col-lg-6">
             <input class="form-control" name="email" type="text" id="email" title="Introduce tu e-mail."
                    placeholder="Email*" />
-            <label for="floatingInput" class="etiquetaCampo" class="etiquetaCampo" class="etiquetaCampo">E-mail</label>
-            <div class="mensajeOculto" id="emailError">
+            <label for="floatingInput" class="etiquetaCampo"">E-mail</label>
+            <div class=" mensajeOculto" id="emailError">
                 Email introducido no valido. El email debe ser tipo "ejemplo@example.es". Se recomienda usar su correo de
                 murciaeduca "NRE@alu.murciaeduca.es".
             </div>
         </div>
 
 
-        <div class="form-floating separador col-12 col-lg-4">
+        <div class="form-floating separador col-12 col-lg-6">
             <input class="form-control" name="nif" type="text" id="nif"
                    title="Introduce tu DNI completo, con su letra en mayuscula. Este debe ser tu DNI real, se comprobara antes de poder enviar la solicitud"
                    placeholder="DNI con letra*" />
@@ -125,46 +125,50 @@
                 introducidos. Por favor, compruebe el DNI introducido.
             </div>
         </div>
+    </div>
 
-        <div class="form-floating separador col-12 col-lg-4">
-            <select class="form-select centradoSelect" aria-label="Default select example" id="provinciaSelect" disabled>
+    <div class="row">
+        <div class="form-floating separador col-12 col-lg-6">
+            <select class="form-select centradoSelect" aria-label="Default select example" id="provinciaSelect">
                 <option selected>Seleccione el grado que esté cursando</option>
             </select>
         </div>
-    </div>
 
-
-    <div class="row">
-        <div class="form-floating separador col-12 col-lg-4">
+        <div class="form-floating separador col-12 col-lg-6">
             <select class="form-select centradoSelect" aria-label="Default select example" id="cursoSelect">
                 <option selected>Seleccione su curso</option>
                 <option value="primero">Primero</option>
                 <option value="segundo">Segundo</option>
             </select>
         </div>
-
-        <div class="form-floating separador col-12 col-lg-4">
-            <input class="form-control" type="text" name="motivo" id="motivo" title="" placeholder="Motivo de la solicitud">
-            <label for="floatingInput" class="etiquetaCampo">Motivo de la solicitud</label>
-        </div>
-
-
-        <div class="form-floating separador col-12 col-lg-4">
-            <select class="form-select centradoSelect" aria-label="Default select example" id="materialSelect">
-                <option selected>Seleccione el equipamiento solicitado</option>
-                <option value="primero">Primero</option>
-                <option value="segundo">Segundo</option>
-            </select>
-        </div>
     </div>
-
 
     <div class="row">
-        <div class="col-12 col-md-12 enviarDiv">
-            <button class=" btn boton btn-primary float-right" type="submit">Enviar</button>
+        <div class="form-floating separador col-12 col-lg-6">
+            <select class="form-select centradoSelect" id="motivoSelect">
+                <option selected>Seleccione el motivo de su solicitud</option>
+            </select>
         </div>
-    </div>
-</div>
+
+        <div class="col-12 col-lg-6 form-floating separador" id="divMultiselect">
+        </div>
+
+        <div class="form-floating separadorMotivo col-12 oculto" id="otroMotivoDiv">
+            <input class="form-control" type="text" id="otroMotivo"
+                   title="Introduce el motivo, no uses caracteres especiales ni numeros" placeholder="Nombre">
+            <label for="floatingInput" class="etiquetaCampoMotivo">Otro motivo</label>
+            <div class="mensajeOculto" id="motivoError">
+                El motivo indicado no es valido. Comprueba que no tenga numeros ni carecteres especiales.
+            </div>
+        </div>
+
+
+
+        <div class="col-12 enviarDiv">
+            <button class=" btn boton btn-primary float-right" type="submit">Enviar</button>
+
+        </div>
+
 </body>
 
 </html>

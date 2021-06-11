@@ -110,7 +110,7 @@ $(document).ready(function () {
         let vacio = campoVacio(email)
         if (vacio) {
             //Declaramos la expresion regular correspondientes al nombre, servidor y dominio.
-            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier
+            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier 
             //caracter incluyendo "\, . y -" y con un maximo de 64 caracteres. Para el servidor,
             //se incluen caracteres de la A a la Z, y numeros. Por ultimo, se espera un ".", y se pasa
             //al dominio, en el que podemos poner dominios tanto con "-" como con ".", e incluso varios
@@ -124,8 +124,49 @@ $(document).ready(function () {
     }
 
     //Redireccion de botones
-    function redirigir(url){
+    function redirigir(url) {
         $(location).attr('href', url)
+    }
+
+    //Desplegar "Otros motivos"
+    function desplegarMotivo() {
+        console.log("a")
+        if ($("#motivoSelect").val() == 6) {
+            $("#otroMotivoDiv").css("display", "block");
+        } else {
+            $("#otroMotivoDiv").css("display", "none");
+        }
+    }
+
+    //Multiselect
+    var expanded = false;
+
+    function showCheckboxes() {
+        if (!expanded) {
+            $("#checkboxes").css("display", "block");
+            expanded = true;
+        } else {
+            $("#checkboxes").css("display", "none");
+            expanded = false;
+        }
+    }
+
+    function configurarEquipamiento() {
+        console.log("a")
+        if (expanded) {
+            $("#checkboxes").css("display", "none");
+            expanded = false;
+        }
+    }
+
+    function esconderEquipamiento() {
+        var container =  $("#divMultiselect");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            if (expanded) {
+                $("#checkboxes").css("display", "none");
+                expanded = false;
+            }
+        }
     }
 
 
@@ -134,18 +175,49 @@ $(document).ready(function () {
     // Create PS
     new Pselect().create(prov, mun);
 
+    function rellenarSelects() {
 
-    //document.getElementById('ps-mun').addEventListener('change', function onChange() {
-    //document.getElementById('code').innerText = 'Código: ' + document.getElementById('ps-mun').value;
-    //});
+        $.each(gradosPresenciales, function (id, grado) {
+            $("#provinciaSelect").append('<option value=' + grado.id + '>' + grado.nombre + '</option>');
+        });
 
-    //$('#ps-mun').change(func)
+        $.each(motivos, function (id, motivo) {
+            $("#motivoSelect").append('<option value=' + motivo.id + '>' + motivo.nombre + '</option>');
+        });
+
+        VirtualSelect.init({
+            ele: '#divMultiselect',
+            options: equipamiento,
+            multiple: true,
+            placeholder: 'Seleccione el material que desea solicitar.',
+            position: 'bottom',
+            additionalClasses: 'multiSelect'
+        });
+
+        /*
+        $.each(equipamiento, function (id, equipo) {
+            $("#checkboxes").append('<label class="form-check-label opcionEquipo" for="' + equipo.id + '"><input type="checkbox" id="' + equipo.id + '" /> ' + equipo.nombre + '</label>');
+        });*/
+    }
+
+    rellenarSelects();
+    $("#motivoSelect").change(function e() { desplegarMotivo() });
     $('#nif').blur(function e() { comprobarDNI($(this).val()) });
     $('#nombre').blur(function e() { comprobarNombre($(this).val(), 'nombre') });
     $('#apellidos').blur(function e() { comprobarNombre($(this).val(), "apellidos") });
     $('#telefono').blur(function e() { comprobarTLF($(this).val()) });
     $('#email').blur(function e() { comprobarEmail($(this).val()) });
-    $("#botonVolver").click(function e(){redirigir("/vistaAlumno")});
+    $("#botonVolver").click(function e() { redirigir("https://www.google.com") });
+    $("#selectBox").click(function e() { showCheckboxes() });
+    $("#divMultiselect").blur(function e() { configurarEquipamiento() });
+    $("#divMultiselect").mouseup(function (e) { var container =  $("#divMultiselect");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        console.log(expanded)
+        if (expanded) {
+            $("#checkboxes").css("display", "none");
+            expanded = false;
+        }
+    } });
 
 
 });
