@@ -11,8 +11,8 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="estiloNotAuthorized.css">
-    <script src="eventosDivNotAuthorized.js"></script>
+    <link rel="stylesheet" href="/estiloNotAuthorized.css">
+    <script src="/eventosDivNotAuthorized.js"></script>
     <title>Acceso restringido</title>
     <link rel="icon" href="Imagenes/logoC3Mobile.svg">
 </head>
@@ -21,7 +21,7 @@
 <div class="contenedor">
     <div class="row">
 
-        <div class="col-12 logoDiv"><img src="Imagenes/prohibidoRojo.svg" class="imagenLogoMobile"></div>
+        <div class="col-12 logoDiv"><img src="/Imagenes/prohibidoRojo.svg" class="imagenLogoMobile"></div>
 
         <div class="col-12 float-center contenedorTitulo">
             <div class="titulo">
