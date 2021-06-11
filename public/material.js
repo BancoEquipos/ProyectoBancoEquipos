@@ -110,7 +110,7 @@ $(document).ready(function () {
         let vacio = campoVacio(email)
         if (vacio) {
             //Declaramos la expresion regular correspondientes al nombre, servidor y dominio.
-            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier 
+            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier
             //caracter incluyendo "\, . y -" y con un maximo de 64 caracteres. Para el servidor,
             //se incluen caracteres de la A a la Z, y numeros. Por ultimo, se espera un ".", y se pasa
             //al dominio, en el que podemos poner dominios tanto con "-" como con ".", e incluso varios
@@ -207,7 +207,7 @@ $(document).ready(function () {
     $('#apellidos').blur(function e() { comprobarNombre($(this).val(), "apellidos") });
     $('#telefono').blur(function e() { comprobarTLF($(this).val()) });
     $('#email').blur(function e() { comprobarEmail($(this).val()) });
-    $("#botonVolver").click(function e() { redirigir("https://www.google.com") });
+    $("#botonVolver").click(function e() { redirigir("/vistaAlumno") });
     $("#selectBox").click(function e() { showCheckboxes() });
     $("#divMultiselect").blur(function e() { configurarEquipamiento() });
     $("#divMultiselect").mouseup(function (e) { var container =  $("#divMultiselect");
