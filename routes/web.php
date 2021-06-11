@@ -35,7 +35,7 @@ Route::get('/solicitudPrestamo', function () {
 Route::get('/logOut', function () {
     if (Auth::check()) {
         Auth::logout();
-        return 'Log Out complete';
+        return view('logOut');
     } else {
         return 'No estabas logeado por lo que no hemos podido deslogear.';
     }
