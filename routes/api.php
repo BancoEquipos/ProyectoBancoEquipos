@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\API\MotivoController;
+use App\Http\Controllers\API\MotivoController;
 
 /*
 |--------------------------------------------------------------------------
