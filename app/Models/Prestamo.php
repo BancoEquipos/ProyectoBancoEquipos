@@ -43,6 +43,6 @@ class Prestamo extends Model
     }
 
     public function ciclo_formativo(){
-        return $this->belongsTo(CicloFormativo::class, 'ciclo_formativo_id', 'ciclo_formativo_id');
+        return $this->belongsTo(CicloFormativo::class, 'ciclo_formativo_id', 'id');
     }
 }

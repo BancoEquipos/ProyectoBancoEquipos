@@ -14,7 +14,7 @@ class CreateCiclosFormativosTable extends Migration
     public function up()
     {
         Schema::create('ciclos_formativos', function (Blueprint $table) {
-            $table->id();
+            $table->id('ciclo_formativo_id');
             $table->string("nombre")->unique(); //sin siglas
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class CreatePrestamosTable extends Migration
             $table->id('prestamo_id');
             $table->integer("curso");
             $table->string("profesor_valida")->nullable();
-            $table->date("alta_solicitud");
+            $table->date("alta_solicitud")->default()->useCurrentOnUpdate();
             $table->date("fecha_valida")->nullable();
             $table->date("fecha_fin")->nullable();
             $table->date("fecha_devolucion")->nullable();
