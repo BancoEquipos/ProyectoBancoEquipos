@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MotivoResource;
-use App\Models\Motivo;
+use App\Models\Prestamo;
 use Illuminate\Http\Request;
+use App\Http\Resources\PrestamoResource;
 
-class MotivoController extends Controller
+class PrestamoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class MotivoController extends Controller
      */
     public function index()
     {
-        return MotivoResource::collection(Motivo::paginate());
+        return PrestamoResource::collection(Prestamo::paginate());
     }
 
     /**
@@ -27,48 +27,49 @@ class MotivoController extends Controller
      */
     public function store(Request $request)
     {
-        $motivoData = json_decode($request->getContent(), true);
+        $datosPrestamo = json_decode($request->getContent(), true);
 
-        $motivo = Motivo::create($motivoData);
-
-        return new MotivoResource($motivo);
+        $prestamo = Prestamo::create($datosPrestamo);
+        
+        return new PrestamoResource($prestamo);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function show(Motivo $motivo)
+    public function show(Prestamo $prestamo)
     {
-        return new MotivoResource($motivo);
+        return new PrestamoResource($prestamo);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Motivo $motivo)
+    public function update(Request $request, Prestamo $prestamo)
     {
-        $motivoData = json_decode($request->getContent(), true);
-        $motivo->update($motivoData);
+        $prestamoData = json_decode($request->getContent(), true);
 
-        return new MotivoResource($motivo);
+        $prestamo->update($prestamoData);
+
+        return new PrestamoResource($prestamo);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Motivo $motivo)
+    public function destroy(Prestamo $prestamo)
     {
-        $motivo->delete();
+        $prestamo->delete();
 
         $mensaje = ['estado' => 'eliminado'];
 

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MotivoResource;
-use App\Models\Motivo;
+use App\Http\Resources\DomicilioResource;
+use App\Models\Domicilio;
 use Illuminate\Http\Request;
 
-class MotivoController extends Controller
+class DomicilioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class MotivoController extends Controller
      */
     public function index()
     {
-        return MotivoResource::collection(Motivo::paginate());
+        return DomicilioResource::collection(Domicilio::paginate());
     }
 
     /**
@@ -27,48 +27,49 @@ class MotivoController extends Controller
      */
     public function store(Request $request)
     {
-        $motivoData = json_decode($request->getContent(), true);
+        $domicilioData = json_decode($request->getContent(), true);
 
-        $motivo = Motivo::create($motivoData);
+        $domicilio = Domicilio::create($domicilioData);
 
-        return new MotivoResource($motivo);
+        return new DomicilioResource($domicilio);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Domicilio  $domicilio
      * @return \Illuminate\Http\Response
      */
-    public function show(Motivo $motivo)
+    public function show(Domicilio $domicilio)
     {
-        return new MotivoResource($motivo);
+        return new DomicilioResource($domicilio);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Domicilio  $domicilio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Motivo $motivo)
+    public function update(Request $request, Domicilio $domicilio)
     {
-        $motivoData = json_decode($request->getContent(), true);
-        $motivo->update($motivoData);
+        $domicilioData = json_decode($request->getContent(), true);
 
-        return new MotivoResource($motivo);
+        $domicilio->update($domicilioData);
+
+        return new DomicilioResource($domicilio);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Domicilio  $domicilio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Motivo $motivo)
+    public function destroy(Domicilio $domicilio)
     {
-        $motivo->delete();
+        $domicilio->delete();
 
         $mensaje = ['estado' => 'eliminado'];
 

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MotivoResource;
-use App\Models\Motivo;
+use App\Http\Resources\AlumnoResource;
+use App\Models\Alumno;
 use Illuminate\Http\Request;
 
-class MotivoController extends Controller
+class AlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class MotivoController extends Controller
      */
     public function index()
     {
-        return MotivoResource::collection(Motivo::paginate());
+        return AlumnoResource::collection(Alumno::paginate());
     }
 
     /**
@@ -27,48 +27,49 @@ class MotivoController extends Controller
      */
     public function store(Request $request)
     {
-        $motivoData = json_decode($request->getContent(), true);
+        $alumnoData = json_decode($request->getContent(), true);
 
-        $motivo = Motivo::create($motivoData);
+        $alumno = Alumno::create($alumnoData);
 
-        return new MotivoResource($motivo);
+        return new AlumnoResource($alumno);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Alumno  $alumno
      * @return \Illuminate\Http\Response
      */
-    public function show(Motivo $motivo)
+    public function show(Alumno $alumno)
     {
-        return new MotivoResource($motivo);
+        return new AlumnoResource($alumno);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Alumno  $alumno
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Motivo $motivo)
+    public function update(Request $request, Alumno $alumno)
     {
-        $motivoData = json_decode($request->getContent(), true);
-        $motivo->update($motivoData);
+        $alumnoData = json_decode($request->getContent(), true);
 
-        return new MotivoResource($motivo);
+        $alumno->update($alumnoData);
+
+        return new AlumnoResource($alumno);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Motivo  $motivo
+     * @param  \App\Models\Alumno  $alumno
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Motivo $motivo)
+    public function destroy(Alumno $alumno)
     {
-        $motivo->delete();
+        $alumno->delete();
 
         $mensaje = ['estado' => 'eliminado'];
 
