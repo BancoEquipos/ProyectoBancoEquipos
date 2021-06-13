@@ -21,7 +21,7 @@ class LoginController extends Controller
         }
 
         $finduser = User::where('google_id', $user->id)->first();
-        return dd($user);
+
         if (!$finduser) {
             $newUser = User::create([
                 'name' => $user->name,
