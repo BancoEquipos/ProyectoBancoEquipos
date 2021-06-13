@@ -15,8 +15,7 @@ class CreateCiclosFormativosTable extends Migration
     {
         Schema::create('ciclos_formativos', function (Blueprint $table) {
             $table->id("ciclo_formativo_id");
-            $table->string("nombre")->unique();
-//            $table->string('siglas')->unique();
+            $table->string("nombre")->unique(); //sin siglas
             $table->timestamps();
         });
     }
