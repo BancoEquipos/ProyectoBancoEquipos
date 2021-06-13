@@ -15,7 +15,7 @@ class CreateComponentesTable extends Migration
     {
         Schema::create('componentes', function (Blueprint $table) {
             $table->id("componente_id");
-            $table->integer('n_serie');
+            $table->integer('n_serie')->unique();
             $table->foreignId('tipo_componente_id')->references("id")->on("tipocomponentes");
             $table->timestamps();
         });

@@ -7,6 +7,9 @@ use App\Http\Controllers\API\PrestamoController;
 use App\Http\Controllers\API\TipocomponenteController;
 use App\Http\Controllers\API\ComponenteController;
 use App\Http\Controllers\API\AlumnoController;
+use App\Http\Controllers\API\CicloFormativoController;
+use App\Http\Controllers\API\DomicilioController;
+use App\Http\Controllers\API\IncidenciaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +32,5 @@ Route::apiResource('motivos', MotivoController::class);
 Route::apiResource('componentes', ComponenteController::class);
 Route::apiResource('alumnos', AlumnoController::class);
 Route::apiResource('incidencias', IncidenciaController::class);
+Route::apiResource('ciclosformativos', CicloFormativoController::class);
+Route::apiResource('domicilios', DomicilioController::class);

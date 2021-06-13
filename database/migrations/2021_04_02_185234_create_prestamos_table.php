@@ -17,7 +17,7 @@ class CreatePrestamosTable extends Migration
             $table->id('prestamo_id');
             $table->integer("curso");
             $table->string("profesor_valida");
-            $table->timestamp("fecha_validacion");
+            $table->date("fecha_validacion");
             $table->date("fecha_devolucion");
             $table->date("fecha_entrega");
             $table->date("fecha_alta_solicitud");

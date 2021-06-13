@@ -17,6 +17,7 @@ class AlumnoResource extends JsonResource
         //return parent::toArray($request);
 
         return [
+            'id' => $this->id,
             'nre' => $this->nre,
             'nombre' => $this->nombre,
             'apellidos' => $this->apellidos,
