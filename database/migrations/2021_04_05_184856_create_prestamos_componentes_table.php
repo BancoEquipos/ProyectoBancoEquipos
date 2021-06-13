@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecificComponentsTable extends Migration
+class CreatePrestamosComponentesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSpecificComponentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('specific_components', function (Blueprint $table) {
+        Schema::create('prestamos_componentes', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('component_id');
-            $table->foreign('component_id')->references('id')->on('component_types');
+            $table->boolean('activo');
+            $table->foreignId("componente_id")->references('componente_id')->on('componentes');
+            $table->foreignId('prestamo_id')->references('prestamo_id')->on('prestamos');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateSpecificComponentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specific_components');
+        Schema::dropIfExists('prestamos_componentes');
     }
 }
