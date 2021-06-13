@@ -24,6 +24,10 @@ class PrestamoResource extends JsonResource
             "fecha_entrega" => $this->fecha_entrega,
             "fecha_alta_solicitud" => $this->fecha_alta_solicitud,
             "alumno" => $this->alumno,
+            "tipo_componente" => $this->tipocomponente,
+            "motivo" => $this->motivo,
+            "domicilio" => $this->domicilio,
+            "ciclo_formativo" => $this->ciclo_formativo,
         ];
     }
 }

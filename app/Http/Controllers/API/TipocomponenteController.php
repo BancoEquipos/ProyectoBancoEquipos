@@ -73,5 +73,9 @@ class TipocomponenteController extends Controller
     {
         $tipoComponente = Tipocomponente::findOrFail($id);
         $tipoComponente->delete();
+
+        $mensaje = ['estado' => 'eliminado'];
+
+        return response()->json($mensaje);
     }
 }
