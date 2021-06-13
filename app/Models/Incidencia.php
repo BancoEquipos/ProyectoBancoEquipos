@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SpecificComponent extends Model
+class Incidencia extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'incidencia'
+    ];
 }

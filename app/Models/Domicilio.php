@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LoanComponent extends Model
+class Domicilio extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'provincia',
+        'poblacion',
+        'domicilio',
+    ];
 }
