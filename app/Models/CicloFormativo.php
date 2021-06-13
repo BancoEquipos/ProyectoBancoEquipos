@@ -15,7 +15,7 @@ class CicloFormativo extends Model
         "siglas",
     ];
 
-    public function alumnos(){
+    /*public function alumnos(){
         return $this->belongsToMany(Alumno::class, 'alumnos_ciclos_formativos', 'ciclo_id', 'alumno_id');
-    }
+    }*/
 }

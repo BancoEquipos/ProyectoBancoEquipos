@@ -17,6 +17,7 @@ class PrestamoResource extends JsonResource
         //return parent::toArray($request);
 
         return [
+            "id" => $this->prestamo_id,
             "curso" => $this->curso,
             "profesor_valida" => $this->profesor_valida,
             "fecha_validacion" => $this->fecha_validacion,

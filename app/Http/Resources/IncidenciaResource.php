@@ -17,6 +17,7 @@ class IncidenciaResource extends JsonResource
         //return parent::toArray($request);
 
         return [
+            'id' => $this->id,
             'incidencia' => $this->incidencia,
         ];
     }
