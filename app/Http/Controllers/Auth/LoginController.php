@@ -26,7 +26,7 @@ class LoginController extends Controller
             $newUser = User::create([
                 'name' => $user->name,
                 'email' => $user->email,
-                'google_id'=> "hasdadad",
+                'google_id'=> $user->id,
             ]);
             $newUser->save();
             Auth::login($newUser);
