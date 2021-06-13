@@ -27,7 +27,6 @@ class LoginController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'google_id'=> $user->id,
-                'lastLog' => date($formatDate),
             ]);
             $newUser->save();
             Auth::login($newUser);
