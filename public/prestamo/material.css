@@ -1,0 +1,226 @@
+.container-fluid {
+  padding-top: 120px;
+  overflow: hidden;
+}
+
+.opcionUsuarioUno {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border-top: 1px solid rgb(10, 89, 163);
+}
+
+.opcionUsuarioDos {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border-top: 1px solid rgb(10, 89, 163);
+}
+
+.botonUsuario {
+  width: 40px;
+  height: 40px;
+}
+
+.selectLabel{
+  margin-left: 7px;
+}
+
+.botonVolver {
+  width: 60px;
+  height: 65px;
+}
+
+.divInfo {
+  background-color: rgb(225, 240, 255);
+}
+
+.logoInfo {
+  height: 40px;
+  width: 40px;
+  background-color: rgb(225, 240, 255);
+}
+
+.textoTitulo {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.campoErroneo {
+  border-color: red;
+}
+
+.campoCorrecto {
+  border-color: green;
+}
+
+.mensajeOculto {
+  display: none;
+}
+
+.mensajeErroneo {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  display: block;
+  max-width: 100%;
+  padding: .25rem .5rem;
+  margin-top: .1rem;
+  font-size: .875rem;
+  color: #fff;
+  background-color: rgba(220, 53, 69, .9);
+  border-radius: .25rem;
+}
+
+.separador {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.separadorMotivo {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.centradoSelect {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.multiSelect {
+  height: 100%;
+}
+
+.botonDiv {
+  padding: 20px;
+}
+
+.boton {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(255, 100, 100);
+  border: 1px solid red;
+  float: right;
+}
+
+.botonEnviar {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(255, 100, 100);
+  border: 1px solid red;
+  float: right;
+}
+
+.enviarDiv {
+  text-align: center;
+  padding: 20px;
+}
+
+.etiquetaCampo {
+  margin-left: 10px;
+}
+
+.etiquetaCampoMotivo {
+  margin-left: 10px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(26, 127, 221);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar li {
+  text-align: center;
+}
+
+.opcionUsuario {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar li :hover {
+  background-color: rgb(21, 103, 180);
+  color: rgb(255, 255, 255);
+}
+
+.logoMovil {
+  height: 100px;
+  width: 100px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  margin-right: 10px;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  margin-top: 190px;
+}
+
+.main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  .titulo {
+    color: white;
+    font-size: 30px;
+  }
+}

@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     //Botones de los servicios
     $('#servicioTres').click(function e() { redirigir("") });
-    $('#servicioUno').click(function e() { redirigir("") });
+    $('#servicioUno').click(function e() { redirigir("incidencias") });
 
     //Cambiar al logo al pasar por encima
     $('#servicioUno').on('mouseenter', function () { cambiarLogoBlanco("#servicioUno") });

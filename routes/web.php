@@ -23,10 +23,6 @@ Route::get('vistaAlumno', function () {
     }
 });
 
-Route::get('/asdb', function () {
-    return view('email');
-});
-
 Route::get('vistaProfesor', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
@@ -59,4 +55,12 @@ Route::get('loginout', function () {
 
 Route::get('noAutorizado', function () {
     return view('logOutError');
+});
+
+Route::get('incidencias',function () {
+    return view('incidencia');
+});
+
+Route::get('solicitudPrestamo',function () {
+    return view('prestamo');
 });

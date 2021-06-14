@@ -20,7 +20,7 @@ $(document).ready(function () {
     $("#cerrarSesion").click(function e() { redirigir("loginout") });
 
     //Botones de los servicios
-    $('#servicioUno').click(function e() { redirigir("") });
+    $('#servicioUno').click(function e() { redirigir("solicitudPrestamo") });
 
     //Cambiar al logo al pasar por encima
     $('#servicioUno').on('mouseenter', function () { cambiarLogoBlanco("#servicioUno") });
