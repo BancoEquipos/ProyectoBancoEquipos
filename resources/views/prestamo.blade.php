@@ -1,14 +1,11 @@
 <!doctype html>
-<html lang="en" id="body">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario solicitud de material</title>
     <link rel="icon" href="/prestamo/Imagenes/logoC3Mobile.svg">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
-    <script type="text/javascript" src="/prestamo/jsPDF.js"></script>
 
     <!--Jquery y Bootstraps-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -79,7 +76,7 @@
         <div class="row">
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" type="text" name="nombre" id="nombre"
-                       title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre" value="{{ $nombre }}">
+                       title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre">
                 <label for="floatingInput" class="etiquetaCampo">Nombre</label>
                 <div class="mensajeOculto" id="nombreError">
                     El nombre indicado no es valido. Comprueba que no tenga numeros ni carecteres especiales.
@@ -88,7 +85,7 @@
 
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" type="text" name="apellidos" id="apellidos"
-                       title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" value="{{ $apellido1 . " ". $apellido2 }}" />
+                       title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" value="{{ $apellido1." ".apellido2 }}" />
                 <label for="floatingInput" class="etiquetaCampo">Apellidos</label>
                 <div class="mensajeOculto" id="apellidosError">
                     El/los apellidos indicados no son validos. Comprueba que no tengan numeros ni carecteres especiales.
@@ -131,8 +128,8 @@
         <div class="row">
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" name="email" type="text" id="email" title="Introduce tu e-mail."
-                       placeholder="Email*" value="{{ $email }}" />
-                <label for="floatingInput" class="etiquetaCampo">E-mail</label>
+                       placeholder="Email*" value="{{ $email }}"/>
+                <label for="floatingInput" class="etiquetaCampo"">E-mail</label>
                 <div class=" mensajeOculto" id="emailError">
                     Email introducido no valido. El email debe ser tipo "ejemplo@example.es". Se recomienda usar su correo de
                     murciaeduca "NRE@alu.murciaeduca.es".
@@ -163,17 +160,17 @@
                 <select class="form-select" id="gradoSelect" aria-label="Floating label select example">
                     <option value="Defecto" selected>Seleccione su grado</option>
                 </select>
-                <label for="tipoIncidencia" class="selectLabel">Seleccione el grado que esté cursando</label>
+                <label for="tipoIncidencia" class="selectLabel d-none d-md-block">Seleccione el grado que esté cursando</label>
             </div>
 
-            <div class="col-12 col-lg-6 form-floating separador" id="equipamientoSolicitado">
+            <div class="col-12 col-lg-6 form-floating separador" id="equipamientoSolicitado" data-search="false">
             </div>
 
             <div class="form-floating separador col-12 col-lg-6">
                 <select class="form-select" id="cursoSelect" aria-label="Floating label select example">
                     <option value="Defecto" selected>Seleccione su curso</option>
-                    <option value="primero">Primero</option>
-                    <option value="segundo">Segundo</option>
+                    <option value="1">Primero</option>
+                    <option value="2">Segundo</option>
                 </select>
                 <label for="tipoIncidencia" class="selectLabel">Seleccione su curso</label>
             </div>
@@ -183,16 +180,13 @@
                 <select class="form-select" id="motivoSelect" aria-label="Floating label select example">
                     <option value="Defecto" selected>Seleccione el motivo de la solicitud</option>
                 </select>
-                <label for="tipoIncidencia" class="selectLabel">Seleccione el motivo de su solicitud</label>
+                <label for="tipoIncidencia" class="selectLabel d-none d-md-block">Seleccione el motivo de su solicitud</label>
             </div>
 
             <div class="form-floating separadorMotivo col-12 oculto" id="otroMotivoDiv">
                 <input class="form-control" type="text" id="motivo"
                        title="Introduce el motivo, no uses caracteres especiales ni numeros" placeholder="Nombre">
                 <label for="floatingInput" class="etiquetaCampoMotivo">Otro motivo</label>
-                <div class="mensajeOculto" id="motivoError">
-                    El motivo indicado no es valido. Comprueba que no tenga numeros ni carecteres especiales.
-                </div>
             </div>
 
             <div class="col-12 enviarDiv">

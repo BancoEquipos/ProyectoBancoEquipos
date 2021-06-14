@@ -1,25 +1,4 @@
 $(document).ready(function () {
-    const URL_API = 'https://shrouded-falls-21309.herokuapp.com/';
-    // const URL_API = 'http://localhost:8000/';
-    let configuracionPeticion = {};
-    let ciclosFormativosPresenciales;
-
-    /***Recogiendo datos iniciales de BBDD***/
-
-    //Configuramos la variable configuracionPeticion para la petición que vamos a hacer
-    /*configuracionPeticion = {
-        method: 'GET',
-        header: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
-    };
-
-    ciclosFormativosPresenciales = peticion(URL_API, configuracionPeticion);
-
-    console.log('Resultado petición: ' + ciclosFormativosPresenciales);*/
-
-    /****************************************/
 
     //Comprobar campos vacios/nulos
     function todoRellenado() {
@@ -72,6 +51,7 @@ $(document).ready(function () {
 
     //Comprobar valor no nulo en un select
     function selectNoNulo(dato, campo) {
+
         if (dato == null || dato == "Defecto" || dato == "") {
             $('#' + campo).removeClass("campoCorrecto")
             $('#' + campo).addClass("campoErroneo")
@@ -87,6 +67,9 @@ $(document).ready(function () {
         let datoVacio = campoVacio(dato);
         if (datoVacio) {
             campoCorrecto(dato, campo);//Quito mensajes de error y doy por bueno
+            if(campo = "otroMotivo"){
+                todoCorrecto["otroMotivo"] = dato;
+            }
         } else {
             mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
             campoNoRellenado(campo);//Campo no rellenado
@@ -177,7 +160,7 @@ $(document).ready(function () {
     var equipoSeleccionado;
 
     function rellenarSelects() {
-        //Cambio constante gradosPresenciales (con datos de datos.js) a ciclosFormativosPresenciales (con datos de servidor)
+
         $.each(gradosPresenciales, function (id, grado) {
             $("#gradoSelect").append('<option value=' + grado.id + '>' + grado.nombre + '</option>');
         });
@@ -215,20 +198,11 @@ $(document).ready(function () {
             $('#enviar').addClass("boton")
         }
 
-        console.log(todoCorrecto)
-        console.log(finalCorrecto)
-
     }
 
     /********************************************* */
     //El JSON que tienes que enviar es todoCorrecto
     //ACUERDATE DE SUSTITUIR LOS JSON "gradosPresenciales" y "motivos" por los JSON que vengan de la BBDD
-
-    function peticion(url, configuracionPeticion){
-        return fetch(url, configuracionPeticion)
-        .then(data => data.json())
-        .catch(error => console.log('Error en la petición: ' + error));
-    }
     /********************************************* */
 
     //Inicializacion de los datos
@@ -243,122 +217,21 @@ $(document).ready(function () {
     $('#telefono').blur(function e() { comprobarTLF($(this).val()), comprobacionFinal() });
     $('#email').blur(function e() { comprobarEmail($(this).val()), comprobacionFinal() });
     $('#domicilio').blur(function e() { selectNoNulo($('#domicilio').val(), "domicilio"), comprobacionFinal() })
+    $('#nre').blur(function e() { comprobarNombre($(this).val(), 'nre'), comprobacionFinal() });
+    $('#nombre').blur(function e() { comprobarNombre($(this).val(), 'otroMotivo'),comprobacionFinal() });
 
     //Comprobacion de los select
-    $('#ps-prov').blur(function e() { selectNoNulo($('#ps-prov').val(), "ps-prov"), comprobacionFinal() })
-    $('#ps-mun').blur(function e() { selectNoNulo($('#ps-mun').val(), "ps-mun"), comprobacionFinal() })
-    $('#gradoSelect').blur(function e() { selectNoNulo($('#gradoSelect').val(), "gradoSelect"), comprobacionFinal() })
-    $('#cursoSelect').blur(function e() { selectNoNulo($('#cursoSelect').val(), "cursoSelect"), comprobacionFinal() })
-    $('#motivoSelect').blur(function e() { selectNoNulo($('#motivoSelect').val(), "motivoSelect"), comprobacionFinal() })
+    $('#ps-prov').change(function e() { selectNoNulo($('#ps-prov option:selected').text(), "ps-prov"), comprobacionFinal() })
+    $('#ps-mun').change(function e() { selectNoNulo($('#ps-mun option:selected').text(), "ps-mun"), comprobacionFinal() })
+    $('#gradoSelect').change(function e() { selectNoNulo($('#gradoSelect').val(), "gradoSelect"), comprobacionFinal() })
+    $('#cursoSelect').change(function e() { selectNoNulo($('#cursoSelect').val(), "cursoSelect"), comprobacionFinal() })
+    $('#motivoSelect').change(function e() { selectNoNulo($('#motivoSelect').val(), "motivoSelect"), comprobacionFinal() })
     $('#equipamientoSolicitado').click(function e() { selectNoNulo($('#equipamientoSolicitado').val(), "equipamientoSolicitado"), comprobacionFinal() })
 
 
-    //Evento de accion del boton vovler
+    //Evento de accion de los botones
     $("#botonVolver").click(function e() { redirigir("vistaAlumno") });
     $("#cambiarCuenta").click(function e() { redirigir("auth/google") });
     $("#cerrarSesion").click(function e() { redirigir("loginout") });
-
-    $("#enviar").click(function(){
-        let idTablaDomicilio;
-        let idTablaAlumno;
-        let idTablaMotivo;
-        let idTablaCicloFormativo;
-        let idTablaPrestamo;
-        let tipoComponentesElegidos = [1, 2];
-        let dataBody;
-
-        //Insertamos en tabla domicilios
-        dataBody = {
-            provincia: $('#ps-prov').val(),
-            poblacion: $('#ps-mun').val(),
-            domicilio: $('#domicilio').val(),
-        }
-
-        configuracionPeticion = {
-            method: 'POST',
-            header: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify(dataBody),
-        };
-
-        peticion(URL_API + 'api/domicilios', configuracionPeticion)
-        .then(response => {
-            //Insertamos en tabla alumnos
-            idTablaDomicilio = response.data.id;
-            console.log('id domicilios: ' + idTablaDomicilio);
-            dataBody = {
-                nombre: $('#nombre').val(),
-                apellidos: $('#apellidos').val(),
-                nif: $('#nif').val(),
-                email: $('#email').val(),
-                telefono: 612365478,
-            }
-            configuracionPeticion.body = JSON.stringify(dataBody);
-
-            return peticion(URL_API + 'api/alumnos', configuracionPeticion);
-        })
-        .then(response => {
-            console.log(response);
-            //Insertamos en tabla prestamos
-            idTablaAlumno = response.data.id;
-            idTablaCicloFormativo = 1;
-            idTablaMotivo = 1;
-            dataBody = {
-                curso: 1,
-                alta_solicitud: "2021-12-12",
-                motivo_id: idTablaMotivo,
-                alumno_id: idTablaAlumno,
-                domicilio_id: idTablaDomicilio,
-                ciclo_formativo_id: idTablaCicloFormativo
-            }
-            configuracionPeticion.body = JSON.stringify(dataBody);
-
-            return peticion(URL_API + 'api/prestamos', configuracionPeticion);
-
-            /*console.log('id alumnos: ' + idTablaAlumno);
-            dataBody = {
-                nombre: $('#gradoSelect').val(),
-            }
-            configuracionPeticion.body = JSON.stringify(dataBody);
-
-            return peticion(URL_API + 'api/alumnos', configuracionPeticion);*/
-
-        })
-        .then(response => {
-            //Insertamos en tabla prestamos_componentes
-            let filasPrestamosComponente;
-            idTablaPrestamo = response.data.id;
-            console.log('Respuesta préstamos: ');
-            console.log(response);
-            for(let i = 0; i < tipoComponentesElegidos.length; ++i){
-                dataBody = {
-                    activo: true,
-                    prestamo_id: idTablaPrestamo,
-                    tipo_componente_id: tipoComponentesElegidos[i]
-                }
-
-                configuracionPeticion.body = JSON.stringify(dataBody);
-
-                peticion(URL_API + 'api/prestamoscomponente', configuracionPeticion)
-                .then(response => filasPrestamosComponente[i] = response)
-                .catch(error => console.log(error));
-            }
-
-            return filasPrestamosComponente;
-        })
-        .then(response => {
-            console.log(response);
-        })
-        /*response
-        .then(response => {
-            console.log('Respuesta servidor: ');
-            console.log(response);
-        })*/
-        .catch(error => console.log('Error' + error));
-    });
-
-
 
 });

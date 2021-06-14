@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Formulario solicitud de material</title>
+  <title>Incidencias al rmi</title>
   <link rel="icon" href="/incidencia/Imagenes/logoC3Mobile.svg">
 
   <!--Jquery y Bootstraps-->

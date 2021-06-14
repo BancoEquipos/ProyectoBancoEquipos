@@ -39,16 +39,6 @@ Route::get('vistaProfesor', function () {
     }
 });
 
-Route::get('solicitudPrestamo', function () {
-    if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
-        return view('solicitudPrestamo');
-    } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
-        return 'Eres profesor';
-    } else {
-        return view('restringido');
-    }
-});
-
 Route::get('loginout', function () {
     if (Auth::check()) {
         Auth::logout();
