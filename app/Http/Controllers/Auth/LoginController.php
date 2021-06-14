@@ -37,7 +37,7 @@ class LoginController extends Controller
             Auth::login($finduser);
         }
         if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
-            return redirect()->route('alumno');
+            return redirect('borja');
         } else {
             return redirect()->route('profesor');
         }
