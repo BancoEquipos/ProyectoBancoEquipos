@@ -63,18 +63,18 @@
                 <h4 class="tituloUsuario">Información del usuario</h4>
                 <table class="tablaUsuario">
                     <tr>
-                        <td>Nombre: Alejandro Sanchez-Arjona Balado</td>
+                        <td>Nombre:<br>{{ $userName }}</td>
                     </tr>
 
                     <tr>
-                        <td>NRE: 4541903</td>
+                        <td>NRE: {{ $nre }}</td>
                     </tr>
 
                     <tr>
-                        <td>E-mail: 4541903@alu.murciaeduca.es</td>
+                        <td>E-mail: {{ $email }}</td>
                     </tr>
                     <tr>
-                        <td>Última conexión: 08/07/2021</td>
+                        <td>Última conexión:<br>{{ $lastLog }}</td>
                     </tr>
                 </table>
             </div>

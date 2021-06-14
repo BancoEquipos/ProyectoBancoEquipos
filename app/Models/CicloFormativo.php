@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CicloFormativo extends Model
+class Cicloformativo extends Model
 {
     use HasFactory;
 
@@ -13,8 +13,4 @@ class CicloFormativo extends Model
         "id",
         "nombre",
     ];
-
-    /*public function alumnos(){
-        return $this->belongsToMany(Alumno::class, 'alumnos_ciclos_formativos', 'ciclo_id', 'alumno_id');
-    }*/
 }

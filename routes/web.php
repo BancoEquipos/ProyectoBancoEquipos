@@ -11,24 +11,24 @@ Route::get('/', function () {
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
-Route::get('/vistaAlumno', function () {
+Route::get('/alumno', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('vistaAlumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
+        return view('alumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('vistaProfesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
+        return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else {
         return view('notAuthorized');
     }
 });
 
-Route::get('/vistaProfesor', function () {
+Route::get('/profesor', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('vistaAlumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
+        return view('alumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
-        return view('vistaProfesor');
+        return view('profesor');
     } else {
         return view('notAuthorized');
     }

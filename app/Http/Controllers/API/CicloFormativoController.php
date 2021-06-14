@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CicloFormativoResource;
-use App\Models\CicloFormativo;
+use App\Http\Resources\CicloformativoResource;
+use App\Models\Cicloformativo;
 use Illuminate\Http\Request;
 
-class CicloFormativoController extends Controller
+class CicloformativoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CicloFormativoController extends Controller
      */
     public function index()
     {
-        return CicloFormativoResource::collection(CicloFormativo::paginate());
+        return CicloformativoResource::collection(Cicloformativo::paginate());
     }
 
     /**
@@ -29,48 +29,48 @@ class CicloFormativoController extends Controller
     {
         $cicloData = json_decode($request->getContent(), true);
 
-        $ciclo = CicloFormativo::create($cicloData);
+        $ciclo = Cicloformativo::create($cicloData);
 
-        return new CicloFormativoResource($ciclo);
+        return new CicloformativoResource($ciclo);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CicloFormativo  $cicloFormativo
+     * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $cicloFormativo = CicloFormativo::findOrFail($id);
-        return new CicloFormativoResource($cicloFormativo);
+        $cicloFormativo = Cicloformativo::findOrFail($id);
+        return new CicloformativoResource($cicloFormativo);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CicloFormativo  $cicloFormativo
+     * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $cicloFormativoData = json_decode($request->getContent(), true);
-        $cicloFormativo = CicloFormativo::findOrFail($id);
+        $cicloFormativo = Cicloformativo::findOrFail($id);
         $cicloFormativo->update($cicloFormativoData);
 
-        return new CicloFormativoResource($cicloFormativo);
+        return new CicloformativoResource($cicloFormativo);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CicloFormativo  $cicloFormativo
+     * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $cicloFormativo = CicloFormativo::findOrFail($id);
+        $cicloFormativo = Cicloformativo::findOrFail($id);
         $cicloFormativo->delete();
 
         $mensaje = ['estado' => 'eliminado'];
