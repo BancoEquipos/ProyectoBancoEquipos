@@ -100,7 +100,7 @@
                     <h2 class="tituloServicio">Servicio en desarrollo</h2>
                 </div>
                 <div class="col-4 logoServicio">
-                    <img id="servicioDosImagen" src=/alumno/"Imagenes/enConstrucion.svg" class="prestamoLogo">
+                    <img id="servicioDosImagen" src="/alumno/Imagenes/enConstrucion.svg" class="prestamoLogo">
                     <img id="servicioDosImagenBlanco" src="/alumno/Imagenes/enConstrucionBlanco.svg"
                          class="prestamoLogo d-none">
                 </div>
