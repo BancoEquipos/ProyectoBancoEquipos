@@ -18,7 +18,8 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 Route::get('vistaAlumno', function () {
     if (Auth::check() && strpos(Auth::user()->email,'alu.murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('alumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at, 'avatar' => Auth::user()->avatar));
+        $date = date_format(Auth::user()->updated_at, "H:i:s d-m-Y");
+        return view('alumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => $date, 'avatar' => Auth::user()->avatar));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
         return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at, 'avatar' => Auth::user()->avatar));
@@ -33,7 +34,8 @@ Route::get('vistaProfesor', function () {
         return view('alumno', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at, 'avatar' => Auth::user()->avatar));
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         $nre = explode("@", Auth::user()->email);
-        return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at, 'avatar' => Auth::user()->avatar));
+        $date = date_format(Auth::user()->updated_at, "H:i:s d-m-Y");
+        return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => $date, 'avatar' => Auth::user()->avatar));
     } else {
         return view('restringido');
     }
