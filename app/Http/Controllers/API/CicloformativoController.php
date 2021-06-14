@@ -7,7 +7,7 @@ use App\Http\Resources\CicloformativoResource;
 use App\Models\Cicloformativo;
 use Illuminate\Http\Request;
 
-class aCicloformativoController extends Controller
+class cicloformativoController extends Controller
 {
     /**
      * Display a listing of the resource.
