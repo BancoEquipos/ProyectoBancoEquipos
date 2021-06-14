@@ -39,7 +39,7 @@
     </button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
       aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <img src="/incidencia/Imagenes/logoUsuario.svg" class="botonUsuario">
+      <img src="{{ $avatar }}" class="botonUsuario">
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">

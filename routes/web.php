@@ -63,7 +63,7 @@ Route::get('noAutorizado', function () {
 });
 
 Route::get('incidencias',function () {
-    return view('incidencia');
+    return view('incidencia', array('avatar' => Auth::user()->avatar));
 });
 
 Route::get('solicitudPrestamo',function () {
