@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    //const URL_API = 'https://shrouded-falls-21309.herokuapp.com/';
-    const URL_API = 'http://localhost:8000/';
+    const URL_API = 'https://shrouded-falls-21309.herokuapp.com/';
+    // const URL_API = 'http://localhost:8000/';
     let configuracionPeticion = {};
     let ciclosFormativosPresenciales;
 
@@ -144,7 +144,7 @@ $(document).ready(function () {
         let vacio = campoVacio(email)
         if (vacio) {
             //Declaramos la expresion regular correspondientes al nombre, servidor y dominio.
-            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier 
+            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier
             //caracter incluyendo "\, . y -" y con un maximo de 64 caracteres. Para el servidor,
             //se incluen caracteres de la A a la Z, y numeros. Por ultimo, se espera un ".", y se pasa
             //al dominio, en el que podemos poner dominios tanto con "-" como con ".", e incluso varios
@@ -171,7 +171,7 @@ $(document).ready(function () {
         }
     }
 
-    //Para esta seccion, hago uso de una libreria externa que me rellena 
+    //Para esta seccion, hago uso de una libreria externa que me rellena
     //los select de provincia y municipio desde un servicio externo
     var prov = document.getElementById('ps-prov');
     var mun = document.getElementById('ps-mun');
@@ -302,7 +302,7 @@ $(document).ready(function () {
             configuracionPeticion.body = JSON.stringify(dataBody);
 
             return peticion(URL_API + 'api/alumnos', configuracionPeticion);
-        }) 
+        })
         .then(response => {
             console.log(response);
             //Insertamos en tabla prestamos
@@ -349,7 +349,7 @@ $(document).ready(function () {
                 .then(response => filasPrestamosComponente[i] = response)
                 .catch(error => console.log(error));
             }
-            
+
             return filasPrestamosComponente;
         })
         .then(response => {
