@@ -1,0 +1,512 @@
+.container-fluid {
+    overflow: hidden;
+    padding-top: 85px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.titulo {
+    color: white;
+    font-size: 15px;
+}
+
+.separador {
+    overflow: hidden;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(26, 127, 221);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.navbar li {
+    text-align: center;
+}
+
+.opcionUsuarioUno {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-top: 1px solid rgb(10, 89, 163);
+}
+
+.opcionUsuarioDos {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-top: 1px solid rgb(10, 89, 163);
+}
+
+.navbar li :hover {
+    background-color: rgb(21, 103, 180);
+    color: rgb(255, 255, 255);
+}
+
+.logoMovil {
+    height: 100px;
+    width: 100px;
+    margin: -20px;
+}
+
+.contenedorClase {
+    margin-bottom: -110px
+}
+
+.divInfo {
+    background-color: rgb(199, 226, 252);
+    height: 650px;
+    margin-right: 50px;
+    margin-top: 1px;
+}
+
+.divServicios {
+    height: 600px;
+}
+
+.servicioUno {
+    background-color: rgb(104, 180, 252);
+    border-bottom: 1px solid rgb(7, 94, 207);
+    height: 200px;
+    width: auto;
+}
+
+.servicioUno:hover {
+    background-color: rgb(51, 136, 216);
+    color: white;
+}
+
+.servicioDos {
+    background-color: rgb(104, 180, 252);
+    border-top: 1px solid rgb(7, 94, 207);
+    border-bottom: 1px solid rgb(7, 94, 207);
+    height: 200px;
+}
+
+.servicioDos:hover {
+    background-color: rgb(51, 136, 216);
+    color: white;
+}
+
+.servicioTres {
+    background-color: rgb(104, 180, 252);
+    border-top: 1px solid rgb(7, 94, 207);
+    height: 200px;
+}
+
+.servicioTres:hover {
+    background-color: rgb(51, 136, 216);
+    color: white;
+}
+
+.logoServicio {
+    height: 150px;
+    margin: 15px;
+    text-align: center;
+}
+
+.textoServicio {
+    height: 150px;
+    margin: 15px;
+    text-align: center;
+}
+
+.tituloServicio {
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.construccionLogo {
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.prestamoLogo {
+    height: 120px;
+    width: 120px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.divInformacion {
+    background-color: rgb(231, 243, 255);
+    height: 200px;
+    border: 2px solid rgb(7, 94, 207);
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+.divInfoUsuario {
+    background-color: rgb(231, 243, 255);
+    height: 300px;
+    border: 2px solid rgb(7, 94, 207);
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+.tituloUsuario {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.tituloInformativo {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.infoLogo {
+    height: 50px;
+    width: 50px;
+}
+
+.tablaUsuario {
+    margin: 0 auto;
+    height: 70%;
+    width: 90%;
+    font-size: 14px;
+    text-align: left;
+}
+
+.row {
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    .container-fluid {
+        overflow: hidden;
+        padding-top: 85px;
+    }
+    .divInfo {
+        background-color: rgb(199, 226, 252);
+        height: 650px;
+        margin-right: 50px;
+        margin-top: 1px;
+    }
+    .divServicios {
+        height: 600px;
+    }
+    .servicioUno {
+        background-color: rgb(104, 180, 252);
+        border-bottom: 1px solid rgb(7, 94, 207);
+        height: 200px;
+        width: auto;
+    }
+    .servicioUno:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioDos {
+        background-color: rgb(104, 180, 252);
+        border-top: 1px solid rgb(7, 94, 207);
+        border-bottom: 1px solid rgb(7, 94, 207);
+        height: 200px;
+    }
+    .servicioDos:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioTres {
+        background-color: rgb(104, 180, 252);
+        border-top: 1px solid rgb(7, 94, 207);
+        height: 200px;
+    }
+    .servicioTres:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .logoServicio {
+        height: 150px;
+        margin: 15px;
+        text-align: center;
+    }
+    .textoServicio {
+        height: 150px;
+        margin: 15px;
+        text-align: center;
+    }
+    .tituloServicio {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+    .prestamoLogo {
+        height: 150px;
+        width: 150px;
+        margin: 0 auto;
+    }
+    .divInformacion {
+        background-color: rgb(231, 243, 255);
+        height: 200px;
+        border: 2px solid rgb(7, 94, 207);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    .divInfoUsuario {
+        background-color: rgb(231, 243, 255);
+        height: 300px;
+        border: 2px solid rgb(7, 94, 207);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    .tituloUsuario {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .tituloInformativo {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 15px;
+    }
+    .infoLogo {
+        height: 50px;
+        width: 50px;
+    }
+    .tablaUsuario {
+        margin: 0 auto;
+        height: 70%;
+        width: 90%;
+        font-size: 16px;
+        text-align: left;
+    }
+    .row {
+        margin: auto;
+    }
+    .titulo {
+        color: white;
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-fluid {
+        overflow: hidden;
+        padding-top: 100px;
+    }
+    .divInfo {
+        background-color: rgb(199, 226, 252);
+        height: 650px;
+        margin-right: 50px;
+        margin-top: 1px;
+        border-radius: 20px;
+    }
+    .divServicios {
+        height: 650px;
+    }
+    .servicioUno {
+        background-color: rgb(104, 180, 252);
+        border-radius: 20px;
+        border: 3px solid rgb(7, 94, 207);
+        height: 180px;
+        margin-bottom: 30px;
+    }
+    .servicioUno:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioDos {
+        background-color: rgb(104, 180, 252);
+        border-radius: 20px;
+        border: 3px solid rgb(7, 94, 207);
+        height: 180px;
+        margin-bottom: 30px;
+    }
+    .servicioDos:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioTres {
+        background-color: rgb(104, 180, 252);
+        border-radius: 20px;
+        border: 3px solid rgb(7, 94, 207);
+        height: 180px;
+    }
+    .servicioTres:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .logoServicio {
+        height: 150px;
+        margin: 15px;
+        text-align: center;
+    }
+    .textoServicio {
+        height: 150px;
+        margin: 15px;
+        text-align: center;
+    }
+    .tituloServicio {
+        margin-top: 10px;
+    }
+    .prestamoLogo {
+        height: 200px;
+        width: 200px;
+        margin-top: -25px;
+    }
+    .divInformacion {
+        background-color: rgb(231, 243, 255);
+        height: 200px;
+        border: 2px solid rgb(7, 94, 207);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    .divInfoUsuario {
+        background-color: rgb(231, 243, 255);
+        height: 300px;
+        border: 2px solid rgb(7, 94, 207);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    .tituloUsuario {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .tituloInformativo {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .infoLogo {
+        height: 50px;
+        width: 50px;
+    }
+    .tablaUsuario {
+        margin: 0 auto;
+        height: 70%;
+        width: 90%;
+        font-size: 15px;
+        text-align: left;
+    }
+    .titulo {
+        color: white;
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-fluid {
+        overflow: hidden;
+        padding-top: 200px;
+    }
+    .divInfo {
+        background-color: rgb(199, 226, 252);
+        height: 650px;
+        margin-right: 50px;
+        margin-top: 1px;
+        border-radius: 20px;
+    }
+    .divServicios {
+        height: 650px;
+    }
+    .servicioUno {
+        background-color: rgb(104, 180, 252);
+        border-radius: 20px;
+        border: 3px solid rgb(7, 94, 207);
+        height: 180px;
+        margin-bottom: 30px;
+    }
+    .servicioUno:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioDos {
+        background-color: rgb(104, 180, 252);
+        border-radius: 20px;
+        border: 3px solid rgb(7, 94, 207);
+        height: 180px;
+        margin-bottom: 30px;
+    }
+    .servicioDos:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioTres {
+        background-color: rgb(104, 180, 252);
+        border-radius: 20px;
+        border: 3px solid rgb(7, 94, 207);
+        height: 180px;
+    }
+    .servicioTres:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .logoServicio {
+        height: 150px;
+        margin: 15px;
+        text-align: center;
+    }
+    .textoServicio {
+        height: 150px;
+        margin: 15px;
+        text-align: center;
+    }
+    .tituloServicio {
+        margin-top: 10px;
+    }
+    .prestamoLogo {
+        height: 200px;
+        width: 200px;
+        margin-top: -25px;
+    }
+    .divInformacion {
+        background-color: rgb(231, 243, 255);
+        height: 200px;
+        border: 2px solid rgb(7, 94, 207);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    .divInfoUsuario {
+        background-color: rgb(231, 243, 255);
+        height: 300px;
+        border: 2px solid rgb(7, 94, 207);
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-top: 35px;
+    }
+    .tituloUsuario {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .tituloInformativo {
+        margin-top: 15px;
+        text-align: center;
+    }
+    .infoLogo {
+        height: 50px;
+        width: 50px;
+    }
+    .tablaUsuario {
+        margin: 0 auto;
+        height: 70%;
+        width: 90%;
+        font-size: 18px;
+        text-align: left;
+    }
+    .titulo {
+        color: white;
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,187 @@
+p {
+    font-size: 18px;
+    padding: 15px;
+    text-align: left;
+}
+
+.logoDiv {
+    text-align: center;
+    height: 200px;
+}
+
+.imagenLogoMobile {
+    height: 100%;
+    width: 30%;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.login {
+    height: 70px;
+    width: 70px;
+}
+
+.contenedorHeader {
+    margin: 0 auto;
+    margin-top: 15px;
+    background-color: rgb(250, 103, 103);
+    border-radius: 20px;
+    height: 280px;
+    text-align: center;
+}
+
+.textoSeccion {
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 110%;
+}
+
+.infoLogo {
+    margin-top: 15px;
+    height: 45px;
+    width: 45px;
+}
+
+.contenedor {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+}
+
+.botonDiv {
+    height: 150px;
+    font-family: Verdana;
+    font-size: 15px;
+}
+
+.botonLogin {
+    height: 50%;
+    font-size: 15px;
+    margin-top: 20px;
+    background-color: rgb(104, 180, 252);
+    border-radius: 15px;
+    border: rgb(54, 148, 255) 1px solid;
+}
+
+.logoMovil {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.tituloTexto {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.divInfo {
+    background-color: rgb(255, 255, 255);
+    height: 300px;
+    margin-right: 50px;
+    margin-top: 1px;
+    text-align: center;
+}
+
+.botonLogin:hover {
+    background-color: rgb(51, 136, 216);
+    color: white;
+}
+
+.servicioUno {
+    text-align: center;
+}
+
+.bordePrincipal {
+    background-color: rgb(231, 243, 255);
+}
+
+@media (min-width: 760px) {
+    p {
+        font-size: 18px;
+        padding: 15px;
+        text-align: left;
+    }
+    .logoDiv {
+        text-align: center;
+        height: 200px;
+    }
+    .imagenLogoMobile {
+        height: 100%;
+        width: 30%;
+        padding-top: 50px;
+        margin: 0 auto;
+    }
+    .login {
+        height: 80px;
+        width: 80px;
+    }
+    .textoSeccion {
+        height: 100%;
+        padding: 20px;
+        text-align: center;
+        font-family: verdana;
+        font-size: 110%;
+    }
+    .infoLogo {
+        margin-top: 15px;
+        height: 45px;
+        width: 45px;
+    }
+    .contenedor {
+        margin: 0 auto;
+        width: 85%;
+        height: 100%;
+    }
+    .botonDiv {
+        height: 150px;
+        font-family: Verdana;
+        font-size: 15px;
+    }
+    .botonLogin {
+        height: 50%;
+        font-size: 120%;
+        margin-top: 20px;
+        background-color: rgb(104, 180, 252);
+        border-radius: 15px;
+        border: rgb(54, 148, 255) 1px solid;
+    }
+    .logoMovil {
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+    }
+    .tituloTexto {
+        text-align: center;
+        margin-top: 15px;
+    }
+    .divInfo {
+        background-color: rgb(255, 255, 255);
+        height: 300px;
+        margin-right: 50px;
+        margin-top: 1px;
+        text-align: center;
+    }
+    .botonLogin:hover {
+        background-color: rgb(51, 136, 216);
+        color: white;
+    }
+    .servicioUno {
+        text-align: center;
+    }
+    .bordePrincipal {
+        border: 2px solid rgb(116, 188, 255);
+        border-radius: 20px;
+        background-color: rgb(231, 243, 255);
+    }
+    .contenedorHeader {
+        margin: 0 auto;
+        margin-top: 15px;
+        background-color: rgb(250, 103, 103);
+        border-radius: 20px;
+        height: 200px;
+        text-align: center;
+    }
+}
