@@ -34,6 +34,7 @@ class LoginController extends Controller
             $newUser->save();
             Auth::login($newUser);
         } else {
+            $finduser->updated_at=date("Y-m-d H:i:s");
             $finduser->save();
             Auth::login($finduser);
         }
