@@ -19,7 +19,6 @@ class CicloFormativoResource extends JsonResource
         return [
             "id" => $this->id,
             "nombre" => $this->nombre,
-            //"siglas" => $this->siglas,
         ];
     }
 }

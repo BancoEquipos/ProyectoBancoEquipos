@@ -13,8 +13,8 @@ class CreateCiclosFormativosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ciclos_formativos', function (Blueprint $table) {
-            $table->id('ciclo_formativo_id');
+        Schema::create('ciclosformativos', function (Blueprint $table) {
+            $table->id();
             $table->string("nombre")->unique(); //sin siglas
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class CreateCiclosFormativosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ciclos_formativos');
+        Schema::dropIfExists('ciclosformativos');
     }
 }

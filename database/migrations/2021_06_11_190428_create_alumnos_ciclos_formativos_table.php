@@ -16,7 +16,7 @@ class CreateAlumnosCiclosFormativosTable extends Migration
         Schema::create('alumnos_ciclos_formativos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('alumno_id');
-            $table->foreignId('ciclo_formativo_id')->references('id')->on('ciclos_formativos');
+            $table->foreignId('ciclo_formativo_id')->references('id')->on('ciclosformativos');
             $table->timestamps();
         });
     }

@@ -28,7 +28,7 @@ class PrestamoResource extends JsonResource
             "tipo_componente" => $this->tipocomponente,
             "motivo" => $this->motivo,
             "domicilio" => $this->domicilio,
-            "ciclo_formativo" => $this->ciclo_formativo,
+            //"ciclo_formativo" => $this->ciclo_formativo,
         ];
     }
 }

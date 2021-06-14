@@ -17,7 +17,7 @@ class CreatePrestamosTable extends Migration
             $table->id('prestamo_id');
             $table->integer("curso");
             $table->string("profesor_valida")->nullable();
-            $table->date("alta_solicitud")->default()->useCurrentOnUpdate();
+            $table->date("alta_solicitud");
             $table->date("fecha_valida")->nullable();
             $table->date("fecha_fin")->nullable();
             $table->date("fecha_devolucion")->nullable();
@@ -25,7 +25,7 @@ class CreatePrestamosTable extends Migration
             $table->foreignId('motivo_id')->references('id')->on('motivos');
             $table->foreignId('alumno_id')->references('id')->on('alumnos');
             $table->foreignId('domicilio_id')->references('id')->on('domicilios');
-            $table->foreignId('ciclo_formativo_id')->references('id')->on('ciclos_formativos');
+            $table->foreignId('ciclo_formativo_id')->references('id')->on('ciclosformativos');
             $table->timestamps();
         });
     }
