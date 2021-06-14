@@ -231,4 +231,105 @@ $(document).ready(function () {
     $("#botonVolver").click(function e() { redirigir("vistaAlumno") });
     $("#cambiarCuenta").click(function e() { redirigir("auth/google") });
     $("#cerrarSesion").click(function e() { redirigir("loginout") });
+
+    $("#enviar").click(function(){
+        let idTablaDomicilio;
+        let idTablaAlumno;
+        let idTablaMotivo;
+        let idTablaCicloFormativo;
+        let idTablaPrestamo;
+        let tipoComponentesElegidos = [1, 2];
+        let dataBody;
+
+        //Insertamos en tabla domicilios
+        dataBody = {
+            provincia: $('#ps-prov').val(),
+            poblacion: $('#ps-mun').val(),
+            domicilio: $('#domicilio').val(),
+        }
+
+        configuracionPeticion = {
+            method: 'POST',
+            header: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify(dataBody),
+        };
+
+        peticion(URL_API + 'api/domicilios', configuracionPeticion)
+            .then(response => {
+                //Insertamos en tabla alumnos
+                idTablaDomicilio = response.data.id;
+                console.log('id domicilios: ' + idTablaDomicilio);
+                dataBody = {
+                    nombre: $('#nombre').val(),
+                    apellidos: $('#apellidos').val(),
+                    nif: $('#nif').val(),
+                    email: $('#email').val(),
+                    telefono: 612365478,
+                }
+                configuracionPeticion.body = JSON.stringify(dataBody);
+
+                return peticion(URL_API + 'api/alumnos', configuracionPeticion);
+            })
+            .then(response => {
+                console.log(response);
+                //Insertamos en tabla prestamos
+                idTablaAlumno = response.data.id;
+                idTablaCicloFormativo = 1;
+                idTablaMotivo = 1;
+                dataBody = {
+                    curso: 1,
+                    alta_solicitud: "2021-12-12",
+                    motivo_id: idTablaMotivo,
+                    alumno_id: idTablaAlumno,
+                    domicilio_id: idTablaDomicilio,
+                    ciclo_formativo_id: idTablaCicloFormativo
+                }
+                configuracionPeticion.body = JSON.stringify(dataBody);
+
+                return peticion(URL_API + 'api/prestamos', configuracionPeticion);
+
+                /*console.log('id alumnos: ' + idTablaAlumno);
+                dataBody = {
+                    nombre: $('#gradoSelect').val(),
+                }
+                configuracionPeticion.body = JSON.stringify(dataBody);
+
+                return peticion(URL_API + 'api/alumnos', configuracionPeticion);*/
+
+            })
+            .then(response => {
+                //Insertamos en tabla prestamos_componentes
+                let filasPrestamosComponente;
+                idTablaPrestamo = response.data.id;
+                console.log('Respuesta préstamos: ');
+                console.log(response);
+                for(let i = 0; i < tipoComponentesElegidos.length; ++i){
+                    dataBody = {
+                        activo: true,
+                        prestamo_id: idTablaPrestamo,
+                        tipo_componente_id: tipoComponentesElegidos[i]
+                    }
+
+                    configuracionPeticion.body = JSON.stringify(dataBody);
+
+                    peticion(URL_API + 'api/prestamoscomponente', configuracionPeticion)
+                        .then(response => filasPrestamosComponente[i] = response)
+                        .catch(error => console.log(error));
+                }
+
+                return filasPrestamosComponente;
+            })
+            .then(response => {
+                console.log(response);
+            })
+            /*response
+            .then(response => {
+                console.log('Respuesta servidor: ');
+                console.log(response);
+            })*/
+            .catch(error => console.log('Error' + error));
+    });
 });
