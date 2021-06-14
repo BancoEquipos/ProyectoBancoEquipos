@@ -1,5 +1,5 @@
 //Variable para comprobar que todo este correcto
-var todoCorrecto = { 
+var todoCorrecto = {
     "nombre":"",
     "apellidos":"",
     "telefono":"",
@@ -113,5 +113,6 @@ const equipamiento = [
     { label: 'Ordenador', value: '1'},
     { label: 'Monitor', value: '2'},
     { label: 'Cableado', value: '3'},
-    { label: 'Teclado + Ratón', value: '4'}
+    { label: 'Teclado', value: '4'},
+    { label: 'Raton', value: '5'},
   ]
