@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('borja', function () {
+   return 'hola';
+});
+
+
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
