@@ -19,7 +19,7 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('google')->stateless()->user();
         if (!strpos($user->getEmail(),'alu.murciaeduca.es') || !strpos($user->getEmail(),'murciaeduca.es')) {
-            return redirect()->route('restringido');
+            return redirect('noAutorizado');
         }
 
         $finduser = User::where('google_id', $user->id)->first();
@@ -29,6 +29,7 @@ class LoginController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'google_id'=> $user->id,
+                'avatar' => $user->avatar,
             ]);
             $newUser->save();
             Auth::login($newUser);
@@ -37,9 +38,9 @@ class LoginController extends Controller
             Auth::login($finduser);
         }
         if (strpos($user->getEmail(),'alu.murciaeduca.es')) {
-            return redirect('alumno');
+            return redirect('vistaAlumno');
         } else {
-            return redirect()->route('profesor');
+            return redirect('vistaProfesor');
         }
     }
 }

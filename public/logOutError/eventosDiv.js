@@ -16,10 +16,10 @@ $(document).ready(function () {
         $(div + "ImagenBlanco").addClass("d-none")
     }
 
-    $("#botonLogin").click(function e() { redirigir("https://www.google.com") });
+    $("#botonLogin").click(function e() { redirigir("auth/google") });
 
     //Cambiar al logo al pasar por encima
     $('#botonLogin').on('mouseenter', function () { cambiarLogoBlanco("#login")});
     $('#botonLogin').on('mouseleave', function () { cambiarLogoNegro("#login") });
-   
+
 });

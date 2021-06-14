@@ -16,11 +16,11 @@ $(document).ready(function () {
         $(div + "ImagenBlanco").addClass("d-none")
     }
 
-    $("#cambiarCuenta").click(function e() { redirigir("../Vista Loggin/index.html") });
-    $("#cerrarSesion").click(function e() { redirigir("../Vista Logout/index.html") });
+    $("#cambiarCuenta").click(function e() { redirigir("auth/google") });
+    $("#cerrarSesion").click(function e() { redirigir("loginout") });
 
     //Botones de los servicios
-    $('#servicioUno').click(function e() { redirigir("../Formulario Material/Material/index.html") });
+    $('#servicioUno').click(function e() { redirigir("") });
 
     //Cambiar al logo al pasar por encima
     $('#servicioUno').on('mouseenter', function () { cambiarLogoBlanco("#servicioUno") });
@@ -29,8 +29,4 @@ $(document).ready(function () {
     $('#servicioDos').on('mouseleave', function () { cambiarLogoNegro("#servicioDos") });
     $('#servicioTres').on('mouseenter', function () { cambiarLogoBlanco("#servicioTres") });
     $('#servicioTres').on('mouseleave', function () { cambiarLogoNegro("#servicioTres") });
-   
-
-
-
 });

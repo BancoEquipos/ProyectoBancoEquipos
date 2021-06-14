@@ -22,7 +22,6 @@
     <link rel="icon" href="/alumno/Imagenes/logoC3Mobile.svg">
 </head>
 
-
 <body>
 <nav class="navbar">
     <a class="navbar-brand d-block prueba">
@@ -33,7 +32,7 @@
     </h3>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="/alumno/Imagenes/logoUsuario.svg" width="50" height="50">
+        <img src="{{ $avatar }}" width="50" height="50">
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">
@@ -67,11 +66,11 @@
                     </tr>
 
                     <tr>
-                        <td>NRE: {{ $nre }}</td>
+                        <td>NRE:<br>{{ $nre }}</td>
                     </tr>
 
                     <tr>
-                        <td>E-mail: {{ $email }}</td>
+                        <td>E-mail:<br>{{ $email }}</td>
                     </tr>
                     <tr>
                         <td>Última conexión:<br>{{ $lastLog }}</td>

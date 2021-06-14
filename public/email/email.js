@@ -5,8 +5,8 @@ function sendEmail() {
 	Password : "Carlos3Incidencias2021$",
 	To : '6379454@alu.murciaeduca.es',
 	From : "incidenciascarlos3@gmail.com",
-	Subject : "prueba",
-	Body : "prueba",
+	Subject : "alejandro",
+	Body : "alejandro",
 	}).then(
 		message => alert("mail sent successfully")
 	);
