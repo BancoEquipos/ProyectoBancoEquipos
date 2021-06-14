@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use app\Http\Resources\CicloformativoResource;
+use App\Http\Resources\CicloformativoResource;
 use App\Models\Cicloformativo;
 use Illuminate\Http\Request;
 
