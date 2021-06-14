@@ -99,8 +99,8 @@
         <div class="form-floating separador col-12 col-lg-3">
           <div class="row divCamara" id="botonCamara" role="button">
             <div class="col-8">
-              <p class="d-none d-md-block letrasFotoGrande">Agrega un archivo</p>
-              <p class="d-block d-md-none letrasFotoGrande">Agrega una foto</p>
+              <p class="d-none d-md-block letrasFotoGrande">Agrege un archivo</p>
+              <p class="d-block d-md-none letrasFotoGrande">Agrege una foto</p>
             </div>
             <div class="col-2"><img class="logoFoto" for="archivo" src="/incidencia/Imagenes/camara.svg" /></div>
           </div>
@@ -114,7 +114,7 @@
         <div class="form-floating separador col-12">
           <textarea class="form-control tamInicial" name="email" type="text" id="descripcion"
             title="Introduce tu e-mail." placeholder="Descripcion de la incidencia"></textarea>
-          <label for="floatingInput" class="etiquetaCampo">Descripcion de la incidencia</label>
+          <label for="floatingInput" class="etiquetaCampo">Descripci&oacute;n de la incidencia</label>
         </div>
 
 
