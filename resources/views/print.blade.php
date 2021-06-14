@@ -8,6 +8,6 @@
 </head>
     <body id="body">
         <p>Imprimir pdf funciona con laravel</p>
-        <button id="boton">PDF</button>
+        <button id="enviar">PDF</button>
   </body>
 </html>

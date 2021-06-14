@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('print', function () {
+    return view('print');
+});
+
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
@@ -62,5 +66,7 @@ Route::get('incidencias',function () {
 });
 
 Route::get('solicitudPrestamo',function () {
-    return view('prestamo');
+    $nre = explode("@", Auth::user()->email);
+    $portions = explode(" ", Auth::user()->name);
+    return view('prestamo', array('apellido1' => $portions[0],'apellido2' => $portions[1],'nombre' => $portions[2], 'email' => Auth::user()->email, 'nre' => $nre[0], 'avatar' => Auth::user()->avatar));
 });

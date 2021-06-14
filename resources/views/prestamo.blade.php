@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="body">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario solicitud de material</title>
     <link rel="icon" href="/prestamo/Imagenes/logoC3Mobile.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.1.135/jspdf.min.js"></script>
+    <script type="text/javascript" src="/prestamo/jsPDF.js"></script>
 
     <!--Jquery y Bootstraps-->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -43,7 +46,7 @@
     </button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
             aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="/prestamo/Imagenes/logoUsuario.svg" class="botonUsuario">
+        <img src="{{ $avatar }}" class="botonUsuario">
     </button>
 
     <div class="collapse navbar-collapse" id="navbarContent">
@@ -76,7 +79,7 @@
         <div class="row">
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" type="text" name="nombre" id="nombre"
-                       title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre">
+                       title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre" value="{{ $nombre }}">
                 <label for="floatingInput" class="etiquetaCampo">Nombre</label>
                 <div class="mensajeOculto" id="nombreError">
                     El nombre indicado no es valido. Comprueba que no tenga numeros ni carecteres especiales.
@@ -85,7 +88,7 @@
 
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" type="text" name="apellidos" id="apellidos"
-                       title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" />
+                       title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" value="{{ $apellido1 . " ". $apellido2 }}" />
                 <label for="floatingInput" class="etiquetaCampo">Apellidos</label>
                 <div class="mensajeOculto" id="apellidosError">
                     El/los apellidos indicados no son validos. Comprueba que no tengan numeros ni carecteres especiales.
@@ -128,7 +131,7 @@
         <div class="row">
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" name="email" type="text" id="email" title="Introduce tu e-mail."
-                       placeholder="Email*" />
+                       placeholder="Email*" value="{{ $email }}" />
                 <label for="floatingInput" class="etiquetaCampo">E-mail</label>
                 <div class=" mensajeOculto" id="emailError">
                     Email introducido no valido. El email debe ser tipo "ejemplo@example.es". Se recomienda usar su correo de
@@ -151,7 +154,7 @@
 
 
             <div class="form-floating separador col-12 col-lg-4">
-                <input class="form-control" name="telefono" type="text" id="nre" title="Introduce tu NRE." placeholder="NRE" />
+                <input class="form-control" name="telefono" type="text" id="nre" title="Introduce tu NRE." placeholder="NRE" value="{{ $nre }}" />
                 <label for="floatingInput" class="etiquetaCampo">NRE</label>
             </div>
 
