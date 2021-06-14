@@ -19,7 +19,7 @@ Route::get('/alumno', function () {
         $nre = explode("@", Auth::user()->email);
         return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => Auth::user()->updated_at));
     } else {
-        return view('notAuthorized');
+        return view('restringido');
     }
 });
 
@@ -30,7 +30,7 @@ Route::get('/profesor', function () {
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return view('profesor');
     } else {
-        return view('notAuthorized');
+        return view('restringido');
     }
 });
 
@@ -40,7 +40,7 @@ Route::get('/solicitudPrestamo', function () {
     } else if (Auth::check() && strpos(Auth::user()->email,'murciaeduca.es')) {
         return 'Eres profesor';
     } else {
-        return view('notAuthorized');
+        return view('restringido');
     }
 });
 
@@ -49,6 +49,6 @@ Route::get('/logOut', function () {
         Auth::logout();
         return view('logOut');
     } else {
-        return view('notLogIn');
+        return view('logOutError');
     }
 });
