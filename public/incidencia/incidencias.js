@@ -42,7 +42,9 @@ $(document).ready(function () {
         } else {
             $('#' + campo).removeClass("campoErroneo")
             $('#' + campo).addClass("campoCorrecto")
+
             todoCorrecto[campo] = tiposIncidencias[dato].nombre;
+            console.log(tiposIncidencias[dato].nombre)
         }
     }
 
@@ -78,7 +80,7 @@ $(document).ready(function () {
         let vacio = campoVacio(email)
         if (vacio) {
             //Declaramos la expresion regular correspondientes al nombre, servidor y dominio.
-            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier
+            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier 
             //caracter incluyendo "\, . y -" y con un maximo de 64 caracteres. Para el servidor,
             //se incluen caracteres de la A a la Z, y numeros. Por ultimo, se espera un ".", y se pasa
             //al dominio, en el que podemos poner dominios tanto con "-" como con ".", e incluso varios
@@ -140,10 +142,7 @@ $(document).ready(function () {
             $('#botonEmail').addClass("d-none")
             $('#botonInfo').removeClass("d-none")
         }
-
     }
-
-
 
     /********************************************* */
     //El JSON que tienes que enviar es todoCorrecto
@@ -165,7 +164,8 @@ $(document).ready(function () {
     //Comprobacion de los select
     $('#tipoIncidencia').change(function e() { selectIncidencias($(this).val(), "tipoIncidencia"), comprobacionFinal() })
 
-    //Evento de accion del boton vovler
+    //Eventos de accion de los botones
+    $("#botonCamara").click(function e(){ $("#archivo").click ();})
     $("#botonVolver").click(function e() { redirigir("vistaAlumno") });
     $("#cambiarCuenta").click(function e() { redirigir("auth/google") });
     $("#cerrarSesion").click(function e() { redirigir("loginout") });

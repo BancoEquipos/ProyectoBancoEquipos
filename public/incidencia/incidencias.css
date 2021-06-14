@@ -3,6 +3,24 @@
   overflow: hidden;
 }
 
+.divCamara{
+  margin: 0 auto;
+  border: 1px solid rgb(219, 219, 219);
+  height: 55px;
+  background-color: white;
+}
+
+.letrasFotoGrande{
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+.logoFoto{
+  height: 50px;
+  width: 50px;
+}
+
 .opcionUsuarioUno {
   display: block;
   color: #ffffff;
