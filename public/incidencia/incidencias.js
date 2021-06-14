@@ -63,13 +63,9 @@ $(document).ready(function () {
     function comprobarNombre(dato, campo) {
         let datoVacio = campoVacio(dato);
         if (datoVacio) {
-            let comprobacion = !/[^A-Za-z-" "]+/g.test(dato); //Regex para nombre y apellido
-            if (!comprobacion) {
-                mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
-            } else {
-                campoCorrecto(dato, campo);//Quito mensajes de error y doy por bueno
-            }
+            campoCorrecto(dato, campo);//Quito mensajes de error y doy por bueno
         } else {
+            mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
             campoNoRellenado(campo);//Campo no rellenado
         }
     }
@@ -80,7 +76,7 @@ $(document).ready(function () {
         let vacio = campoVacio(email)
         if (vacio) {
             //Declaramos la expresion regular correspondientes al nombre, servidor y dominio.
-            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier 
+            //Se tiene en cuenta que el nombre del email comienza con una letra, seguido de cualquier
             //caracter incluyendo "\, . y -" y con un maximo de 64 caracteres. Para el servidor,
             //se incluen caracteres de la A a la Z, y numeros. Por ultimo, se espera un ".", y se pasa
             //al dominio, en el que podemos poner dominios tanto con "-" como con ".", e incluso varios

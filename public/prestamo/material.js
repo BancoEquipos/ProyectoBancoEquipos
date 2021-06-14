@@ -86,13 +86,9 @@ $(document).ready(function () {
     function comprobarNombre(dato, campo) {
         let datoVacio = campoVacio(dato);
         if (datoVacio) {
-            let comprobacion = !/[^A-Za-z-" "]+/g.test(dato); //Regex para nombre y apellido
-            if (!comprobacion) {
-                mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
-            } else {
-                campoCorrecto(dato, campo);//Quito mensajes de error y doy por bueno
-            }
+            campoCorrecto(dato, campo);//Quito mensajes de error y doy por bueno
         } else {
+            mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
             campoNoRellenado(campo);//Campo no rellenado
         }
     }
