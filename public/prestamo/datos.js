@@ -1,14 +1,14 @@
 //Variable para comprobar que todo este correcto
-var todoCorrecto = { 
-    "nombre":"",
-    "apellidos":"",
+var todoCorrecto = {
+    "nombre":"auto",
+    "apellidos":"auto",
     "telefono":"",
     "ps-prov":"",
     "ps-mun":"",
     "domicilio":"",
-    "email":"",
+    "email":"auto",
     "nif":"",
-    "nre":"",
+    "nre":"auto",
     "gradoSelect":"",
     "cursoSelect":"",
     "motivoSelect":"",

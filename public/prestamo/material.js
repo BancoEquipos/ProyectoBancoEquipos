@@ -77,7 +77,6 @@ $(document).ready(function () {
             mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
             campoNoRellenado(campo);//Campo no rellenado
         }
-        console.log("hola");
     }
 
 
@@ -222,8 +221,6 @@ $(document).ready(function () {
     $("#motivoSelect").change(function e() { desplegarMotivo() });
 
     //Comprobacion de los imputs
-    comprobarNombre($('#nombre').val());
-    comprobarNombre($('#apellidos').val());
     $('#nif').blur(function e() { comprobarDNI($(this).val()), comprobacionFinal() });
     $('#nombre').blur(function e() { comprobarNombre($(this).val(), 'nombre'), comprobacionFinal() });
     $('#apellidos').blur(function e() { comprobarNombre($(this).val(), "apellidos"), comprobacionFinal() });
@@ -244,11 +241,17 @@ $(document).ready(function () {
 
 
     //Evento de accion de los botones
-    $("#botonVolver").click(function e() { redirigir("../../Vista alumno/index.html") });
-    $("#cambiarCuenta").click(function e() { redirigir("") });
-    $("#cerrarSesion").click(function e() { console.log(todoCorrecto) });
+    $("#botonVolver").click(function e() { redirigir("vistaAlumno") });
+    $("#cambiarCuenta").click(function e() { redirigir("auth/google") });
+    $("#cerrarSesion").click(function e() { redirigir("loginout") });
+
+    $('#enviar').click(function e() { comprobarNombre($('#nombre').val(), 'nombre'), comprobacionFinal() });
+    $('#enviar').click(function e() { comprobarNombre($('#apellidos').val(), "apellidos"), comprobacionFinal() });
+    $('#enviar').click(function e() { comprobarEmail($('#email').val()), comprobacionFinal() });
+    $('#enviar').blur(function e() { comprobarNombre($('#nre').val(), 'nre'), comprobacionFinal() });
 
     $("#enviar").click(function(){
+        window.print();
         if(listoEnviar){
             let idTablaDomicilio;
             let idTablaAlumno;
