@@ -156,6 +156,8 @@ $(document).ready(function () {
     $('#urgente').change(function e() { comprobarCheckbox(), comprobacionFinal() });
     $('#archivo').change(function e() { rellenarArchivos(), todoCorrecto["archivo"] = "Se adjuntan archivos" })
 
+    $('#botonInfo').click(function e() { comprobarNombre($('#nombre').val(), 'nombre'), comprobacionFinal() });
+    $('#botonInfo').click(function e() { comprobarEmail($('#email').val()), comprobacionFinal() });
 
     //Comprobacion de los select
     $('#tipoIncidencia').change(function e() { selectIncidencias($(this).val(), "tipoIncidencia"), comprobacionFinal() })

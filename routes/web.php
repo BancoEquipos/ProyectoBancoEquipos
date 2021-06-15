@@ -57,11 +57,17 @@ Route::get('noAutorizado', function () {
 });
 
 Route::get('incidencias',function () {
-    return view('incidencia', array('avatar' => Auth::user()->avatar));
+    return view('incidencia', array('nombre' => Auth::user()->name, 'email' => Auth::user()->email, 'avatar' => Auth::user()->avatar));
 });
 
 Route::get('solicitudPrestamo',function () {
     $nre = explode("@", Auth::user()->email);
     $portions = explode(" ", Auth::user()->name);
     return view('prestamo', array('apellido1' => $portions[0],'apellido2' => $portions[1],'nombre' => $portions[2], 'email' => Auth::user()->email, 'nre' => $nre[0], 'avatar' => Auth::user()->avatar));
+});
+
+Route::get('validarlo',function () {
+    $nre = explode("@", Auth::user()->email);
+    $portions = explode(" ", Auth::user()->name);
+    return view('validar', array('apellido1' => $portions[0],'apellido2' => $portions[1],'nombre' => $portions[2], 'email' => Auth::user()->email, 'nre' => $nre[0], 'avatar' => Auth::user()->avatar));
 });

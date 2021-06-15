@@ -72,7 +72,7 @@
       <div class="row">
         <div class="form-floating separador col-12 col-lg-6">
           <input class="form-control" type="text" name="nombre" id="nombre"
-            title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre">
+            title="Introduce tu nombre completo, no uses caracteres especiales ni numeros" placeholder="Nombre" value=" {{ $nombre }}">
           <label for="floatingInput" class="etiquetaCampo">Nombre</label>
           <div class="mensajeOculto" id="nombreError">
             El nombre indicado no es valido. Comprueba que no tenga numeros ni carecteres especiales.
@@ -81,7 +81,7 @@
 
         <div class="form-floating separador col-12 col-lg-6">
           <input class="form-control" name="email" type="text" id="email" title="Introduce tu e-mail."
-            placeholder="Email*" />
+            placeholder="Email*" value="{{ $email }}" />
           <label for="floatingInput" class="etiquetaCampo">E-mail</label>
           <div class=" mensajeOculto" id="emailError">
             Email introducido no valido. El email debe ser tipo "ejemplo@example.es". Se recomienda usar su correo de

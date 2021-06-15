@@ -1,0 +1,39 @@
+.container-fluid{padding-top:200px}
+.titulo{color:#fff;font-size:15px}
+.separador{overflow:hidden;padding-right:0;padding-left:0;margin-right:auto;margin-left:auto}
+.navbar{overflow:hidden;background-color:#1a7fdd;position:absolute;top:0;width:100%;z-index:9999}
+.botonUsuario{width:40px;height:40px}
+.navbar li{text-align:center}
+.opcionUsuarioUno{display:block;color:#fff;text-align:center;padding:20px 20px;text-decoration:none;font-size:18px;border-top:1px solid #0a59a3}
+.opcionUsuarioDos{display:block;color:#fff;text-align:center;padding:20px 20px;text-decoration:none;font-size:18px;border-top:1px solid #0a59a3}
+.navbar li :hover{background-color:#1567b4;color:#fff}
+.logoMovil{height:100px;width:100px;margin:-20px}
+.contenedorClase{margin-bottom:-110px}
+.botonVolver{width:60px;height:65px}
+.ejemplo{background-color:#0ff;height:500px}
+.divPrincipal{margin:0}
+table{font-family:arial,sans-serif;border-collapse:collapse;width:100%}
+td,th{border:1px solid #ddd;text-align:left;padding:8px}
+tr:nth-child(even){background-color:#fff}
+th{background-color:#ddd}
+.botonValidar{margin-top:15px;text-align:right}
+.divInfo{background-color:#e1f0ff;margin-left:40px}
+.textoTitulo{padding:10px;margin-left:10px}
+.logoInfo{height:40px;width:40px;background-color:#e1f0ff;}
+.selectNumero{height: 30px;}
+@media (min-width:768px){
+.container-fluid{padding-top:200px}
+.titulo{color:#fff;font-size:30px}
+.separador{overflow:hidden;padding-right:0;padding-left:0;margin-right:auto;margin-left:auto}
+.navbar{overflow:hidden;background-color:#1a7fdd;position:absolute;top:0;width:100%;z-index:9999}
+.botonUsuario{width:40px;height:40px}
+.navbar li{text-align:center}
+.opcionUsuarioUno{display:block;color:#fff;text-align:center;padding:20px 20px;text-decoration:none;font-size:18px;border-top:1px solid #0a59a3}
+.opcionUsuarioDos{display:block;color:#fff;text-align:center;padding:20px 20px;text-decoration:none;font-size:18px;border-top:1px solid #0a59a3}
+.navbar li :hover{background-color:#1567b4;color:#fff}
+.logoMovil{height:100px;width:100px;margin:-20px}
+.contenedorClase{margin-bottom:-110px}
+.botonVolver{width:60px;height:65px}
+.ejemplo{background-color:#0ff;height:500px}
+.divPrincipal{margin:50px}
+}

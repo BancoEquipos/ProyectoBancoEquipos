@@ -1,6 +1,6 @@
 var todoCorrecto = {
-    "nombre": "",
-    "email": "",
+    "nombre": "auto",
+    "email": "auto",
     "tipoIncidencia": "",
     "urgente": "",
     "archivo": "Sin archivo adjunto",
