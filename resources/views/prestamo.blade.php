@@ -85,7 +85,7 @@
 
             <div class="form-floating separador col-12 col-lg-4">
                 <input class="form-control" type="text" name="apellidos" id="apellidos"
-                       title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" />
+                       title="Introduce tus apellidos, no uses caracteres especiales ni numeros" placeholder="Apellidos" value="{{ $apellido1." ".$apellido2 }}" />
                 <label for="floatingInput" class="etiquetaCampo">Apellidos</label>
                 <div class="mensajeOculto" id="apellidosError">
                     El/los apellidos indicados no son validos. Comprueba que no tengan numeros ni carecteres especiales.
