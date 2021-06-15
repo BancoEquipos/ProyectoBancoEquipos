@@ -77,6 +77,7 @@ $(document).ready(function () {
             mostrarError(campo); //Muetro mensaje si hay numeros o caracteres especiales
             campoNoRellenado(campo);//Campo no rellenado
         }
+        console.log("hola");
     }
 
 
