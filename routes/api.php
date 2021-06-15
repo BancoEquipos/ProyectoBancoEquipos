@@ -33,6 +33,6 @@ Route::apiResource('motivos', MotivoController::class);
 Route::apiResource('componentes', ComponenteController::class);
 Route::apiResource('alumnos', AlumnoController::class);
 Route::apiResource('incidencias', IncidenciaController::class);
-Route::apiResource('cicloformativos', CicloformativoController::class);
+Route::apiResource('ciclosformativos', CicloformativoController::class);
 Route::apiResource('domicilios', DomicilioController::class);
 Route::apiResource('prestamoscomponente', PrestamosComponenteController::class);
