@@ -1,5 +1,5 @@
 //Variable para comprobar que todo este correcto
-var todoCorrecto = {
+var todoCorrecto = { 
     "nombre":"",
     "apellidos":"",
     "telefono":"",
@@ -8,12 +8,10 @@ var todoCorrecto = {
     "domicilio":"",
     "email":"",
     "nif":"",
-    "nre":"",
     "gradoSelect":"",
     "cursoSelect":"",
     "motivoSelect":"",
-    "equipamientoSolicitado":"",
-    "otroMotivo":"No"
+    "equipamientoSolicitado":""
 }
 
 
@@ -110,9 +108,8 @@ const motivos = [
 
 //Equipamiento solicitado
 const equipamiento = [
-    { label: 'Ordenador', value: '1'},
-    { label: 'Monitor', value: '2'},
-    { label: 'Cableado', value: '3'},
-    { label: 'Teclado', value: '4'},
-    { label: 'Raton', value: '5'},
+    { label: 'Ordenador', value: 'ordenador'},
+    { label: 'Monitor', value: 'monitor'},
+    { label: 'Cableado', value: 'cableado'},
+    { label: 'Teclado + Ratón', value: 'teclado+raton'}
   ]
