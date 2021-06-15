@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\PrestamosComponente;
+use App\Models\PrestamosComponentes;
 use Illuminate\Http\Request;
-use App\Http\Resources\PrestamosComponenteResource;
+use App\Http\Resources\PrestamosComponentesResource;
 
-class PrestamosComponenteController extends Controller
+class PrestamosComponentesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class PrestamosComponenteController extends Controller
      */
     public function index()
     {
-        return PrestamosComponente::collection(PrestamosComponente::paginate());
+        return PrestamosComponentesResource::collection(PrestamosComponentes::paginate());
     }
 
     /**
@@ -37,39 +37,39 @@ class PrestamosComponenteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PrestamosComponente  $prestamosComponente
+     * @param  \App\Models\PrestamosComponentes  $prestamosComponentes
      * @return \Illuminate\Http\Response
      */
-    public function show(PrestamosComponente $prestamosComponente)
+    public function show(PrestamosComponentes $prestamosComponentes)
     {
-        return new PrestamosComponenteResource($prestamosComponente);
+        return new PrestamosComponenteResource($prestamosComponentes);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PrestamosComponente  $prestamosComponente
+     * @param  \App\Models\PrestamosComponentes  $prestamosComponentes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PrestamosComponente $prestamosComponente)
+    public function update(Request $request, PrestamosComponentes $prestamosComponentes)
     {
         $prestamosComponenteData = json_decode($request->getContent(), true);
 
-        $prestamosComponente->update($prestamosComponenteData);
+        $prestamosComponentes->update($prestamosComponenteData);
 
-        return new PrestamosComponenteResource($prestamosComponente);
+        return new PrestamosComponenteResource($prestamosComponentes);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PrestamosComponente  $prestamosComponente
+     * @param  \App\Models\PrestamosComponentes  $prestamosComponentes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PrestamosComponente $prestamosComponente)
+    public function destroy(PrestamosComponentes $prestamosComponentes)
     {
-        $prestamosComponente->delete();
+        $prestamosComponentes->delete();
 
         $mensaje = ['estado' => 'eliminado'];
 
