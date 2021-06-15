@@ -10,7 +10,7 @@ class Cicloformativo extends Model
     use HasFactory;
 
     protected $fillable = [
-        "id",
-        "nombre",
+        'id',
+        'nombre',
     ];
 }
