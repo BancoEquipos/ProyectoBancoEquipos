@@ -16,7 +16,6 @@ class CicloformativoController extends Controller
      */
     public function index()
     {
-        return dd("hola");
         return CicloformativoResource::collection(Cicloformativo::paginate());
     }
 
