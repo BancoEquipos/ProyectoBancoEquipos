@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cicloformativo extends Model
 {
     use HasFactory;
+    protected $table = 'cicloformativos';
 
     protected $fillable = [
         'id',
