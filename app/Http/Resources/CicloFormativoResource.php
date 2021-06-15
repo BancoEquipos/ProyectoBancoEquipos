@@ -17,8 +17,8 @@ class CicloformativoResource extends JsonResource
         //return parent::toArray($request);
 
         return [
-            "id" => $this->id,
-            "nombre" => $this->nombre,
+            'id' => $this->id,
+            'nombre' => $this->nombre,
         ];
     }
 }

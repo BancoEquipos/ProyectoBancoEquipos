@@ -40,9 +40,8 @@ class CicloformativoController extends Controller
      * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cicloformativo $cicloFormativo)
     {
-        $cicloFormativo = Cicloformativo::findOrFail($id);
         return new CicloformativoResource($cicloFormativo);
     }
 
@@ -53,10 +52,9 @@ class CicloformativoController extends Controller
      * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cicloformativo $cicloFormativo)
     {
         $cicloFormativoData = json_decode($request->getContent(), true);
-        $cicloFormativo = Cicloformativo::findOrFail($id);
         $cicloFormativo->update($cicloFormativoData);
 
         return new CicloformativoResource($cicloFormativo);
@@ -68,9 +66,8 @@ class CicloformativoController extends Controller
      * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cicloformativo $cicloFormativo)
     {
-        $cicloFormativo = Cicloformativo::findOrFail($id);
         $cicloFormativo->delete();
 
         $mensaje = ['estado' => 'eliminado'];
