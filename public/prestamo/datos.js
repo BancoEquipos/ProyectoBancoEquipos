@@ -8,10 +8,12 @@ var todoCorrecto = {
     "domicilio":"",
     "email":"",
     "nif":"",
+    "nre":"",
     "gradoSelect":"",
     "cursoSelect":"",
     "motivoSelect":"",
-    "equipamientoSolicitado":""
+    "equipamientoSolicitado":"",
+    "otroMotivo":"No"
 }
 
 
@@ -108,8 +110,9 @@ const motivos = [
 
 //Equipamiento solicitado
 const equipamiento = [
-    { label: 'Ordenador', value: 'ordenador'},
-    { label: 'Monitor', value: 'monitor'},
-    { label: 'Cableado', value: 'cableado'},
-    { label: 'Teclado + Ratón', value: 'teclado+raton'}
+    { label: 'Ordenador', value: '1'},
+    { label: 'Monitor', value: '2'},
+    { label: 'Cableado', value: '3'},
+    { label: 'Teclado', value: '4'},
+    { label: 'Ratón', value: '5'},
   ]
