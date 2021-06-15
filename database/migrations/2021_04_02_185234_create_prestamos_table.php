@@ -25,7 +25,7 @@ class CreatePrestamosTable extends Migration
             $table->foreignId('motivo_id')->references('id')->on('motivos');
             $table->foreignId('alumno_id')->references('id')->on('alumnos');
             $table->foreignId('domicilio_id')->references('id')->on('domicilios');
-            $table->foreignId('ciclo_formativo_id')->references('id')->on('cicloformativos');
+            $table->foreignId('ciclo_formativo_id')->references('id')->on('ciclos_formativos');
             $table->timestamps();
         });
     }
