@@ -19,7 +19,7 @@ class TipocomponenteResource extends JsonResource
         return [
             'id' => $this->id,
             'tipoComponente' => $this->tipo_componente,
-            'componentes' => $this->componentes,
+            //'componentes' => $this->componentes,
         ];
     }
 }

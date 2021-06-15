@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\CiclosFormativos;
+use App\Http\Resources\CicloformativoResource;
+use App\Models\Cicloformativo;
 use Illuminate\Http\Request;
-use App\Http\Resources\CiclosFormativosResource;
 
-class CiclosFormativosController extends Controller
+class CicloformativoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CiclosFormativosController extends Controller
      */
     public function index()
     {
-        return CiclosFormativosResource::collection(CiclosFormativos::paginate());
+        return CicloformativoResource::collection(Cicloformativo::paginate());
     }
 
     /**
@@ -37,7 +37,7 @@ class CiclosFormativosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CiclosFormativos  $ciclosFormativos
+     * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -50,7 +50,7 @@ class CiclosFormativosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CiclosFormativos  $ciclosFormativos
+     * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -65,7 +65,7 @@ class CiclosFormativosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CiclosFormativos  $ciclosFormativos
+     * @param  \App\Models\Cicloformativo  $cicloFormativo
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

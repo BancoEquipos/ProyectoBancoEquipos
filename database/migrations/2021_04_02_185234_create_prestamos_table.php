@@ -14,8 +14,9 @@ class CreatePrestamosTable extends Migration
     public function up()
     {
         Schema::create('prestamos', function (Blueprint $table) {
-            $table->id('prestamo_id');
+            $table->id();
             $table->integer("curso");
+            $table->string("descripcion")->nullable();
             $table->string("profesor_valida")->nullable();
             $table->date("alta_solicitud");
             $table->date("fecha_valida")->nullable();
@@ -25,7 +26,7 @@ class CreatePrestamosTable extends Migration
             $table->foreignId('motivo_id')->references('id')->on('motivos');
             $table->foreignId('alumno_id')->references('id')->on('alumnos');
             $table->foreignId('domicilio_id')->references('id')->on('domicilios');
-            $table->foreignId('ciclo_formativo_id')->references('id')->on('ciclos_formativos');
+            $table->foreignId('ciclo_formativo_id')->references('id')->on('cicloformativos');
             $table->timestamps();
         });
     }

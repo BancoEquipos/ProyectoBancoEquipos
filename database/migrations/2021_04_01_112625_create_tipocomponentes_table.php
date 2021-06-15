@@ -15,7 +15,7 @@ class CreateTipocomponentesTable extends Migration
     {
         Schema::create('tipocomponentes', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_componente');
+            $table->string('tipo_componente')->unique();
             $table->timestamps();
         });
     }

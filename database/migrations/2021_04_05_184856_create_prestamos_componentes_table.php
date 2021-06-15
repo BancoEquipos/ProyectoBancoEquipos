@@ -16,8 +16,10 @@ class CreatePrestamosComponentesTable extends Migration
         Schema::create('prestamos_componentes', function (Blueprint $table) {
             $table->id();
             $table->boolean('activo');
-            $table->foreignId("componente_id")->nullable()->references('componente_id')->on('componentes');
-            $table->foreignId('prestamo_id')->references('prestamo_id')->on('prestamos');
+            $table->unsignedBigInteger('componente_id')->nullable();
+            
+            $table->foreign("componente_id")->references('componente_id')->on('componentes');
+            $table->foreignId('prestamo_id')->references('id')->on('prestamos');
             $table->foreignId('tipo_componente_id')->references('id')->on('tipocomponentes');
             $table->timestamps();
         });

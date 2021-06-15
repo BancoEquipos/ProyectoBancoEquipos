@@ -18,7 +18,7 @@ class MotivoResource extends JsonResource
 
         return [
             'id' => $this->id,
-            'motivo' => $this->motivo,
+            'motivo' => $this->motivo
         ];
     }
 }

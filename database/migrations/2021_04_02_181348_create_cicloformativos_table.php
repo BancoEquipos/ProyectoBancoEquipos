@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCiclosFormativosTable extends Migration
+class CreateCicloformativosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCiclosFormativosTable extends Migration
      */
     public function up()
     {
-        Schema::create('ciclos_formativos', function (Blueprint $table) {
+        Schema::create('cicloformativos', function (Blueprint $table) {
             $table->id();
             $table->string("nombre")->unique(); //sin siglas
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateCiclosFormativosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ciclos_formativos');
+        Schema::dropIfExists('cicloformativos');
     }
 }
