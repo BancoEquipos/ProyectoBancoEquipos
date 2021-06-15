@@ -20,16 +20,6 @@ class CiclosFormativosController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,7 +27,11 @@ class CiclosFormativosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cicloData = json_decode($request->getContent(), true);
+
+        $ciclo = Cicloformativo::create($cicloData);
+
+        return new CicloformativoResource($ciclo);
     }
 
     /**
@@ -46,20 +40,10 @@ class CiclosFormativosController extends Controller
      * @param  \App\Models\CiclosFormativos  $ciclosFormativos
      * @return \Illuminate\Http\Response
      */
-    public function show(CiclosFormativos $ciclosFormativos)
+    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CiclosFormativos  $ciclosFormativos
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(CiclosFormativos $ciclosFormativos)
-    {
-        //
+        $cicloFormativo = Cicloformativo::findOrFail($id);
+        return new CicloformativoResource($cicloFormativo);
     }
 
     /**
@@ -69,9 +53,13 @@ class CiclosFormativosController extends Controller
      * @param  \App\Models\CiclosFormativos  $ciclosFormativos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CiclosFormativos $ciclosFormativos)
+    public function update(Request $request, $id)
     {
-        //
+        $cicloFormativoData = json_decode($request->getContent(), true);
+        $cicloFormativo = Cicloformativo::findOrFail($id);
+        $cicloFormativo->update($cicloFormativoData);
+
+        return new CicloformativoResource($cicloFormativo);
     }
 
     /**
@@ -80,8 +68,13 @@ class CiclosFormativosController extends Controller
      * @param  \App\Models\CiclosFormativos  $ciclosFormativos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CiclosFormativos $ciclosFormativos)
+    public function destroy($id)
     {
-        //
+        $cicloFormativo = Cicloformativo::findOrFail($id);
+        $cicloFormativo->delete();
+
+        $mensaje = ['estado' => 'eliminado'];
+
+        return response()->json($mensaje);
     }
 }
