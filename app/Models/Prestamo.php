@@ -45,4 +45,8 @@ class Prestamo extends Model
     public function ciclo_formativo(){
         return $this->belongsTo(Cicloformativo::class, 'ciclo_formativo_id', 'id');
     }
+
+    public function componentes(){
+        return $this->belongsToMany(Componente::class, 'prestamos_componentes', 'prestamo_id', 'componente_id');
+    }
 }
