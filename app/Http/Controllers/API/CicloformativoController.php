@@ -7,9 +7,6 @@ use App\Http\Resources\CicloformativoResource;
 use App\Models\Cicloformativo;
 use Illuminate\Http\Request;
 
-use App\Http\Resources\MotivoResource;
-use App\Models\Motivo;
-
 class CicloformativoController extends Controller
 {
     /**
@@ -19,7 +16,7 @@ class CicloformativoController extends Controller
      */
     public function index()
     {
-        return MotivoResource::collection(Motivo::paginate());
+        return CicloformativoResource::collection(Cicloformativo::paginate());
     }
 
     /**
