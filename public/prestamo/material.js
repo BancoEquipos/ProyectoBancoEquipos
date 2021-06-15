@@ -221,6 +221,8 @@ $(document).ready(function () {
     $("#motivoSelect").change(function e() { desplegarMotivo() });
 
     //Comprobacion de los imputs
+    comprobacionFinal($('#nombre'));
+    comprobacionFinal($('#apellidos'));
     $('#nif').blur(function e() { comprobarDNI($(this).val()), comprobacionFinal() });
     $('#nombre').blur(function e() { comprobarNombre($(this).val(), 'nombre'), comprobacionFinal() });
     $('#apellidos').blur(function e() { comprobarNombre($(this).val(), "apellidos"), comprobacionFinal() });
@@ -229,7 +231,7 @@ $(document).ready(function () {
     $('#email').blur(function e() { comprobarEmail($(this).val()), comprobacionFinal() });
     $('#domicilio').blur(function e() { selectNoNulo($('#domicilio').val(), "domicilio"), comprobacionFinal() })
     $('#nre').blur(function e() { comprobarNombre($(this).val(), 'nre'), comprobacionFinal() });
-    $('#nombre').blur(function e() { comprobarNombre($(this).val(), 'otroMotivo'),comprobacionFinal() });
+    $('#otroMotivo').blur(function e() { comprobarNombre($(this).val(), 'otroMotivo'),comprobacionFinal() });
 
     //Comprobacion de los select
     $('#ps-prov').change(function e() { selectNoNulo($('#ps-prov option:selected').text(), "ps-prov"), comprobacionFinal(), $('#ps-mun').addClass("campoErroneo")})
