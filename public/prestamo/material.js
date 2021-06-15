@@ -221,8 +221,8 @@ $(document).ready(function () {
     $("#motivoSelect").change(function e() { desplegarMotivo() });
 
     //Comprobacion de los imputs
-    comprobacionFinal($('#nombre'));
-    comprobacionFinal($('#apellidos'));
+    comprobarNombre($('#nombre').val());
+    comprobarNombre($('#apellidos').val());
     $('#nif').blur(function e() { comprobarDNI($(this).val()), comprobacionFinal() });
     $('#nombre').blur(function e() { comprobarNombre($(this).val(), 'nombre'), comprobacionFinal() });
     $('#apellidos').blur(function e() { comprobarNombre($(this).val(), "apellidos"), comprobacionFinal() });
