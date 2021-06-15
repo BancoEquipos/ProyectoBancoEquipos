@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\CiclosFormativos;
+use App\Models\Cicloformativo;
 use App\Models\Componente;
 use App\Models\Motivo;
 use App\Models\Tipocomponente;
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         for($i = 0; $i <  11; ++$i){
-            $ciclo = new CiclosFormativos();
+            $ciclo = new Cicloformativo();
             $ciclo->nombre = $ciclos[$i];
             $ciclo->save();
         }
