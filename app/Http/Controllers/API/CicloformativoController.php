@@ -4,7 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CicloformativoResource;
+use App\Http\Resources\MotivoResource;
 use App\Models\Cicloformativo;
+use App\Models\Motivo;
 use Illuminate\Http\Request;
 
 class CicloformativoController extends Controller
@@ -16,7 +18,7 @@ class CicloformativoController extends Controller
      */
     public function index()
     {
-        return CicloformativoResource::collection(Cicloformativo::paginate());
+        return MotivoResource::collection(Motivo::paginate());
     }
 
     /**

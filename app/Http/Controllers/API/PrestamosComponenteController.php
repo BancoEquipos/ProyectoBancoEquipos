@@ -31,7 +31,7 @@ class PrestamosComponenteController extends Controller
 
         $prestamosComponente = PrestamosComponente::create($prestamosComponenteData);
 
-        return new PrestamosComponenteResource($prestamosComponente);
+        return new PrestamosComponenteResource($prestamosComponenteData);
     }
 
     /**
