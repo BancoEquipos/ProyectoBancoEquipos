@@ -84,7 +84,7 @@ $(document).ready(function () {
                 '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
 
                 '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
-                '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>' +
+                '<td>Nº de serie asignados: ' + mostrarNumeroSerie(datosSolicitudes[i].id) + ' </td></tr></table>' +
                 ' <div class="botonValidar"><input type="button" class=" btn botonEnviar btn-primary enviar" type="submit" id="' + datosSolicitudes[i].id + '" value="Validar solicitud"></div>');
 
                 crearEventosDatepicker(i+1)
