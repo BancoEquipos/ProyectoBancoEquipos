@@ -66,7 +66,7 @@ $(document).ready(function () {
                 '<td>Numero de prestamo: ' + datosSolicitudes[i].id + '</td></tr >' +
 
                 '<tr><td>Apellidos: ' + datosSolicitudes[i].alumno.apellidos + '</td>' +
-                '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="Ejemplo" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
+                '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="{{ $nombre }}" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
 
                 '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
                 '<td>Fecha y hora de la validación: <input class="inputPrestamo" type="text" id="datepickerValidacion' + datosSolicitudes[i].id + '"></td></tr >' +
