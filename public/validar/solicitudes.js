@@ -226,8 +226,8 @@ $(document).ready(function () {
             //EL PROBLEMA ESTA EN LA ID DEL COMPONENTE, NO EN LA DEL PRESTAMO
             arrayNum = arrayNum + " " + datosSolicitudes[id-1].tipo_componente[i].tipo_componente + " Numero de serie: " + datosSolicitudes[id-1].tipo_componente[i].n_serie;
         }
-        arrayNum = arrayNum.substring(0, arrayNombres.length - 2);
-        return arrayNombres;
+        arrayNum = arrayNum.substring(0, arrayNum.length - 2);
+        return arrayNum;
     }
 
     function separarComponentesDisponibles() {
