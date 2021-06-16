@@ -71,3 +71,8 @@ Route::get('validarlo',function () {
     $portions = explode(" ", Auth::user()->name);
     return view('validar', array('apellido1' => $portions[0],'apellido2' => $portions[1],'nombre' => $portions[2], 'email' => Auth::user()->email, 'nre' => $nre[0], 'avatar' => Auth::user()->avatar));
 });
+
+
+Route::get('correorestringido',function () {
+    return view('correoRestringido');
+});
