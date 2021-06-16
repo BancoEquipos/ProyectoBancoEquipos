@@ -1,7 +1,7 @@
 //PASAR DATO FINALIZADO
 $(document).ready(function () {
-    //const URL_API = 'http://shrouded-falls-21309.herokuapp.com/';
-    const URL_API = 'http://localhost:8000/';
+    const URL_API = 'http://shrouded-falls-21309.herokuapp.com/';
+    // const URL_API = 'http://localhost:8000/';
     let configuracionPeticion = {};
     let datosSolicitudes = [];
     let componentes = [];
@@ -19,7 +19,7 @@ $(document).ready(function () {
             "numMonitor":  null,
             "numOrdenador": null
     }
-    
+
 
     async function iniciar(){
         datosSolicitudes = await devolverPrestamo();
@@ -157,7 +157,7 @@ $(document).ready(function () {
         }
         rellenarSinPrestamo(prestamosPendientes, "Pendientes", "pendiente");
         rellenarSinPrestamo(prestamosTramitadas, "Tramitadas", "tramitados");
-        rellenarSinPrestamo(prestamosFinalizadas, "Finalizadas", "finalizados");   
+        rellenarSinPrestamo(prestamosFinalizadas, "Finalizadas", "finalizados");
 
     }
 
@@ -185,15 +185,15 @@ $(document).ready(function () {
                 active: false,
                 heightStyle: "content"
             });
-        });    
+        });
     }
 
     function rellenarSinPrestamo(dato, campo, tipo){
         if(dato == false ){
             $("#acordeon"+campo).append('<h3>Ningún prestamo '+ tipo +'</h3>')
-        }   
+        }
     }
- 
+
     function crearDatepicker() {
         for (let i = 0; i < Object.keys(datosSolicitudes).length; i++) {
             if (datosSolicitudes[i].fecha_validacion == null) {
@@ -322,7 +322,7 @@ $(document).ready(function () {
         $('#'+id).click(insertarComponenteEnPrestamosComponentes);
         $('#'+id).click(insertarFechasProfesor);
     }
-   
+
 
     async function devolverPrestamo(){
         let prestamoJson;
@@ -381,7 +381,7 @@ $(document).ready(function () {
         let fechaValida = cambiarFormatoFecha(datosEnviar['fechaValidacion']);
         let fechaFin = cambiarFormatoFecha(datosEnviar['fechaMaxima']);
         let fechaEnvio = cambiarFormatoFecha(datosEnviar['fechaSalida']);
-       
+
 
         let dataBody = {
             profesor_valida: datosEnviar['nombreProfesor'],
