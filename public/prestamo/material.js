@@ -252,6 +252,7 @@ $(document).ready(function () {
 
     $("#enviar").click(function(){
         window.print();
+        alert("Se ha enviado la solicitud");
         if(listoEnviar){
             let idTablaDomicilio;
             let idTablaAlumno;
