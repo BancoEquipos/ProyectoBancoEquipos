@@ -10,7 +10,7 @@ $(document).ready(function () {
     var ordenadoresDisponibles = [];
     var numSerieMonitores = "";
     var numSerieOrdenadores = "";
-    var nombreAutocompletar = $('#autoC').val();
+    var nombreAutocompletar;
     var fechaHoy = new Date();
     fechaHoy = fechaHoy.getDate() + "/" + (fechaHoy.getMonth() +1) + "/" + fechaHoy.getFullYear()
     var datosEnviar = {
@@ -395,6 +395,7 @@ $(document).ready(function () {
         let fechaValida = cambiarFormatoFecha(datosEnviar['fechaValidacion']);
         let fechaFin = cambiarFormatoFecha(datosEnviar['fechaMaxima']);
         let fechaEnvio = cambiarFormatoFecha(datosEnviar['fechaSalida']);
+        nombreAutocompletar = $('#autoC').val();
         datosEnviar['nombreProfesor'] = nombreAutocompletar;
 
         let dataBody = {
