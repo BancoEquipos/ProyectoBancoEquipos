@@ -132,6 +132,7 @@ $(document).ready(function () {
                     '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
                     '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>' +
                     ' <div class="botonValidar"><input type="button" class=" btn botonEnviar btn-primary enviar" type="submit" id="' + datosSolicitudes[i].id + '" value="Finalizar solicitud"></div>')
+                crearEventosBotonesFinalizar(i+1);
             }
             else{
                 prestamosFinalizados = true;
@@ -163,7 +164,6 @@ $(document).ready(function () {
 
                     '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
                     '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>')
-                crearEventosBotonesFinalizar(i+1);
             }
         }
         rellenarSinPrestamo(prestamosPendientes, "Pendientes", "pendiente");
@@ -242,7 +242,6 @@ $(document).ready(function () {
     }
 
     function crearEventosBotonesFinalizar(id){
-        console.log("Borja Aznar BErenguer");
         $('#'+id).click(finalizarPrestamo);
     }
 
