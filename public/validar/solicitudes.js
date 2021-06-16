@@ -61,47 +61,47 @@ $(document).ready(function () {
 
         for (let i = 0; i < Object.keys(datosSolicitudes).length; i++) {
 
-            if (datosSolicitudes[i].fecha_validacion == null) {
+            if (datosSolicitudes[i].fecha_valida == null) {
 
                 datosEnviar["id"] = i;
                 prestamosPendientes = true;
 
                 $('#acordeonPendientes').append('<h3>Solicitud de material: ' + datosSolicitudes[i].alumno.nombre + " " + datosSolicitudes[i].alumno.apellidos + " | " +
 
-                datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</h3> <div id="solicitud"' + datosSolicitudes[i].id + '> ' +
-                '<table><tr><th>Alumno que solicita</th><th>Informacion del prestamo</th></tr>' +
+                    datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</h3> <div id="solicitud"' + datosSolicitudes[i].id + '> ' +
+                    '<table><tr><th>Alumno que solicita</th><th>Informacion del prestamo</th></tr>' +
 
-                '<tr><td>Nombre: ' + datosSolicitudes[i].alumno.nombre + '</td>' +
-                '<td>Numero de prestamo: ' + datosSolicitudes[i].id + '</td></tr >' +
+                    '<tr><td>Nombre: ' + datosSolicitudes[i].alumno.nombre + '</td>' +
+                    '<td>Numero de prestamo: ' + datosSolicitudes[i].id + '</td></tr >' +
 
-                '<tr><td>Apellidos: ' + datosSolicitudes[i].alumno.apellidos + '</td>' +
-                '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="'+nombreAutocompletar+'" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
+                    '<tr><td>Apellidos: ' + datosSolicitudes[i].alumno.apellidos + '</td>' +
+                    '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="Ejemplo" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
 
-                '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
-                '<td>Fecha y hora de la validación: <input class="inputPrestamo" type="text" value="'+fechaHoy+'" id="datepickerValidacion' + datosSolicitudes[i].id + '"></td></tr >' +
+                    '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
+                    '<td>Fecha y hora de la validación: <input class="inputPrestamo" type="text" value="'+fechaHoy+'" id="datepickerValidacion' + datosSolicitudes[i].id + '"></td></tr >' +
 
-                '<tr><td>NIF: ' + datosSolicitudes[i].alumno.nif + '</td>' +
-                '<td>Fecha máxima de la devolución: <input class="inputPrestamo" type="text" id="datepickerMaximo' + datosSolicitudes[i].id + '"></p></td></tr>' +
+                    '<tr><td>NIF: ' + datosSolicitudes[i].alumno.nif + '</td>' +
+                    '<td>Fecha máxima de la devolución: <input class="inputPrestamo" type="text" id="datepickerMaximo' + datosSolicitudes[i].id + '"></p></td></tr>' +
 
-                '<tr><td>Provincia y población: ' + datosSolicitudes[i].domicilio.provincia + " |  " + datosSolicitudes[i].domicilio.poblacion + '</td>' +
-                '<td>Fecha de salida del equipo solicitado: <input class="inputPrestamo" type="text" id="datepickerSalida' + datosSolicitudes[i].id + '"></p></td></tr>' +
+                    '<tr><td>Provincia y población: ' + datosSolicitudes[i].domicilio.provincia + " |  " + datosSolicitudes[i].domicilio.poblacion + '</td>' +
+                    '<td>Fecha de salida del equipo solicitado: <input class="inputPrestamo" type="text" id="datepickerSalida' + datosSolicitudes[i].id + '"></p></td></tr>' +
 
-                '<tr><td>Domicilio: ' + datosSolicitudes[i].domicilio.domicilio + '</td>' +
-                '<td>Fecha de devolucion: Aun no se ha hecho el prestamo</p></td></tr>' +
+                    '<tr><td>Domicilio: ' + datosSolicitudes[i].domicilio.domicilio + '</td>' +
+                    '<td>Fecha de devolucion: Aun no se ha hecho el prestamo</p></td></tr>' +
 
-                '<tr><td>Correo: ' + datosSolicitudes[i].alumno.email + '</td>' +
-                '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
+                    '<tr><td>Correo: ' + datosSolicitudes[i].alumno.email + '</td>' +
+                    '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
 
-                '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
-                '<td>Nº de serie asignados: ' + mostrarNumeroSerie(datosSolicitudes[i].id) + ' </td></tr></table>' +
-                ' <div class="botonValidar"><input type="button" class=" btn botonEnviar btn-primary enviar" type="submit" id="' + datosSolicitudes[i].id + '" value="Validar solicitud"></div>');
+                    '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
+                    '<td>Nº de serie asignados: ' + mostrarNumeroSerie(datosSolicitudes[i].id) + ' </td></tr></table>' +
+                    ' <div class="botonValidar"><input type="button" class=" btn botonEnviar btn-primary enviar" type="submit" id="' + datosSolicitudes[i].id + '" value="Validar solicitud"></div>');
 
                 crearEventosDatepicker(i+1)
                 crearSelectMonitor(i+1)
                 crearSelectOrdenador(i+1)
                 crearEventosBotones(i+1)
             }
-            else if (datosSolicitudes[i].fecha_devolucion == null && (datosSolicitudes[i].finalizado == 0  || datosSolicitudes[i].finalizado == false)){
+            else if (datosSolicitudes[i].fecha_fin == null && (datosSolicitudes[i].finalizado == 0  || datosSolicitudes[i].finalizado == false)){
 
                 prestamosTramitados = true;
                 $('#acordeonTramitadas').append('<h3>Solicitud de material: ' + datosSolicitudes[i].alumno.nombre + " " + datosSolicitudes[i].alumno.apellidos + " | " +
@@ -115,16 +115,16 @@ $(document).ready(function () {
                     '<td>Profesor que lo validó: ' + datosSolicitudes[i].profesor_valida + '</td></tr >' +
 
                     '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
-                    '<td>Fecha y hora de la validación: ' + datosSolicitudes[i].fecha_validacion + '</td></tr >' +
+                    '<td>Fecha y hora de la validación: ' + datosSolicitudes[i].fecha_valida + '</td></tr >' +
 
                     '<tr><td>NIF: ' + datosSolicitudes[i].alumno.nif + '</td>' +
                     '<td>Fecha máxima de la devolución: ' + datosSolicitudes[i].fecha_fin + '</p></td></tr>' +
 
                     '<tr><td>Provincia y población: ' + datosSolicitudes[i].domicilio.provincia + " |  " + datosSolicitudes[i].domicilio.poblacion + '</td>' +
-                    '<td>Fecha de salida del equipo solicitado: ' + datosSolicitudes[i].fecha_entrega + '</p></td></tr>' +
+                    '<td>Fecha de salida del equipo solicitado: ' + datosSolicitudes[i].fecha_envio + '</p></td></tr>' +
 
                     '<tr><td>Domicilio: ' + datosSolicitudes[i].domicilio.domicilio + '</td>' +
-                    '<td>Fecha de devolucion: ' + datosSolicitudes[i].fecha_devolucion + '</p></td></tr>' +
+                    '<td>Fecha de devolucion: ' + datosSolicitudes[i].fecha_fin + '</p></td></tr>' +
 
                     '<tr><td>Correo: ' + datosSolicitudes[i].alumno.email + '</td>' +
                     '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
@@ -137,32 +137,32 @@ $(document).ready(function () {
                 prestamosFinalizados = true;
 
                 $('#acordeonFinalizadas').append('<h3>Solicitud de material: ' + datosSolicitudes[i].alumno.nombre + " " + datosSolicitudes[i].alumno.apellidos + " | " +
-                datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</h3> <div id="solicitud"' + datosSolicitudes[i].id + '> ' +
-                '<table><tr><th>Alumno que solicita</th><th>Informacion del prestamo</th></tr>' +
+                    datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</h3> <div id="solicitud"' + datosSolicitudes[i].id + '> ' +
+                    '<table><tr><th>Alumno que solicita</th><th>Informacion del prestamo</th></tr>' +
 
-                '<tr><td>Nombre: ' + datosSolicitudes[i].alumno.nombre + '</td>' +
-                '<td>Numero de prestamo: ' + datosSolicitudes[i].id + '</td></tr >' +
+                    '<tr><td>Nombre: ' + datosSolicitudes[i].alumno.nombre + '</td>' +
+                    '<td>Numero de prestamo: ' + datosSolicitudes[i].id + '</td></tr >' +
 
-                '<tr><td>Apellidos: ' + datosSolicitudes[i].alumno.apellidos + '</td>' +
-                '<td>Profesor que lo validó: ' + datosSolicitudes[i].profesor_valida + '</td></tr >' +
+                    '<tr><td>Apellidos: ' + datosSolicitudes[i].alumno.apellidos + '</td>' +
+                    '<td>Profesor que lo validó: ' + datosSolicitudes[i].profesor_valida + '</td></tr >' +
 
-                '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
-                '<td>Fecha y hora de la validación: ' + datosSolicitudes[i].fecha_validacion + '</td></tr >' +
+                    '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
+                    '<td>Fecha y hora de la validación: ' + datosSolicitudes[i].fecha_valida + '</td></tr >' +
 
-                '<tr><td>NIF: ' + datosSolicitudes[i].alumno.nif + '</td>' +
-                '<td>Fecha máxima de la devolución: ' + datosSolicitudes[i].fecha_devolucion + '</p></td></tr>' +
+                    '<tr><td>NIF: ' + datosSolicitudes[i].alumno.nif + '</td>' +
+                    '<td>Fecha máxima de la devolución: ' + datosSolicitudes[i].fecha_fin + '</p></td></tr>' +
 
-                '<tr><td>Provincia y población: ' + datosSolicitudes[i].domicilio.provincia + " |  " + datosSolicitudes[i].domicilio.poblacion + '</td>' +
-                '<td>Fecha de salida del equipo solicitado: ' + datosSolicitudes[i].fecha_entrega + '</p></td></tr>' +
+                    '<tr><td>Provincia y población: ' + datosSolicitudes[i].domicilio.provincia + " |  " + datosSolicitudes[i].domicilio.poblacion + '</td>' +
+                    '<td>Fecha de salida del equipo solicitado: ' + datosSolicitudes[i].fecha_envio + '</p></td></tr>' +
 
-                '<tr><td>Domicilio: ' + datosSolicitudes[i].domicilio.domicilio + '</td>' +
-                '<td>Fecha de devolucion: ' + datosSolicitudes[i].fecha_devolucion + '</p></td></tr>' +
+                    '<tr><td>Domicilio: ' + datosSolicitudes[i].domicilio.domicilio + '</td>' +
+                    '<td>Fecha de devolucion: ' + datosSolicitudes[i].fecha_fin + '</p></td></tr>' +
 
-                '<tr><td>Correo: ' + datosSolicitudes[i].alumno.email + '</td>' +
-                '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
+                    '<tr><td>Correo: ' + datosSolicitudes[i].alumno.email + '</td>' +
+                    '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
 
-                '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
-                '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>')
+                    '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
+                    '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>')
             }
         }
         rellenarSinPrestamo(prestamosPendientes, "Pendientes", "pendiente");
@@ -466,7 +466,4 @@ $(document).ready(function () {
         $('#acordeonPendientes').empty();
         iniciar();
     }*/
-
-
-
 });
