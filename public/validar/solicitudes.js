@@ -1,4 +1,4 @@
-function funcionar() {
+$(document).ready(function () {
 
     //Variable para almacenar las solicitudes entrantes:
     var monitoresDisponibles = [];
@@ -254,4 +254,4 @@ function funcionar() {
     -generar la fecha de ahora mismo para el campo fecha_alta_solicitud
     -hacer get de un json igual al de algo.js
     */
-};
+});

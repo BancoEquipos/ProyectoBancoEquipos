@@ -1,8 +1,4 @@
-$(document).ready(async function(){
-  const URL_API = 'http://localhost/';
-let configuracionPeticion = {};
-
-var datosSolicitudesAnterior = [
+var datosSolicitudes = [
   {
     "id": 1,
     "curso": 1,
@@ -253,30 +249,7 @@ var datosSolicitudesAnterior = [
     }]
   }]
 
-  function peticion(url, configuracionPeticion){
-    return fetch(url, configuracionPeticion).then(data => data.json());
-  }
-
-  async function devolverPrestamo(){
-    let prestamoJson;
-    configuracionPeticion = {
-        method: 'GET',
-        header: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        }
-    }
-
-    prestamoJson = await peticion(URL_API + 'api/prestamos', configuracionPeticion);
-
-    return prestamoJson;
-}
-
-let datosSolicitudes = await devolverPrestamo();
-const componentes = await peticion(URL_API, configuracionPeticion);
-
-
-const componentesAnterior = [
+const componentes = [
   {
     "id": 1,
     "nSerie": 1,
@@ -353,5 +326,3 @@ const componentesAnterior = [
     "tipoComponente": "Monitor"
   }
 ]
-
-});

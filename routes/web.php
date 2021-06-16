@@ -25,7 +25,7 @@ Route::get('vistaAlumno', function () {
         $date = date_format(Auth::user()->updated_at, "H:i:s d-m-Y");
         return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => $date, 'avatar' => Auth::user()->avatar));
     } else {
-        return view('restringido');
+        return view('correoRestringido');
     }
 });
 
@@ -39,7 +39,7 @@ Route::get('vistaProfesor', function () {
         $date = date_format(Auth::user()->updated_at, "H:i:s d-m-Y");
         return view('profesor', array('userName' => Auth::user()->name, 'email' => Auth::user()->email, 'nre' => $nre[0], 'lastLog' => $date, 'avatar' => Auth::user()->avatar));
     } else {
-        return view('restringido');
+        return view('correoRestringido');
     }
 });
 
