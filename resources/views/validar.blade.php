@@ -70,7 +70,7 @@
         </div>
     </div>
     <div class="divPrincipal d-block centrar" id="cargandoDiv">
-        <img src="/validar/Imagenes/cargando.svg">
+        <img src="/validar/Imagenes/cargandoGif.gif">
     </div>
     <div class="divPrincipal d-none" id="divPrestamos">
         <div id="tabs">
