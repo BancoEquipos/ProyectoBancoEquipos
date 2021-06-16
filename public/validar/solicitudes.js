@@ -230,12 +230,13 @@ $(document).ready(function () {
     }
 
     function recorrerNumComponente(id) {
-        var arrayNum = "";
-        for (let i = 0; i < Object.keys(datosSolicitudes[id-1].tipo_componente).length; i++) {
+        var arrayNum = "</br></br>";
+        for (let i = 0; i < Object.keys(datosSolicitudes[id-1].componentes).length; i++) {
             //EL PROBLEMA ESTA EN LA ID DEL COMPONENTE, NO EN LA DEL PRESTAMO
-            arrayNum = arrayNum + " " + datosSolicitudes[id-1].tipo_componente[i].tipo_componente + " Numero de serie: " + datosSolicitudes[id-1].tipo_componente[i].n_serie;
+            arrayNum = arrayNum + " " + datosSolicitudes[id-1].tipo_componente[i].tipo_componente + "| Numero de serie: " + datosSolicitudes[id-1].componentes[i].n_serie + "</br></br>";
         }
         arrayNum = arrayNum.substring(0, arrayNum.length - 2);
+        console.log(arrayNum)
         return arrayNum;
     }
 
