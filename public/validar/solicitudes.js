@@ -163,6 +163,7 @@ $(document).ready(function () {
 
                     '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
                     '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>')
+                crearEventosBotonesFinalizar(i+1);
             }
         }
         rellenarSinPrestamo(prestamosPendientes, "Pendientes", "pendiente");
@@ -238,6 +239,10 @@ $(document).ready(function () {
         arrayNum = arrayNum.substring(0, arrayNum.length - 2);
         console.log(arrayNum)
         return arrayNum;
+    }
+
+    function crearEventosBotonesFinalizar(id){
+        $('#'+id).click(finalizarPrestamos);
     }
 
     function separarComponentesDisponibles() {
