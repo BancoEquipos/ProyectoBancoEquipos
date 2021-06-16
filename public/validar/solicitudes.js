@@ -1,7 +1,7 @@
 //PASAR DATO FINALIZADO
 $(document).ready(function () {
     const URL_API = 'http://shrouded-falls-21309.herokuapp.com/';
-    // const URL_API = 'http://localhost:8000/';
+    //.const URL_API = 'http://localhost:8000/';
     let configuracionPeticion = {};
     let datosSolicitudes = [];
     let componentes = [];
@@ -39,8 +39,9 @@ $(document).ready(function () {
         $(location).attr('href', url)
     }
 
-    $("#cambiarCuenta").click(function e() { redirigir("../Vista Loggin/index.html") });
-    $("#cerrarSesion").click(function e() { redirigir("../Vista Logout/index.html") });
+    $("#cambiarCuenta").click(function e() { redirigir("auth/google") });
+    $("#cerrarSesion").click(function e() { redirigir("loginout") });
+    $("#botonVolver").click(function e() { redirigir("vistaProfesor") });
 
     //Recorrer el JSON y crear una entrada para cada uno:
 
@@ -83,7 +84,7 @@ $(document).ready(function () {
                 '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
 
                 '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
-                '<td>Nº de serie asignados: ' + mostrarNumeroSerie(datosSolicitudes[i].id) + ' </td></tr></table>' +
+                '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>' +
                 ' <div class="botonValidar"><input type="button" class=" btn botonEnviar btn-primary enviar" type="submit" id="' + datosSolicitudes[i].id + '" value="Validar solicitud"></div>');
 
                 crearEventosDatepicker(i+1)
@@ -120,7 +121,7 @@ $(document).ready(function () {
                     '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
 
                     '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
-                    '<td>Nº de serie asignados: ' + recorrerComponentesSolicitados(datosSolicitudes[i].id) + ' </td></tr></table>' +
+                    '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>' +
                     ' <div class="botonValidar"><input type="button" class=" btn botonEnviar btn-primary enviar" type="submit" id="' + datosSolicitudes[i].id + '" value="Finalizar solicitud"></div>')
             }
             else{
@@ -152,7 +153,7 @@ $(document).ready(function () {
                 '<td>Solicita : ' + recorrerTipoComponente(datosSolicitudes[i].id) + '</td></tr>' +
 
                 '<tr><td>Esta cursando: ' + datosSolicitudes[i].curso + " de " + datosSolicitudes[i].ciclo_formativo.nombre + '</td>' +
-                '<td>Nº de serie asignados: ' + recorrerComponentesSolicitados(datosSolicitudes[i].id) + ' </td></tr></table>')
+                '<td>Nº de serie asignados: ' + recorrerNumComponente(datosSolicitudes[i].id) + ' </td></tr></table>')
             }
         }
         rellenarSinPrestamo(prestamosPendientes, "Pendientes", "pendiente");
@@ -216,6 +217,16 @@ $(document).ready(function () {
         }
         arrayNombres = arrayNombres.substring(0, arrayNombres.length - 2);
 
+        return arrayNombres;
+    }
+
+    function recorrerNumComponente(id) {
+        var arrayNum = "";
+        for (let i = 0; i < Object.keys(datosSolicitudes[id-1].tipo_componente).length; i++) {
+            //EL PROBLEMA ESTA EN LA ID DEL COMPONENTE, NO EN LA DEL PRESTAMO
+            arrayNum = arrayNum + " " + datosSolicitudes[id-1].tipo_componente[i].tipo_componente + " Numero de serie: " + datosSolicitudes[id-1].tipo_componente[i].n_serie;
+        }
+        arrayNum = arrayNum.substring(0, arrayNombres.length - 2);
         return arrayNombres;
     }
 

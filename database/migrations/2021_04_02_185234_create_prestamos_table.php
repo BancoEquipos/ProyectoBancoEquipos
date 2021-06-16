@@ -22,8 +22,8 @@ class CreatePrestamosTable extends Migration
             $table->date("fecha_valida")->nullable();
             $table->date("fecha_fin")->nullable();
             $table->date("fecha_devolucion")->nullable();
-            $table->boolean('finalizado')->default(0);
             $table->date("fecha_envio")->nullable(); //salida en tablas de Víctor
+            $table->boolean('finalizado')->default(0);
             $table->foreignId('motivo_id')->references('id')->on('motivos');
             $table->foreignId('alumno_id')->references('id')->on('alumnos');
             $table->foreignId('domicilio_id')->references('id')->on('domicilios');
