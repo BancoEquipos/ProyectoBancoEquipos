@@ -10,7 +10,7 @@ $(document).ready(function () {
     var ordenadoresDisponibles = [];
     var numSerieMonitores = "";
     var numSerieOrdenadores = "";
-    var nombreAutocompletar;
+    var nombreAutocompletar = $('#autoC').val();
     var fechaHoy = new Date();
     fechaHoy = fechaHoy.getDate() + "/" + (fechaHoy.getMonth() +1) + "/" + fechaHoy.getFullYear()
     var datosEnviar = {
