@@ -242,6 +242,7 @@ $(document).ready(function () {
     }
 
     function crearEventosBotonesFinalizar(id){
+        console.log("Borja Aznar BErenguer");
         $('#'+id).click(finalizarPrestamo);
     }
 
