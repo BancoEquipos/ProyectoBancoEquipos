@@ -22,7 +22,6 @@
 
     <link rel="stylesheet" href="/validar/estilo.css">
     <script src="/validar/solicitudes.js"></script>
-    <script src="/validar/algo.js"></script>
     <title>Solicitudes de material</title>
     <link rel="icon" href="/validar/Imagenes/logoC3Mobile.svg">
 </head>

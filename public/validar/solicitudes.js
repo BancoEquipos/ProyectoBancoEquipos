@@ -371,7 +371,7 @@ $(document).ready(function () {
         }
 
         response = await peticion(URL_API + 'api/prestamoscomponentesespecificos/' + idPrestamo, configuracionPeticion);
-        await sleep(500)
+        await sleep(500);
         location.reload();
         return response;
     }
@@ -415,6 +415,7 @@ $(document).ready(function () {
         }
 
         componentesDisponibles = await peticion(URL_API + 'api/prestamos/' + this.id, configuracionPeticion);
+        await sleep(500);
         return componentesDisponibles;
     }
 
