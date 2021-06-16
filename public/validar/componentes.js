@@ -1,5 +1,5 @@
 {
-    "data": [
+    var data = [
       {
         "id": 1,
         "nSerie": 1,
@@ -75,14 +75,16 @@
         "nSerie": 15,
         "tipoComponente": "Monitor"
       }
-    ],
-    "links": {
+    ]
+
+    var link = {
       "first": "http://localhost:8000/api/componentes?page=1",
       "last": "http://localhost:8000/api/componentes?page=2",
       "prev": null,
       "next": "http://localhost:8000/api/componentes?page=2"
-    },
-    "meta": {
+    }
+
+    var meta = {
       "current_page": 1,
       "from": 1,
       "last_page": 2,

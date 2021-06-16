@@ -21,6 +21,7 @@ th{background-color:#ddd}
 .textoTitulo{padding:10px;margin-left:10px}
 .logoInfo{height:40px;width:40px;background-color:#e1f0ff;}
 .selectNumero{height: 30px;}
+.inputPrestamo{height: 20px;}
 @media (min-width:768px){
 .container-fluid{padding-top:200px}
 .titulo{color:#fff;font-size:30px}
