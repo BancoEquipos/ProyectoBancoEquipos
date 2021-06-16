@@ -2,7 +2,7 @@ var todoCorrecto = {
     "nombre": "auto",
     "email": "auto",
     "tipoIncidencia": "",
-    "urgente": "",
+    "urgente": "No",
     "archivo": "Sin archivo adjunto",
     "descripcion": "",
 }
