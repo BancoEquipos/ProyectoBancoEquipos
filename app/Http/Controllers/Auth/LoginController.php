@@ -17,7 +17,6 @@ class LoginController extends Controller
 
     public function handleGoogleCallback()
     {
-        return "hola";
         $user = Socialite::driver('google')->stateless()->user();
         if (!strpos($user->getEmail(),'alu.murciaeduca.es') || !strpos($user->getEmail(),'murciaeduca.es')) {
             return redirect('correorestringido');
