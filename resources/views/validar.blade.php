@@ -69,10 +69,10 @@
                 alumnos. Están ordenadas de más nuevas a más antiguas.</h3>
         </div>
     </div>
-    <div class="divPrincipal">
-        <div id="prueba">
-            Esto es una prueba
-        </div>
+    <div class="divPrincipal d-block centrar" id="cargandoDiv">
+        <img src="/validar/Imagenes/cargando.svg">
+    </div>
+    <div class="divPrincipal d-none" id="divPrestamos">
         <div id="tabs">
             <ul>
                 <li><a href="#tabs-1">Solicitudes Pendientes</a></li>

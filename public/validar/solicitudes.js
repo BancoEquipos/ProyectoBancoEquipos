@@ -25,6 +25,8 @@ $(document).ready(function () {
 
 
     async function iniciar(){
+        $('#cargandoDiv').removeClass('d-none');
+        $('#cargandoDiv').addClass('d-block');
         datosSolicitudes = await devolverPrestamo();
         datosSolicitudes = datosSolicitudes.data;
         componentes = await getComponentesDisponibles();
@@ -49,6 +51,10 @@ $(document).ready(function () {
     //Recorrer el JSON y crear una entrada para cada uno:
 
     function recuperarSolicitudes() {
+        $('#cargandoDiv').removeClass('d-block');
+        $('#cargandoDiv').addClass('d-none');
+        $('#divPrestamos').removeClass('d-none');
+        $('#divPrestamos').addClass('d-block');
         var prestamosPendientes = false;
         var prestamosTramitadas = false;
         var prestamosFinalizadas = false;
