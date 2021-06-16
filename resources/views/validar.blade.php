@@ -98,7 +98,7 @@
         </div>
 
     </div>
-<input class="d-block" id="autoC" value="{{ $nombre }}">
+<input class="d-none" id="autoC" value="{{ $nombre }}">
 </div>
 
 </body>

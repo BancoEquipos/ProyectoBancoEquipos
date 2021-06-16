@@ -10,7 +10,7 @@ $(document).ready(function () {
     var ordenadoresDisponibles = [];
     var numSerieMonitores = "";
     var numSerieOrdenadores = "";
-    var nombreAutocompletar = $('autoC').val();
+    var nombreAutocompletar = $('#autoC').val();
     var datosEnviar = {
             "idPrestamo": "",
             "nombreProfesor": "",
