@@ -395,7 +395,7 @@ $(document).ready(function () {
         let fechaValida = cambiarFormatoFecha(datosEnviar['fechaValidacion']);
         let fechaFin = cambiarFormatoFecha(datosEnviar['fechaMaxima']);
         let fechaEnvio = cambiarFormatoFecha(datosEnviar['fechaSalida']);
-
+        datosEnviar['nombreProfesor'] = nombreAutocompletar;
 
         let dataBody = {
             profesor_valida: datosEnviar['nombreProfesor'],
