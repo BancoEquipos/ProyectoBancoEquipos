@@ -11,6 +11,8 @@ $(document).ready(function () {
     var numSerieMonitores = "";
     var numSerieOrdenadores = "";
     var nombreAutocompletar = $('#autoC').val();
+    var fechaHoy = new Date();
+    fechaHoy = fechaHoy.getDate() + "/" + (fechaHoy.getMonth() +1) + "/" + fechaHoy.getFullYear()
     var datosEnviar = {
             "idPrestamo": "",
             "nombreProfesor": "",
@@ -70,7 +72,7 @@ $(document).ready(function () {
                 '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="'+nombreAutocompletar+'" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
 
                 '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
-                '<td>Fecha y hora de la validación: <input class="inputPrestamo" type="text" id="datepickerValidacion' + datosSolicitudes[i].id + '"></td></tr >' +
+                '<td>Fecha y hora de la validación: <input class="inputPrestamo" type="text" value="'+fechaHoy+'" id="datepickerValidacion' + datosSolicitudes[i].id + '"></td></tr >' +
 
                 '<tr><td>NIF: ' + datosSolicitudes[i].alumno.nif + '</td>' +
                 '<td>Fecha máxima de la devolución: <input class="inputPrestamo" type="text" id="datepickerMaximo' + datosSolicitudes[i].id + '"></p></td></tr>' +
