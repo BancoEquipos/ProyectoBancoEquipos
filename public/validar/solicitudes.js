@@ -242,7 +242,7 @@ $(document).ready(function () {
     }
 
     function crearEventosBotonesFinalizar(id){
-        $('#'+id).click(finalizarPrestamos);
+        $('#'+id).click(finalizarPrestamo);
     }
 
     function separarComponentesDisponibles() {
@@ -455,7 +455,8 @@ $(document).ready(function () {
         };
 
         const response = await peticion(URL_API + 'api/finalizarprestamo/' + idPrestamo, configuracionPeticion);
-
+        await sleep(500);
+        location.reload();
         return response;
     }
 
@@ -463,13 +464,4 @@ $(document).ready(function () {
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-
-    /*
-    function reiniciarPagina(){
-        datosEnviar = {"idPrestamo": "","nombreProfesor": "","fechaValidacion":"","fechaMaxima": "","fechaSalida": "","numMonitor": "","numOrdenador": ""}
-        $('#acordeonFinalizadas').empty();
-        $('#acordeonTramitadas').empty();
-        $('#acordeonPendientes').empty();
-        iniciar();
-    }*/
 });
