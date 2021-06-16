@@ -1,7 +1,7 @@
 //PASAR DATO FINALIZADO
 $(document).ready(function () {
     const URL_API = 'https://shrouded-falls-21309.herokuapp.com/';
-    //.const URL_API = 'http://localhost:8000/';
+    // const URL_API = 'http://localhost/';
     let configuracionPeticion = {};
     let datosSolicitudes = [];
     let componentes = [];
@@ -384,7 +384,7 @@ $(document).ready(function () {
 
         response = await peticion(URL_API + 'api/prestamoscomponentesespecificos/' + idPrestamo, configuracionPeticion);
         // await sleep(500);
-        location.reload();
+        // location.reload();
         return response;
     }
 
@@ -409,7 +409,9 @@ $(document).ready(function () {
         let fechaEnvio = cambiarFormatoFecha(datosEnviar['fechaSalida']);
         nombreAutocompletar = $('#autoC').val();
         datosEnviar['nombreProfesor'] = nombreAutocompletar;
-
+        console.log(fechaValida);
+        console.log(fechaFin);
+        console.log(fechaEnvio);
         let dataBody = {
             profesor_valida: datosEnviar['nombreProfesor'],
             fecha_valida: fechaValida,
