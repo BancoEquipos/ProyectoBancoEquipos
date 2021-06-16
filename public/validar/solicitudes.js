@@ -15,12 +15,12 @@ $(document).ready(function () {
     fechaHoy = fechaHoy.getDate() + "/" + (fechaHoy.getMonth() +1) + "/" + fechaHoy.getFullYear()
     var datosEnviar = {
             "idPrestamo": "",
-            "nombreProfesor": "",
-            "fechaValidacion": "",
+            "nombreProfesor": nombreAutocompletar,
+            "fechaValidacion": fechaHoy,
             "fechaMaxima": "",
             "fechaSalida": "",
             "numMonitor":  null,
-            "numOrdenador": null
+            "numOrdenador": null,
     }
 
 
@@ -237,7 +237,6 @@ $(document).ready(function () {
             arrayNum = arrayNum + " " + datosSolicitudes[id-1].tipo_componente[i].tipo_componente + "| Numero de serie: " + datosSolicitudes[id-1].componentes[i].n_serie + "</br></br>";
         }
         arrayNum = arrayNum.substring(0, arrayNum.length - 2);
-        console.log(arrayNum)
         return arrayNum;
     }
 
@@ -409,8 +408,6 @@ $(document).ready(function () {
         let fechaEnvio = cambiarFormatoFecha(datosEnviar['fechaSalida']);
         nombreAutocompletar = $('#autoC').val();
         datosEnviar['nombreProfesor'] = nombreAutocompletar;
-        console.log(datosEnviar['fechaMaxima']);
-        console.log(fechaValida);
         let dataBody = {
             profesor_valida: datosEnviar['nombreProfesor'],
             fecha_valida: fechaValida,
@@ -448,7 +445,7 @@ $(document).ready(function () {
         let idPrestamo = this.id;
 
         configuracionPeticion = {
-            methos: 'PUT',
+            method: 'PUT',
             header: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
