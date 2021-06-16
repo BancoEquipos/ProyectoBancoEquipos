@@ -1,6 +1,6 @@
 //PASAR DATO FINALIZADO
 $(document).ready(function () {
-    const URL_API = 'http://shrouded-falls-21309.herokuapp.com/';
+    const URL_API = 'https://shrouded-falls-21309.herokuapp.com/';
     //.const URL_API = 'http://localhost:8000/';
     let configuracionPeticion = {};
     let datosSolicitudes = [];
