@@ -61,6 +61,22 @@ class PrestamoController extends Controller
         return new PrestamoResource($prestamo);
     }
 
+    public function finalizar($id){
+        $prestamo = Prestamo::findOrFail($id);
+
+        $componentes = $prestamo->componentes;
+
+        foreach($componentes as $componente){
+            $componente->disponible = 1;
+            $componente->save();
+        }
+
+        $prestamo->finalizado = 1;
+        $prestamo->save();
+
+        return $prestamo;
+    }
+
     /**
      * Remove the specified resource from storage.
      *

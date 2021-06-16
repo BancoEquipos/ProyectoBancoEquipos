@@ -19,6 +19,12 @@ class ComponenteController extends Controller
         return ComponenteResource::collection(Componente::paginate());
     }
 
+    public function componentesDisponibles(){
+        $componentes = Componente::where('disponible', true)->get();
+        
+        return ComponenteResource::collection($componentes);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -14,6 +14,7 @@ class Componente extends Model
     protected $fillable = [
         'componente_id',
         'n_serie',
+        'disponible',
         'tipo_componente_id',
     ];
 

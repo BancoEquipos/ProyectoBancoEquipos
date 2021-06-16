@@ -61,8 +61,8 @@ class PrestamosComponenteController extends Controller
 
     public function porPrestamoId(Request $request, $id){
         $data = json_decode($request->getContent(), true);
-        $idOrdenador = $data['idOrdenador'];
-        $idMonitor = $data['idMonitor'];
+        $idOrdenador = isset($data['idOrdenador']) ? $data['idOrdenador'] : null;
+        $idMonitor = isset($data['idMonitor']) ? $data['idMonitor'] : null;
 
         $prestamosComponentes = PrestamosComponente::where('prestamo_id', $id)->get();
 
@@ -72,6 +72,9 @@ class PrestamosComponenteController extends Controller
             foreach($prestamosComponentes as $prestamoComponente){
                 if($prestamoComponente->tipo_componente_id === $ordenador->tipo_componente_id){
                     $prestamoComponente->componente_id = $ordenador->componente_id;
+                    $ordenador->disponible = 0;
+
+                    $ordenador->save();
                     $prestamoComponente->save();
                 }
             }
@@ -83,6 +86,9 @@ class PrestamosComponenteController extends Controller
             foreach($prestamosComponentes as $prestamoComponente){
                 if($prestamoComponente->tipo_componente_id === $monitor->tipo_componente_id){
                     $prestamoComponente->componente_id = $monitor->componente_id;
+                    $monitor->disponible = 0;
+                    
+                    $monitor->save();
                     $prestamoComponente->save();
                 }
             }
