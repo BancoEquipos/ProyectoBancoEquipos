@@ -91,7 +91,7 @@ $(document).ready(function () {
                 crearSelectOrdenador(i+1)
                 crearEventosBotones(i+1)
             }
-            else if (datosSolicitudes[i].fecha_devolucion == null && datosSolicitudes[i].finalizado == 0){
+            else if (datosSolicitudes[i].fecha_devolucion == null && (datosSolicitudes[i].finalizado == 0  || datosSolicitudes[i].finalizado == false)){
 
                 prestamosTramitados = true;
                 $('#acordeonTramitadas').append('<h3>Solicitud de material: ' + datosSolicitudes[i].alumno.nombre + " " + datosSolicitudes[i].alumno.apellidos + " | " +
