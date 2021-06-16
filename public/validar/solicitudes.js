@@ -75,7 +75,7 @@ $(document).ready(function () {
                     '<td>Numero de prestamo: ' + datosSolicitudes[i].id + '</td></tr >' +
 
                     '<tr><td>Apellidos: ' + datosSolicitudes[i].alumno.apellidos + '</td>' +
-                    '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="Ejemplo" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
+                    '<td>Profesor que lo valida <input class="inputPrestamo" type="text" value="'+nombreAutocompletar+'" id="profesor' + datosSolicitudes[i].id + '"></td></tr >' +
 
                     '<tr><td>Teléfono: ' + datosSolicitudes[i].alumno.telefono + '</td>' +
                     '<td>Fecha y hora de la validación: <input class="inputPrestamo" type="text" value="'+fechaHoy+'" id="datepickerValidacion' + datosSolicitudes[i].id + '"></td></tr >' +
@@ -201,7 +201,7 @@ $(document).ready(function () {
 
     function rellenarSinPrestamo(dato, campo, tipo){
         if(dato == false ){
-            $("#acordeon"+campo).append('<h3>Ningún prestamo '+ tipo +'</h3>')
+            $("#acordeon"+campo).append('<h3>No hay m&aacute;s prestamos '+ tipo +'</h3>')
         }
     }
 
